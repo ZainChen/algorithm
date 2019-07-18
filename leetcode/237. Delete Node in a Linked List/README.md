@@ -1,6 +1,16 @@
-English | [简体中文](./README.CN.md)
+[Leetcode](../README.CN.md) | English | [简体中文](./README.CN.md)
 
-# 237. Delete Node in a Linked List
+# Directory
+
+>- [Title](#title)
+>- [Solution](#solution)
+>    - [Method-1: Node coverage](#Method-1)
+
+# Title
+
+>[directory](#directory)
+
+237.&nbsp;Delete Node in a Linked List
 
 Write a function to delete a node (except the tail) in a singly linked list, given only access to that node.
 
@@ -31,9 +41,13 @@ Explanation: You are given the third node with value 1, the linked list should b
 - The given node will not be the tail and it will always be a valid node of the linked list.
 - Do not return anything from your function.
 
-# Problem solving
+# Solution
 
-## Method one: 
+## Method-1
+
+Node coverage
+
+>[directory](#directory) | [title](#title) | [C++](#code-cpp-1), [JavaScript](#code-js-1)
 
 ### Analyze
 
@@ -41,7 +55,9 @@ Explanation: You are given the third node with value 1, the linked list should b
 
 ### Code
 
-[main-1.cpp](./main-1.cpp "main-1.cpp")
+#### code-cpp-1
+
+>[directory](#directory) | [title](#title) | [analyze](#method-1) | [main-1.cpp](./main-1.cpp "main-1.cpp")
 
 ```cpp
 #include<iostream>
@@ -113,7 +129,9 @@ int main() {
 }
 ```
 
-[index-1.js](./index-1.js "index-1.js")
+#### code-js-1
+
+>[directory](#directory) | [title](#title) | [analyze](#method-1) | [index-1.js](./index-1.js "index-1.js")
 
 ```js
 
