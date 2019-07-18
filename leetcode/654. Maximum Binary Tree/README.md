@@ -1,6 +1,16 @@
-English | [简体中文](./README.CN.md)
+[Leetcode](../README.md) | English | [简体中文](./README.CN.md)
 
-# 654. Maximum Binary Tree
+# Directory
+
+>- [Title](#title)
+>- [Solution](#solution)
+>    - [Method-1: Partition recursion](#method-1)
+
+# Title
+
+>[directory](#directory)
+
+654.&nbsp;Maximum Binary Tree
 
 Given an integer array with no duplicates. A maximum tree building on this array is defined as follow:
 
@@ -30,9 +40,13 @@ Note:
 The size of the given array will be in the range [1,1000].
 
 
-# Problem solving
+# Solution
 
-## Method one: Recursive
+## Method-1
+
+Partition recursion
+
+>[directory](#directory) | [title](#title) | [C++](#code-cpp-1), [JavaScript](#code-js-1)
 
 ### Analyze
 
@@ -40,7 +54,9 @@ Confirm the maximum subscript, partition, recursion.
 
 ### Code
 
-[main-1.cpp](./main-1.cpp "main-1.cpp")
+#### code-cpp-1
+
+>[directory](#directory) | [title](#title) | [analyze](#method-1) | [main-1.cpp](./main-1.cpp "main-1.cpp")
 
 ```cpp
 #include<iostream>
@@ -141,7 +157,9 @@ int main() {
 }
 ```
 
-[index-1.js](./index-1.js "index-1.js")
+#### code-js-1
+
+>[directory](#directory) | [title](#title) | [analyze](#method-1) | [index-1.js](./index-1.js "index-1.js")
 
 ```js
 
