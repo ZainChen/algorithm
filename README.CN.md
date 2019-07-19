@@ -4,10 +4,16 @@
 
 >- [说明](#说明)
 >- [编译及调试环境配置](#编译及调试环境配置)
->    - [C/C++](#C/C++)
->       - [安装C/C++扩展](#安装C/C++扩展)
+>    - [C++](#C++)
+>       - [安装C++扩展](#安装C++扩展)
 >       - [配置MinGw](#配置MinGw)
->       - [配置.vscode(C/C++)](#配置.vscode(C/C++))
+>           - [MinGw下载](#MinGw下载)
+>           - [MinGw安装及环境变量配置](#MinGw安装及环境变量配置)
+>       - [配置.vscode(C++)](#配置.vscode(C++))
+>           - [launch.json(C++)](#launch.json(C++))
+>           - [c_cpp_properties.json(C++)](#c_cpp_properties.json(C++))
+>           - [tasks.json(C++)](#tasks.json(C++))
+>       - [编译及调试C++代码](#编译及调试C++代码)
 >    - [JavaScript](#JavaScript)
 >    - [Python](#Python)
 
@@ -19,27 +25,41 @@
 
 这里用的是 `vscode` 配置各种语言的编译和调试环境。
 
-## C/C++
+## C++
 
-### 安装C/C++扩展
+### 安装C++扩展
 
 `vscode` 扩展中心搜索 `C/C++` 下载并安装扩展。
 
 ### 配置MinGw
 
-MinGw
+#### MinGw下载
 
-### 配置.vscode(C/C++)
+通过下列链接下载自己喜欢的版本
 
-`./.vscode` 文件夹下添加下列配置文件：[launch.json](./.vscode/launch.json)、[c_cpp_properties.json](./.vscode/c_cpp_properties.json)、[settings.json](./.vscode/settings.json)、[tasks.json](./.vscode/tasks.json)
+64位(x64): [http://mingw-w64.org/doku.php/download/mingw-builds](http://mingw-w64.org/doku.php/download/mingw-builds)
 
-#### 文件-1
+32位(x86): [https://osdn.net/projects/mingw/releases](https://osdn.net/projects/mingw/releases)
+
+#### MinGw安装及环境变量配置
+
+引用两个比较好的教程
+
+64位(x64): [https://www.jianshu.com/p/fabdb067fe89](https://www.jianshu.com/p/fabdb067fe89)
+
+32位(x86): [https://www.cnblogs.com/lidabo/p/8990348.html](https://www.cnblogs.com/lidabo/p/8990348.html)
+
+### 配置.vscode(C++)
+
+`./.vscode` 文件夹下添加下列配置文件：[launch.json](./.vscode/launch.json)、[c_cpp_properties.json](./.vscode/c_cpp_properties.json)、[tasks.json](./.vscode/tasks.json)、[settings.json](./.vscode/settings.json)
+
+#### launch.json(C++)
 
 具体说明见注释，需注意把 `"miDebuggerPath"` 的值改为自己的 `MinGW` 安装路径。
 
 [launch.json](./.vscode/launch.json)
 
-```json
+```js
 {
     "version": "0.2.0",
     "configurations": [
@@ -64,7 +84,7 @@ MinGw
 }
 ```
 
-#### 文件-2
+#### c_cpp_properties.json(C++)
 
 需注意把 `"compilerPath"` 的值改为自己的 `MinGW` 安装路径，其它设置不变。
 
@@ -93,6 +113,44 @@ MinGw
     "version": 4
 }
 ```
+
+#### tasks.json(C++)
+
+这个文件不用改动
+
+[tasks.json](./.vscode/tasks.json)
+
+```js
+{
+    "version": "2.0.0",
+    "command": "g++",
+    "args": [
+        "-g",
+        "${file}",
+        "-o",
+        "${file}.exe"
+    ], // 编译命令参数
+    "problemMatcher": {
+        "owner": "cpp",
+        "fileLocation": [
+            "relative",
+            "${workspaceRoot}"
+        ],
+        "pattern": {
+            "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+            "file": 1,
+            "line": 2,
+            "column": 3,
+            "severity": 4,
+            "message": 5
+        }
+    }
+}
+```
+
+### 编译及调试C++代码
+
+将需要编译和调试的代码放到 `.vscode` 文件夹所在的工作区文件夹内。打开文件，在调试侧边栏将调试配置选择为 `launch.json` 文件中 `"name"` 对应值，鼠标单击调试按钮或按下键盘 `F5` 开始编译和调试。
 
 ## JavaScript
 
