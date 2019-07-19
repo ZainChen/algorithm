@@ -4,16 +4,16 @@
 
 >- [说明](#说明)
 >- [编译及调试环境配置](#编译及调试环境配置)
->    - [C&#43;&#43;](#C&#43;&#43;)
->       - [安装C++扩展](#安装C++扩展)
+>    - [CPP](#CPP)
+>       - [安装CPP扩展](#安装CPP扩展)
 >       - [配置MinGw](#配置MinGw)
 >           - [MinGw下载](#MinGw下载)
 >           - [MinGw安装及环境变量配置](#MinGw安装及环境变量配置)
->       - [配置.vscode(C++)](#配置.vscode(C++))
->           - [launch.json(C++)](#launch.json(C++))
->           - [c_cpp_properties.json(C++)](#c_cpp_properties.json(C++))
->           - [tasks.json(C++)](#tasks.json(C++))
->       - [编译及调试C++代码](#编译及调试C++代码)
+>       - [配置.vscode(CPP)](#配置.vscode(CPP))
+>           - [launch.json(CPP)](#launch.json(CPP))
+>           - [c_cpp_properties.json(CPP)](#c_cpp_properties.json(CPP))
+>           - [tasks.json(CPP)](#tasks.json(CPP))
+>       - [编译及调试CPP代码](#编译及调试CPP代码)
 >    - [JavaScript](#JavaScript)
 >    - [Python](#Python)
 
@@ -25,9 +25,9 @@
 
 这里用的是 `vscode` 配置各种语言的编译和调试环境。
 
-## C++
+## CPP
 
-### 安装C++扩展
+### 安装CPP扩展
 
 `vscode` 扩展中心搜索 `C/C++` 下载并安装扩展。
 
@@ -49,11 +49,11 @@
 
 32位(x86): [https://www.cnblogs.com/lidabo/p/8990348.html](https://www.cnblogs.com/lidabo/p/8990348.html)
 
-### 配置.vscode(C++)
+### 配置.vscode(CPP)
 
 `./.vscode` 文件夹下添加下列配置文件：[launch.json](./.vscode/launch.json)、[c_cpp_properties.json](./.vscode/c_cpp_properties.json)、[tasks.json](./.vscode/tasks.json)、[settings.json](./.vscode/settings.json)
 
-#### launch.json(C++)
+#### launch.json(CPP)
 
 具体说明见注释，需注意把 `"miDebuggerPath"` 的值改为自己的 `MinGW` 安装路径。
 
@@ -84,7 +84,7 @@
 }
 ```
 
-#### c_cpp_properties.json(C++)
+#### c_cpp_properties.json(CPP)
 
 需注意把 `"compilerPath"` 的值改为自己的 `MinGW` 安装路径，其它设置不变。
 
@@ -114,7 +114,7 @@
 }
 ```
 
-#### tasks.json(C++)
+#### tasks.json(CPP)
 
 这个文件不用改动
 
@@ -148,7 +148,7 @@
 }
 ```
 
-### 编译及调试C++代码
+### 编译及调试CPP代码
 
 将需要编译和调试的代码放到 `.vscode` 文件夹所在的工作区文件夹内。打开文件，在调试侧边栏将调试配置选择为 `launch.json` 文件中 `"name"` 对应值，鼠标单击调试按钮或按下键盘 `F5` 开始编译和调试。
 
