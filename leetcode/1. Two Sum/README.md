@@ -29,9 +29,9 @@ return [0, 1].
 
 ## Method-1
 
-Violence
-
 >[directory](#directory) | [title](#title) | [C++](#code-cpp-1), [JavaScript](#code-js-1)
+
+Violence
 
 ### Analyze
 
@@ -118,9 +118,9 @@ console.log(twoSum(nums, target));
 
 ## Method-2
 
-Two-pass hash table
-
 >[directory](#directory) | [title](#title) | [C++](#code-cpp-2), [JavaScript](#code-js-2)
+
+Two-pass hash table
 
 ### Analyze
 
@@ -212,9 +212,9 @@ console.log(twoSum(nums, target));
 
 ## Method-3
 
-Once hash table
-
 >[directory](#directory) | [title](#title) | [C++](#code-cpp-3), [JavaScript](#code-js-3)
+
+Once hash table
 
 ### Analyze
 

@@ -29,9 +29,9 @@
 
 ## 方法一
 
-暴力
-
 >[目录](#目录) | [标题](#标题) | [C++](#code-cpp-1), [JavaScript](#code-js-1)
+
+暴力
 
 ### 分析
 
@@ -118,9 +118,9 @@ console.log(twoSum(nums, target));
 
 ## 方法二
 
-两遍哈希表
-
 >[目录](#目录) | [标题](#标题) | [C++](#code-cpp-2), [JavaScript](#code-js-2)
+
+两遍哈希表
 
 ### 分析
 
@@ -212,9 +212,9 @@ console.log(twoSum(nums, target));
 
 ## 方法三
 
-一遍哈希表
-
 >[目录](#目录) | [标题](#标题) | [C++](#code-cpp-3), [JavaScript](#code-js-3)
+
+一遍哈希表
 
 ### 分析
 

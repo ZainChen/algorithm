@@ -45,9 +45,9 @@ Explanation: You are given the third node with value 1, the linked list should b
 
 ## Method-1
 
-Node coverage
-
 >[directory](#directory) | [title](#title) | [C++](#code-cpp-1), [JavaScript](#code-js-1)
+
+Node coverage
 
 ### Analyze
 

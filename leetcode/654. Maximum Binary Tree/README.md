@@ -44,9 +44,9 @@ The size of the given array will be in the range [1,1000].
 
 ## Method-1
 
-Partition recursion
-
 >[directory](#directory) | [title](#title) | [C++](#code-cpp-1), [JavaScript](#code-js-1)
+
+Partition recursion
 
 ### Analyze
 
