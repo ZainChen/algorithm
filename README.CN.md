@@ -2,14 +2,14 @@
 
 # 目录
 
->- [说明](#说明)
->- [编译及调试环境配置](#编译及调试环境配置)
->    - [CPP](#CPP)
->       - [安装CPP扩展](#安装CPP扩展)
+>- [1.说明](#1.说明)
+>- [2.编译及调试环境配置](#2.编译及调试环境配置)
+>    - [2.1.CPP](#CPP)
+>       - [2.1.1.安装CPP扩展](#安装CPP扩展)
 >       - [配置MinGw](#配置MinGw)
 >           - [MinGw下载](#MinGw下载)
 >           - [MinGw安装及环境变量配置](#MinGw安装及环境变量配置)
->       - [配置.vscode(CPP)](#配置.vscode(CPP))
+>       - [配置.vscode)](#配置.vscode(CPP))
 >           - [launch.json(CPP)](#launch.json(CPP))
 >           - [c_cpp_properties.json(CPP)](#c_cpp_properties.json(CPP))
 >           - [tasks.json(CPP)](#tasks.json(CPP))
@@ -17,11 +17,11 @@
 >    - [JavaScript](#JavaScript)
 >    - [Python](#Python)
 
-# 说明
+# 1.说明
 
 刷题，算法总结，算法库。包含语言：`C/C++`、`JavaScript`、`Python` ...
 
-# 编译及调试环境配置
+# 2.编译及调试环境配置
 
 这里用的是 `vscode` 配置各种语言的编译和调试环境。
 
