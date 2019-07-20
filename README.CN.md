@@ -9,7 +9,7 @@
 >       - [配置MinGw](#配置MinGw)
 >           - [MinGw下载](#MinGw下载)
 >           - [MinGw安装及环境变量配置](#MinGw安装及环境变量配置)
->       - [配置.vscode_CPP](#配置.vscode_CPP)
+>       - [配置vscode_CPP](#配置vscode_CPP)
 >           - [launch.json(CPP)](#launch.json(CPP))
 >           - [c_cpp_properties.json(CPP)](#c_cpp_properties.json(CPP))
 >           - [tasks.json(CPP)](#tasks.json(CPP))
@@ -49,7 +49,7 @@
 
 32位(x86): [https://www.cnblogs.com/lidabo/p/8990348.html](https://www.cnblogs.com/lidabo/p/8990348.html)
 
-### 配置.vscode_CPP
+### 配置vscode_CPP
 
 `./.vscode` 文件夹下添加下列配置文件：[launch.json](./.vscode/launch.json)、[c_cpp_properties.json](./.vscode/c_cpp_properties.json)、[tasks.json](./.vscode/tasks.json)、[settings.json](./.vscode/settings.json)
 
