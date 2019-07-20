@@ -9,10 +9,10 @@
 >       - [配置MinGw](#配置MinGw)
 >           - [MinGw下载](#MinGw下载)
 >           - [MinGw安装及环境变量配置](#MinGw安装及环境变量配置)
->       - [配置vscode(CPP)](#配置vscode(CPP))
->           - [launch.json(CPP)](#launch.json(CPP))
->           - [c_cpp_properties.json(CPP)](#c_cpp_properties.json(CPP))
->           - [tasks.json(CPP)](#tasks.json(CPP))
+>       - [配置vscode_CPP](#配置vscode_CPP)
+>           - [launch_CPP](#launch_CPP)
+>           - [c_cpp_properties_CPP](#c_cpp_properties_CPP)
+>           - [tasks_CPP](#tasks_CPP)
 >       - [编译及调试CPP代码](#编译及调试CPP代码)
 >    - [JavaScript](#JavaScript)
 >    - [Python](#Python)
@@ -49,11 +49,11 @@
 
 32位(x86): [https://www.cnblogs.com/lidabo/p/8990348.html](https://www.cnblogs.com/lidabo/p/8990348.html)
 
-### 配置vscode(CPP)
+### 配置vscode_CPP
 
 `./.vscode` 文件夹下添加下列配置文件：[launch.json](./.vscode/launch.json)、[c_cpp_properties.json](./.vscode/c_cpp_properties.json)、[tasks.json](./.vscode/tasks.json)、[settings.json](./.vscode/settings.json)
 
-#### launch.json(CPP)
+#### launch_CPP
 
 具体说明见注释，需注意把 `"miDebuggerPath"` 的值改为自己的 `MinGW` 安装路径。
 
@@ -84,7 +84,7 @@
 }
 ```
 
-#### c_cpp_properties.json(CPP)
+#### c_cpp_properties_CPP
 
 需注意把 `"compilerPath"` 的值改为自己的 `MinGW` 安装路径，其它设置不变。
 
@@ -114,7 +114,7 @@
 }
 ```
 
-#### tasks.json(CPP)
+#### tasks_CPP
 
 这个文件不用改动
 
