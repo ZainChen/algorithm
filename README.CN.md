@@ -15,23 +15,33 @@
 >           - [tasks_CPP](#tasks_CPP)
 >       - [编译及调试CPP代码](#编译及调试CPP代码)
 >    - [JavaScript](#JavaScript)
+>       - [配置Nodejs](#配置Nodejs)
+>       - [配置vscode_JS](#配置vscode_JS)
+>           - [launch_JS](#launch_JS)
+>       - [编译及调试JavaScript代码](#编译及调试JavaScript代码)
 >    - [Python](#Python)
 
 # 说明
+
+>[目录](#目录)
 
 刷题，算法总结，算法库。包含语言：`C/C++`、`JavaScript`、`Python` ...
 
 # 编译及调试环境配置
 
-这里用的是 `vscode` 配置各种语言的编译和调试环境。
+这里用的是 `vscode` 配置各种语言的编译和调试环境，系统为windows。
 
 ## CPP
+
+>[目录](#目录) | [说明](#说明)
 
 ### 安装CPP扩展
 
 `vscode` 扩展中心搜索 `C/C++` 下载并安装扩展。
 
 ### 配置MinGw
+
+>[目录](#目录) | [说明](#说明)
 
 #### MinGw下载
 
@@ -43,6 +53,8 @@
 
 #### MinGw安装及环境变量配置
 
+>[目录](#目录) | [说明](#说明)
+
 引用两个比较好的教程
 
 64位(x64): [https://www.jianshu.com/p/fabdb067fe89](https://www.jianshu.com/p/fabdb067fe89)
@@ -50,6 +62,8 @@
 32位(x86): [https://www.cnblogs.com/lidabo/p/8990348.html](https://www.cnblogs.com/lidabo/p/8990348.html)
 
 ### 配置vscode_CPP
+
+>[目录](#目录) | [说明](#说明)
 
 `./.vscode` 文件夹下添加下列配置文件：[launch.json](./.vscode/launch.json)、[c_cpp_properties.json](./.vscode/c_cpp_properties.json)、[tasks.json](./.vscode/tasks.json)、[settings.json](./.vscode/settings.json)
 
@@ -86,6 +100,8 @@
 
 #### c_cpp_properties_CPP
 
+>[目录](#目录) | [说明](#说明)
+
 需注意把 `"compilerPath"` 的值改为自己的 `MinGW` 安装路径，其它设置不变。
 
 [c_cpp_properties.json](./.vscode/c_cpp_properties.json)
@@ -115,6 +131,8 @@
 ```
 
 #### tasks_CPP
+
+>[目录](#目录) | [说明](#说明)
 
 这个文件不用改动
 
@@ -150,8 +168,53 @@
 
 ### 编译及调试CPP代码
 
+>[目录](#目录) | [说明](#说明)
+
 将需要编译和调试的代码放到 `.vscode` 文件夹所在的工作区文件夹内。打开文件，在调试侧边栏将调试配置选择为 `launch.json` 文件中 `"name"` 对应值，鼠标单击调试按钮或按下键盘 `F5` 开始编译和调试。
 
 ## JavaScript
 
+>[目录](#目录) | [说明](#说明)
+
+### 配置Nodejs
+
+Nodejs下载：[http://nodejs.cn/download](http://nodejs.cn/download)
+
+下载好后安装到自己喜欢的文件夹，不用手动配置环境变量。 
+
+### 配置vscode_JS
+
+>[目录](#目录) | [说明](#说明)
+
+`./.vscode/launch.json` 文件新增下列内容，如果没有 `launch.json` 文件则新建。
+
+#### launch_JS
+
+[launch.json](./.vscode/launch.json)
+
+```js
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Node debug (js)",
+            "program": "${file}",
+            "sourceMaps": true
+        }
+    ]
+}
+```
+
+### 编译及调试JavaScript代码
+
+>[目录](#目录) | [说明](#说明)
+
+同 C/C++ 编译及调试，将需要编译和调试的代码放到 `.vscode` 文件夹所在的工作区文件夹内。打开文件，在调试侧边栏将调试配置选择为 `launch.json` 文件中 `"name"` 对应值，鼠标单击调试按钮或按下键盘 `F5` 开始编译和调试。
+
 ## Python
+
+>[目录](#目录) | [说明](#说明)
+
+...
