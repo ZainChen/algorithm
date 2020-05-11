@@ -57,7 +57,7 @@
 
 引用两个比较好的教程
 
-64位(x64): [https://www.jianshu.com/p/fabdb067fe89](https://www.jianshu.com/p/fabdb067fe89)
+64位(x64): [https://sourceforge.net/projects/mingw-w64/files/](https://sourceforge.net/projects/mingw-w64/files/)
 
 32位(x86): [https://www.cnblogs.com/lidabo/p/8990348.html](https://www.cnblogs.com/lidabo/p/8990348.html)
 
