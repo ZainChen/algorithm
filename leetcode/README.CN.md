@@ -9,3 +9,4 @@
 20 | [有效的括号](./20.%20Valid%20Parentheses/README.CN.md) | [JavaScript(暴力)](./20.%20Valid%20Parentheses/README.CN.md#code-js-1)
 237 | [删除链表中的节点](./237.%20Delete%20Node%20in%20a%20Linked%20List/README.CN.md) | [C++(节点覆盖)](./237.%20Delete%20Node%20in%20a%20Linked%20List/README.CN.md#code-cpp-1)
 654 | [最大二叉树](./654.%20Maximum%20Binary%20Tree/README.CN.md) | [C++(分区递归)](./654.%20Maximum%20Binary%20Tree/README.CN.md#code-cpp-1)
+1295 | [统计位数为偶数的数字](./1295.%20Find%20Numbers%20with%20Even%20Number%20of%20Digits/README.CN.md) | [C++(暴力)](./1295.%20Find%20Numbers%20with%20Even%20Number%20of%20Digits/README.CN.md#code-cpp-1)<br/>[JavaScript(暴力)](./1295.%20Find%20Numbers%20with%20Even%20Number%20of%20Digits/README.CN.md#code-js-1)
