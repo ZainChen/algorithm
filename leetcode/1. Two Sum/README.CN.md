@@ -5,8 +5,15 @@
 >- [标题](#标题)
 >- [解](#解)
 >    - [方法一：暴力](#方法一)
+>        - [code-cpp-1](#code-cpp-1)
+>        - [code-js-1](#code-js-1)
+>        - [code-python2-1](#code-python2-1)
 >    - [方法二：两遍哈希表](#方法二)
+>        - [code-cpp-1](#code-cpp-2)
+>        - [code-js-1](#code-js-2)
 >    - [方法三：一遍哈希表](#方法三)
+>        - [code-cpp-1](#code-cpp-3)
+>        - [code-js-1](#code-js-3)
 
 # 标题
 
@@ -29,7 +36,7 @@
 
 ## 方法一
 
->[目录](#目录) | [标题](#标题) | [C++](#code-cpp-1), [JavaScript](#code-js-1)
+>[目录](#目录) | [标题](#标题) | [C++](#code-cpp-1), [JavaScript](#code-js-1), [Python](#code-python2-1)
 
 暴力
 
@@ -116,9 +123,35 @@ let target = 9;
 console.log(twoSum(nums, target));
 ```
 
+#### code-python2-1
+
+>[目录](#目录) | [标题](#标题) | [分析](#方法二) | [python2-1.py](./python2-1.py "python2-1.py")
+
+```python
+class Solution(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        l = len(nums)
+        for i in range(l-1):
+            for j in range(i+1, l):
+                if nums[i]+nums[j] == target:
+                    return [i, j]
+
+if __name__ == '__main__':
+    nums = [2, 7, 11, 15]
+    target = 9
+    solution = Solution()
+    result = solution.twoSum(nums, target)
+    print(result)
+```
+
 ## 方法二
 
->[目录](#目录) | [标题](#标题) | [C++](#code-cpp-2), [JavaScript](#code-js-2), [Python](#code-python2-1)
+>[目录](#目录) | [标题](#标题) | [C++](#code-cpp-2), [JavaScript](#code-js-2)
 
 两遍哈希表
 
@@ -208,32 +241,6 @@ let nums = [2, 7, 11, 15];
 let target = 9;
 
 console.log(twoSum(nums, target));
-```
-
-#### code-python2-1
-
->[目录](#目录) | [标题](#标题) | [分析](#方法二) | [python2-1.py](./python2-1.py "python2-1.py")
-
-```python
-class Solution(object):
-    def twoSum(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[int]
-        """
-        l = len(nums)
-        for i in range(l-1):
-            for j in range(i+1, l):
-                if nums[i]+nums[j] == target:
-                    return [i, j]
-
-if __name__ == '__main__':
-    nums = [2, 7, 11, 15]
-    target = 9
-    solution = Solution()
-    result = solution.twoSum(nums, target)
-    print(result)
 ```
 
 ## 方法三

@@ -5,8 +5,15 @@
 >- [Title](#title)
 >- [Solution](#solution)
 >    - [Method-1: Violence](#method-1)
+>        - [code-cpp-1](#code-cpp-1)
+>        - [code-js-1](#code-js-1)
+>        - [code-python2-1](#code-python2-1)
 >    - [Method-2: Two-pass hash table](#method-2)
+>        - [code-cpp-1](#code-cpp-2)
+>        - [code-js-1](#code-js-2)
 >    - [Method-3: Once hash table](#method-3)
+>        - [code-cpp-1](#code-cpp-3)
+>        - [code-js-1](#code-js-3)
 
 # Title
 
@@ -29,7 +36,7 @@ return [0, 1].
 
 ## Method-1
 
->[directory](#directory) | [title](#title) | [C++](#code-cpp-1), [JavaScript](#code-js-1)
+>[directory](#directory) | [title](#title) | [C++](#code-cpp-1), [JavaScript](#code-js-1), [Python](#code-python2-1)
 
 Violence
 
@@ -116,9 +123,35 @@ let target = 9;
 console.log(twoSum(nums, target));
 ```
 
+#### code-python2-1
+
+>[directory](#directory) | [title](#title) | [analyze](#method-2) | [python2-1.py](./python2-1.py "python2-1.py")
+
+```python
+class Solution(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        l = len(nums)
+        for i in range(l-1):
+            for j in range(i+1, l):
+                if nums[i]+nums[j] == target:
+                    return [i, j]
+
+if __name__ == '__main__':
+    nums = [2, 7, 11, 15]
+    target = 9
+    solution = Solution()
+    result = solution.twoSum(nums, target)
+    print(result)
+```
+
 ## Method-2
 
->[directory](#directory) | [title](#title) | [C++](#code-cpp-2), [JavaScript](#code-js-2), [Python](#code-python2-1)
+>[directory](#directory) | [title](#title) | [C++](#code-cpp-2), [JavaScript](#code-js-2)
 
 Two-pass hash table
 
@@ -208,32 +241,6 @@ let nums = [2, 7, 11, 15];
 let target = 9;
 
 console.log(twoSum(nums, target));
-```
-
-#### code-python2-1
-
->[directory](#directory) | [title](#title) | [analyze](#method-2) | [python2-1.py](./python2-1.py "python2-1.py")
-
-```python
-class Solution(object):
-    def twoSum(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[int]
-        """
-        l = len(nums)
-        for i in range(l-1):
-            for j in range(i+1, l):
-                if nums[i]+nums[j] == target:
-                    return [i, j]
-
-if __name__ == '__main__':
-    nums = [2, 7, 11, 15]
-    target = 9
-    solution = Solution()
-    result = solution.twoSum(nums, target)
-    print(result)
 ```
 
 ## Method-3
