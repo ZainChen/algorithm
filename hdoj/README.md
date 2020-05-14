@@ -1,4 +1,0 @@
-# HDOJ
-
-Brush problem
-
