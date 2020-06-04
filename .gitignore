@@ -1,1 +1,8 @@
 *.exe
+
+/scripts/toc/dist/*
+/scripts/toc/build/*
+/scripts/toc/__pycache__/*
+
+
+/scripts/toc/toc.spec
