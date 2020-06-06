@@ -11,10 +11,21 @@ def insertEndDisabled(text: Text, content: str):
     text.config(state=DISABLED)  # 禁用输入框编辑
     text.see(END)  # 查看尾部部数据
 
-def filePathInsert(files: list):
-    msg = '\n'.join((item.decode('gbk') for item in files))
-    insertEndDisabled(consoleText, msg)
+def filePathListboxInsert(files: list):
+    """路径列表框控件，鼠标拖入文件或文件夹后，插入路径"""
+    filePathList = []
+    for i in files:
+        filePathListbox.insert('end', i.decode('utf-8'))
+    insertEndDisabled(consoleText, '添加路径\n')
 
+def deleteSelectFilePathListbox():
+    """路径列表框控件，删除选中内容"""
+    filePathListbox.delete(ACTIVE)
+
+def deleteFilePathListbox():
+    """路径列表框控件，删除所有内容"""
+    if filePathListbox:
+        filePathListbox.delete(0, END)
 
 # --------------------
 # leetcode README.md 文件智能生成或修改
@@ -41,7 +52,6 @@ topFrame.pack(side=TOP, fill=X)
 # --------------------
 # 文件或文件夹路径，输入控件
 # --------------------
-
 filePathFrame = Frame(topFrame, bg='#ccc')  # 框架控件
 filePathFrame.pack(side=LEFT, padx=8, pady=8)  # 停靠在父控件下方，水平填充
 
@@ -51,14 +61,35 @@ filePathTopFrame.pack(side=TOP)
 filePathBottomFrame = Frame(filePathFrame)
 filePathBottomFrame.pack(side=BOTTOM)
 
-filePathLabel = Label(filePathTopFrame, text="请拖入文件或文件夹：", width=21, anchor=W)
+filePathLabel = Label(filePathTopFrame, text="请拖入文件或文件夹：", width=18, anchor=W)
 filePathLabel.pack(side=LEFT)
 
-filePathClearButton = Button(filePathTopFrame, text="清空路径")
-filePathClearButton.pack(side=RIGHT)
+filePathClearButton = Button(filePathTopFrame, text="删除选中", command=deleteSelectFilePathListbox)
+filePathClearButton.pack(side=LEFT)
 
-filePathListbox = Listbox(filePathBottomFrame, width=30, height=11)
+filePathClearButton = Button(filePathTopFrame, text="删除所有", command=deleteFilePathListbox)
+filePathClearButton.pack()
+
+# 文件或文件夹路径列表框控件滚动条
+filePathListboxScrollbarY = Scrollbar(filePathBottomFrame, orient=VERTICAL)
+filePathListboxScrollbarY.pack(side=RIGHT, fill=Y)
+filePathListboxScrollbarX = Scrollbar(filePathBottomFrame, orient=HORIZONTAL)
+filePathListboxScrollbarX.pack(side=BOTTOM, fill=X)
+# 文件或文件夹路径列表框控件
+filePathListbox = Listbox(
+    filePathBottomFrame,
+    yscrollcommand=filePathListboxScrollbarY.set,  # 文件或文件夹路径列表框控件关联滚动条
+    xscrollcommand=filePathListboxScrollbarX.set,
+    width=33,
+    height=11
+)
 filePathListbox.pack()
+# 文件或文件夹路径列表框控件关联滚动条
+filePathListboxScrollbarY.config(command=filePathListbox.yview)
+filePathListboxScrollbarX.config(command=filePathListbox.xview)
+
+windnd.hook_dropfiles(filePathListbox, func=filePathListboxInsert)  # 列表控件拖入文件或文件夹路径
+
 
 # --------------------
 # 功能选择和执行区域
@@ -74,7 +105,6 @@ bbb.pack(side=TOP)
 # --------------------
 # 控制台控件
 # --------------------
-
 consoleFrame = Frame(window)  # 框架控件
 consoleFrame.pack(side=BOTTOM, fill=X)  # 停靠在父控件下方，水平填充
 
@@ -86,17 +116,6 @@ consoleScrollbar.pack(side=RIGHT, fill=Y)  # 停靠在父控件右边，垂直�
 
 consoleScrollbar.config(command=consoleText.yview)  # 控制台滚动条挂关联控制台输入框
 consoleText.config(yscrollcommand=consoleScrollbar.set)  # 控制台输入框关联控制台滚动条
-
-
-
-# ===========================================================
-# 控件逻辑
-# ===========================================================
-
-# 列表控件拖入文件或文件夹路径
-windnd.hook_dropfiles(filePathListbox, func=filePathInsert)
-
-
 
 # ===========================================================
 # 进入消息循环，显示窗口界面
