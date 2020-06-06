@@ -16,7 +16,7 @@ pip install pyinstaller
 
 
 ```
-pyinstaller -F test.py  
+pyinstaller -F test.py
 ```
 
 ### 常用参数说明：
