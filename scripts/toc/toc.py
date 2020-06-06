@@ -8,6 +8,9 @@ import time
 # ===========================================================
 # 功能函数
 # ===========================================================
+# --------------------
+# 控件交互功能
+# --------------------
 def insertEndDisabled(text: Text, content: str, showTime: str = 'false'):
     """输入框控件，尾部输入字符串后，禁止编辑"""
     if showTime != 'false':
@@ -76,12 +79,18 @@ def readmeResetGroupCheckButton():
     insertEndDisabled(consoleText, '重新生成 README\n', 'showTime')
 
 
+# --------------------
+# 文件处理生成 README 功能
+# --------------------
+
+
+
 # ===========================================================
 # tkinter 控件创建及关联
 # ===========================================================
 window = Tk()  # 创建主窗口
 
-window.title('ZainJane - README 智能生成或修改工具')  # 主窗口标题
+window.title('ZainJane - algorithm README 智能生成或修改工具')  # 主窗口标题
 window.geometry('510x400')  # 主窗口初始宽高
 window.resizable(0, 0) # 防止用户调整尺寸
 
@@ -137,9 +146,6 @@ funSelectConfirmLeftFrame.pack(side=LEFT, fill=Y)
 funSelectConfirmRightFrame = Frame(funSelectConfirmFrame, bg='#ccc')
 funSelectConfirmRightFrame.pack(side=RIGHT, fill=Y)
 
-# README.md 文件智能生成或修改
-# 处理当前选中文件夹, 处理所有子文件夹
-# 重新生成 README, 增量修改 README
 Label(funSelectConfirmLeftFrame, text="文件处理类型：", width=28, anchor=W).pack()
 fileSelectBooleanVar = BooleanVar()
 fileSelectBooleanVar.set(True)
