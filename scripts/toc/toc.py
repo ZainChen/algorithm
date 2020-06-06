@@ -63,12 +63,12 @@ def fileAllChildGroupCheckButton():
     insertEndDisabled(consoleText, '处理所有子文件夹\n', 'showTime')
 
 def readmeAddGroupCheckButton():
-    """README 生成方式复选框，按组单选，增量修改 README"""
+    """README 生成方式复选框，按组单选，增量修正 README"""
     readmeResetCheckButton.deselect()
     readmeResetBooleanVar.set(False)
     readmeAddCheckButton.select()
     readmeAddBooleanVar.set(True)
-    insertEndDisabled(consoleText, '增量修改 README\n', 'showTime')
+    insertEndDisabled(consoleText, '增量修正 README\n', 'showTime')
 
 def readmeResetGroupCheckButton():
     """README 生成方式复选框，按组单选，重新生成 README"""
@@ -160,7 +160,7 @@ fileAllChildCheckButton.pack(anchor=W, padx=(16, 0))
 Label(funSelectConfirmLeftFrame, text="README 生成：").pack(anchor=W, pady=(8, 0))
 readmeAddBooleanVar = BooleanVar()
 readmeAddBooleanVar.set(True)
-readmeAddCheckButton = Checkbutton(funSelectConfirmLeftFrame, text="增量修改 README", command=readmeAddGroupCheckButton)
+readmeAddCheckButton = Checkbutton(funSelectConfirmLeftFrame, text="增量修正 README", command=readmeAddGroupCheckButton)
 readmeAddCheckButton.select()
 readmeAddCheckButton.pack(anchor=W, padx=(16, 0))
 readmeResetBooleanVar = BooleanVar()
