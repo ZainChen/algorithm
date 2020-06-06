@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 from tkinter import *
 from tkinter import ttk
+import os
 import windnd
 import time
 
@@ -17,21 +18,30 @@ def insertEndDisabled(text: Text, content: str, showTime: str = 'false'):
     text.see(END)  # 查看尾部部数据
 
 def filePathListboxInsert(files: list):
-    """路径列表框控件，鼠标拖入文件或文件夹后，插入路径"""
-    filePathList = []
+    """路径列表框控件，鼠标拖入文件夹后，插入路径"""
+    count: int = 0
     for i in files:
-        filePathListbox.insert('end', i.decode('utf-8'))
-    insertEndDisabled(consoleText, '添加文件或文件夹路径.\n', 'showTime')
+        dirString = i.decode('utf-8')
+        if os.path.isdir(dirString):
+            filePathListbox.insert('end', dirString)
+            count = count + 1
+            insertEndDisabled(consoleText, '添加'+dirString+'.\n', 'showTime')
+        else:
+            insertEndDisabled(consoleText, '不是文件夹:'+dirString+'\n', 'showTime')
+    if count > 0:
+        insertEndDisabled(consoleText, '添加文件夹数量：'+str(count)+'\n', 'showTime')
+    else:
+        insertEndDisabled(consoleText, '文件夹添加失败\n', 'showTime')
 
 def deleteSelectFilePathListbox():
     """路径列表框控件，删除选中内容"""
     filePathListbox.delete(ACTIVE)
-    insertEndDisabled(consoleText, '删除选中的文件或文件夹路径.\n', 'showTime')
+    insertEndDisabled(consoleText, '删除选中的文件夹.\n', 'showTime')
 
 def deleteFilePathListbox():
     """路径列表框控件，删除所有内容"""
     filePathListbox.delete(0, END)
-    insertEndDisabled(consoleText, '删除所有文件或文件夹路径.\n', 'showTime')
+    insertEndDisabled(consoleText, '删除所有文件夹.\n', 'showTime')
 
 def fileSelectGroupCheckButton():
     """文件处理类型复选框，按组单选，处理当前选中文件夹"""
@@ -82,7 +92,7 @@ topFrame = Frame(window, bg='#ddd')  # 框架控件
 topFrame.pack(side=TOP, fill=X)
 
 # --------------------
-# 文件或文件夹路径，输入控件
+# 文件夹，输入控件
 # --------------------
 filePathFrame = Frame(topFrame, bg='#ccc')  # 框架控件
 filePathFrame.pack(side=LEFT, padx=8, pady=8)  # 停靠在父控件下方，水平填充
@@ -91,30 +101,30 @@ filePathTopFrame.pack(side=TOP)
 filePathBottomFrame = Frame(filePathFrame)
 filePathBottomFrame.pack(side=BOTTOM)
 
-Label(filePathTopFrame, text="请拖入文件或文件夹：", width=18, anchor=W).pack(side=LEFT)
+Label(filePathTopFrame, text="请拖入文件夹：", width=18, anchor=W).pack(side=LEFT)
 
 Button(filePathTopFrame, text="删除选中", command=deleteSelectFilePathListbox).pack(side=LEFT)
 Button(filePathTopFrame, text="删除所有", command=deleteFilePathListbox).pack()
 
-# 文件或文件夹路径列表框控件滚动条
+# 文件夹列表框控件滚动条
 filePathListboxScrollbarY = Scrollbar(filePathBottomFrame, orient=VERTICAL)
 filePathListboxScrollbarY.pack(side=RIGHT, fill=Y)
 filePathListboxScrollbarX = Scrollbar(filePathBottomFrame, orient=HORIZONTAL)
 filePathListboxScrollbarX.pack(side=BOTTOM, fill=X)
-# 文件或文件夹路径列表框控件
+# 文件夹列表框控件
 filePathListbox = Listbox(
     filePathBottomFrame,
-    yscrollcommand=filePathListboxScrollbarY.set,  # 文件或文件夹路径列表框控件关联滚动条
+    yscrollcommand=filePathListboxScrollbarY.set,  # 文件夹列表框控件关联滚动条
     xscrollcommand=filePathListboxScrollbarX.set,
     width=33,
     height=11
 )
 filePathListbox.pack()
-# 文件或文件夹路径列表框控件关联滚动条
+# 文件夹列表框控件关联滚动条
 filePathListboxScrollbarY.config(command=filePathListbox.yview)
 filePathListboxScrollbarX.config(command=filePathListbox.xview)
 
-windnd.hook_dropfiles(filePathListbox, func=filePathListboxInsert)  # 列表控件拖入文件或文件夹路径
+windnd.hook_dropfiles(filePathListbox, func=filePathListboxInsert)  # 列表控件拖入文件夹
 
 
 # --------------------
