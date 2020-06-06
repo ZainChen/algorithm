@@ -16,7 +16,7 @@ pip install pyinstaller
 
 
 ```
-pyinstaller -F test.py
+pyinstaller -F -w toc.py
 ```
 
 ### 常用参数说明：
@@ -34,8 +34,8 @@ pyinstaller -h 来查看参数
 
 pyinstaller 改变生成exe程序的图标
 
-my.ico 是一个图标名，和当前的test.py文件在同一个目录下
+zain.ico 是一个图标名，和当前的test.py文件在同一个目录下
 
 ```
-pyinstaller -F --icon=my.ico test.py
+pyinstaller -F -w --icon=zain.ico toc.py
 ```
