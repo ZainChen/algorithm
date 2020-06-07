@@ -102,12 +102,42 @@ def getProcessFolder():
                 # print(files)
         return tuple(set(folderAll))
 
+def getProgramLangSuffixDict():
+    """获取编程语言后缀对应编程语言字典"""
+    programLangSuffixDict = {
+        '.c': 'c',
+        '.cpp': 'c++',
+        '.js': 'javascript',
+        '.py': 'python',
+        '.ts': 'typescript'
+    }
+    return programLangSuffixDict
 
+def getPathFileListDict(path: str):
+    """获取指定文件夹下，所有文件(包含文件名、文件路径、文件后缀名)"""
+    fileList: list = []
+    for file in os.listdir(path):
+        filePath = os.path.join(path, file)
+        if not os.path.isdir(filePath):
+            fileDict: dict = {}
+            fileDict['filePath'] = filePath
+            fileDict['fileNameSuffix'] = file
+            splitext = os.path.splitext(file)
+            fileDict['fileName'] = splitext[0]
+            fileDict['fileSuffix'] = splitext[1]
+            fileList.append(fileDict)
+    return fileList
+
+def generateReadme(path: str):
+    """处理指定文件夹，智能生成 README"""
+    files: list = getPathFileListDict(path)
+    print(files)
+    ##########
 
 def generateAllReadme(folderPaths: tuple):
     """对选中的所有文件夹，智能生成 README"""
-
-
+    for path in folderPaths:
+        generateReadme(path)
 
 def startTack():
     """文件处理开始"""
