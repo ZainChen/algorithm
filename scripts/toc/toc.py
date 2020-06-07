@@ -24,7 +24,7 @@ def filePathListboxInsert(files: list):
     """路径列表框控件，鼠标拖入文件夹后，插入路径"""
     count: int = 0
     for i in files:
-        dirString = i.decode('utf-8')
+        dirString = i.decode('gbk')
         if os.path.isdir(dirString):
             filePathListbox.insert('end', dirString)
             count = count + 1
@@ -82,6 +82,48 @@ def readmeResetGroupCheckButton():
 # --------------------
 # 文件处理生成 README 功能
 # --------------------
+def getDeduplicationFolderPaths():
+    """获取去重后的所有文件夹路径"""
+    filePathBoxContent: tuple = filePathListbox.get(0, END)
+    return tuple(set(filePathBoxContent))
+
+def getProcessFolder():
+    """根据选择的文件处理类型，获取需要处理的所有文件夹"""
+    folderDeduplication: tuple = getDeduplicationFolderPaths()
+    if fileSelectBooleanVar.get() == True:
+        return folderDeduplication
+    else:
+        folderAll: list = []
+        for path in folderDeduplication:
+            for root, dirs, files in os.walk(path):
+                folderAll.append(root)
+                # print(root)  # 当前目录路径
+                # print(dirs)  # 当前路径下的所有子目录
+                # print(files)
+        return tuple(set(folderAll))
+
+
+
+def generateAllReadme(folderPaths: tuple):
+    """对选中的所有文件夹，智能生成 README"""
+
+
+
+def startTack():
+    """文件处理开始"""
+    insertEndDisabled(consoleText, '文件处理开始.\n', 'showTime')
+    insertEndDisabled(consoleText, '开始获取所有文件夹路径.\n', 'showTime')
+    taskProgressbar.config(maximum=1000, value=0)
+    folderPaths: tuple = getProcessFolder()
+    taskProgressbar.config(maximum=1000, value=200)
+    if folderPaths:
+        insertEndDisabled(consoleText, '所有文件夹路径获取完成.\n', 'showTime')
+        print(folderPaths)
+        generateAllReadme(folderPaths)
+        insertEndDisabled(consoleText, '文件处理完成.\n', 'showTime')
+    else:
+        insertEndDisabled(consoleText, '没有要处理的文件夹.\n', 'showTime')
+    taskProgressbar.config(maximum=1000, value=1000)
 
 
 
@@ -158,21 +200,22 @@ fileAllChildCheckButton = Checkbutton(funSelectConfirmLeftFrame, text="处理所
 fileAllChildCheckButton.pack(anchor=W, padx=(16, 0))
 
 Label(funSelectConfirmLeftFrame, text="README 生成：").pack(anchor=W, pady=(8, 0))
-readmeAddBooleanVar = BooleanVar()
-readmeAddBooleanVar.set(True)
-readmeAddCheckButton = Checkbutton(funSelectConfirmLeftFrame, text="增量修正 README", command=readmeAddGroupCheckButton)
-readmeAddCheckButton.select()
-readmeAddCheckButton.pack(anchor=W, padx=(16, 0))
 readmeResetBooleanVar = BooleanVar()
-readmeResetBooleanVar.set(False)
+readmeResetBooleanVar.set(True)
 readmeResetCheckButton = Checkbutton(funSelectConfirmLeftFrame, text="重新生成 README", command=readmeResetGroupCheckButton)
+readmeResetCheckButton.select()
 readmeResetCheckButton.pack(anchor=W, padx=(16, 0))
+readmeAddBooleanVar = BooleanVar()
+readmeAddBooleanVar.set(False)
+readmeAddCheckButton = Checkbutton(funSelectConfirmLeftFrame, text="增量修正 README", command=readmeAddGroupCheckButton)
+readmeAddCheckButton.pack(anchor=W, padx=(16, 0))
 
-Button(funSelectConfirmRightFrame, text="开始").pack(side=TOP)
+Button(funSelectConfirmRightFrame, text="开始", command=startTack).pack(side=TOP)
 
+# 进度条控件
 taskProgressbar = ttk.Progressbar(funSelectConfirmRightFrame, length=219, mode="determinate", orient=VERTICAL)
 taskProgressbar.pack()
-taskProgressbar.config(maximum=100, value=50)
+taskProgressbar.config(maximum=1000, value=0)
 
 # --------------------
 # 控制台控件
