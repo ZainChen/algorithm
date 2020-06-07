@@ -4,6 +4,12 @@
 
 README.md 目录生成工具（python3编写）
 
+## 运行
+
+1. 安装 python3，确认配置好环境变量
+
+2. 双击 toc.bat 运行
+
 ## 使用 `pyinstaller` 打包 `py` 文件成 `exe` 程序
 
 ### 下载 `pyinstaller`

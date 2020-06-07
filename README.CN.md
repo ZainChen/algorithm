@@ -23,6 +23,7 @@
 >       - [安装Python扩展](#安装Python扩展)
 >       - [配置Python](#配置Python)
 >           - [Python下载](#Python下载)
+>           - [Python2和python3共存配置](#Python2和python3共存配置)
 >       - [配置vscode_Python](#配置vscode_Python)
 >           - [launch_Python](#launch_Python)
 >           - [settings_Python](#settings_Python)
@@ -245,6 +246,21 @@ Nodejs下载：[http://nodejs.cn/download](http://nodejs.cn/download)
 官网下载自己想要的版本：[https://www.python.org/](https://www.python.org/)
 
 （注：根据自己需求下载安装 `Python2` 或 `Python3`）
+
+### Python2和python3共存配置
+
+1. 找到 `Python2` 和 `python3` 的安装目录
+
+2. 将目录下的 `python.exe` 和 `pythonw.exe` 分别命名成 `python2.exe` 和 `pythonw2.exe` 及 `python3.exe` 和 `pythonw3.exe` (也可保留其中一个版本不重命名)
+
+3. 重命名后的 `python` 版本，重新安装 `pip`
+```c++
+//如果更改了 python2：
+python2 -m pip install selenium
+
+//如果更改了 python3：
+python3 -m pip install selenium
+```
 
 ### 配置vscode_Python
 
