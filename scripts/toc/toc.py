@@ -104,14 +104,25 @@ def getProcessFolder():
 
 def getProgramLangSuffixDict():
     """获取编程语言后缀对应编程语言字典"""
-    programLangSuffixDict = {
-        '.c': 'c',
-        '.cpp': 'c++',
-        '.js': 'javascript',
-        '.py': 'python',
-        '.ts': 'typescript'
+    programLangSuffixDict: dict = {
+        '.c': 'C',
+        '.cpp': 'C++',
+        '.js': 'Javascript',
+        '.py': 'Python',
+        '.ts': 'Typescript'
     }
     return programLangSuffixDict
+
+def getProgramLangDirectoryIndex():
+    """编程语言对应目录索引"""
+    langDirectoryIndex: dict = {
+        '.c': 'code-c',
+        '.cpp': 'code-cpp',
+        '.js': 'code-js',
+        '.py': 'code-python',
+        '.ts': 'code-ts'
+    }
+    return langDirectoryIndex
 
 def getPathFileListDict(path: str):
     """获取指定文件夹下，所有文件(包含文件名、文件路径、文件后缀名)"""
@@ -125,14 +136,81 @@ def getPathFileListDict(path: str):
             splitext = os.path.splitext(file)
             fileDict['fileName'] = splitext[0]
             fileDict['fileSuffix'] = splitext[1]
+            programLangSuffixDict = getProgramLangSuffixDict()
+            if programLangSuffixDict.get(fileDict['fileSuffix']):
+                fileDict['methodNumber'] = fileDict['fileName'].split('-')[-1]
+            else:
+                fileDict['methodNumber'] = ''
             fileList.append(fileDict)
     return fileList
+
+def getMethodFilesDictList(files: list):
+    """解析所有文件信息，获取所有方法对应的所有文件信息"""
+    methodToFilesDictList: dict = {}
+    for item in files:
+        methodNumber = item.get('methodNumber')
+        if methodNumber:
+            if methodToFilesDictList.get(methodNumber):
+                methodToFilesDictList[methodNumber].append(item)
+            else:
+                methodToFilesDictList.setdefault(methodNumber, [])
+                methodToFilesDictList[methodNumber].append(item)
+    return methodToFilesDictList
+
+def generateReadmeCN(path: str, files: list):
+    """处理指定文件夹，智能生成 README.CN.md"""
+    writeContent: str = '[Leetcode](../README.CN.md) | [English](./README.md) | 简体中文\n\n'
+    writeContent += '# 目录\n\n'
+    writeContent += '>- [标题](#标题)\n'
+    writeContent += '>- [解](#解)\n'
+    methodFilesDictList: dict = getMethodFilesDictList(files)
+    programLangDirectoryIndex: dict = getProgramLangDirectoryIndex()
+    programLangSuffixDict = getProgramLangSuffixDict()
+    for key, values in methodFilesDictList.items():
+        strKey = str(key)
+        writeContent += '>    - [方法'+strKey+'](#方法'+strKey+')\n'
+        for item in values:
+            langDirectory = programLangDirectoryIndex.get(item.get('fileSuffix'))
+            writeContent += '>        - ['+langDirectory+'-'+strKey+'](#'+langDirectory+'-'+strKey+')\n'
+    writeContent += '\n# 标题\n\n'
+    writeContent += '\n>[目录](#目录)\n\n'
+    writeContent += '\n[[[题目]]]\n\n\n'
+    writeContent += '# 解\n\n'
+    for key, values in methodFilesDictList.items():
+        strKey = str(key)
+        writeContent += '## 方法'+strKey+'\n\n'
+        writeContent += '>[目录](#目录) | [标题](#标题) | '
+        for item in values[:-1]:
+            writeContent += '['+programLangSuffixDict.get(item.get('fileSuffix'))+'](#'+programLangDirectoryIndex.get(item.get('fileSuffix'))+'-'+strKey+'), '
+        if values[-1]:
+            writeContent += '['+programLangSuffixDict.get(values[-1].get('fileSuffix'))+'](#'+programLangDirectoryIndex.get(values[-1].get('fileSuffix'))+'-'+strKey+')'
+        writeContent += '\n\n'
+        writeContent += '[[[方法简介]]]\n\n'
+        writeContent += '### 分析\n\n'
+        writeContent += '[[[方法分析]]]\n\n'
+        writeContent += '### 代码\n\n'
+        for item in values:
+            writeContent += '#### '+programLangDirectoryIndex.get(item.get('fileSuffix'))+'-'+strKey+'\n\n'
+            writeContent += '>[目录](#目录) | [标题](#标题) | [分析](#方法'+strKey+') | ['+item.get('fileNameSuffix')+'](./'+item.get('fileNameSuffix')+' "'+item.get('fileNameSuffix')+'")\n\n'
+            writeContent += '```'+programLangSuffixDict.get(item.get('fileSuffix'))+'\n'
+            readFile = open(item.get('filePath'), 'r', encoding='utf-8')
+            readFileContent: list = readFile.readlines()
+            for content in readFileContent:
+                writeContent += content
+            readFile.close()
+            writeContent += '\n```\n\n'
+    writeFileName = os.path.join(path, 'README.CN.md')
+    writeOpen = open(writeFileName, 'w', encoding='utf-8')
+    writeOpen.write(writeContent)
+    writeOpen.write(str(files).replace("'", '"'))
+    writeOpen.write('\n\n\n')
+    writeOpen.write(str(methodFilesDictList).replace("'", '"'))
+    writeOpen.close()
 
 def generateReadme(path: str):
     """处理指定文件夹，智能生成 README"""
     files: list = getPathFileListDict(path)
-    print(files)
-    ##########
+    generateReadmeCN(path, files)
 
 def generateAllReadme(folderPaths: tuple):
     """对选中的所有文件夹，智能生成 README"""

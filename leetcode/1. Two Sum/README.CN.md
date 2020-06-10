@@ -9,11 +9,11 @@
 >        - [code-js-1](#code-js-1)
 >        - [code-python2-1](#code-python2-1)
 >    - [方法二：两遍哈希表](#方法二)
->        - [code-cpp-1](#code-cpp-2)
->        - [code-js-1](#code-js-2)
+>        - [code-cpp-2](#code-cpp-2)
+>        - [code-js-2](#code-js-2)
 >    - [方法三：一遍哈希表](#方法三)
->        - [code-cpp-1](#code-cpp-3)
->        - [code-js-1](#code-js-3)
+>        - [code-cpp-3](#code-cpp-3)
+>        - [code-js-3](#code-js-3)
 
 # 标题
 
