@@ -198,13 +198,13 @@ def generateReadmeCN(path: str, files: list):
             for content in readFileContent:
                 writeContent += content
             readFile.close()
-            writeContent += '\n```\n\n'
+            writeContent += '\n```\n'
     writeFileName = os.path.join(path, 'README.CN.md')
     writeOpen = open(writeFileName, 'w', encoding='utf-8')
     writeOpen.write(writeContent)
-    writeOpen.write(str(files).replace("'", '"'))
-    writeOpen.write('\n\n\n')
-    writeOpen.write(str(methodFilesDictList).replace("'", '"'))
+    # writeOpen.write(str(files).replace("'", '"'))
+    # writeOpen.write('\n\n\n')
+    # writeOpen.write(str(methodFilesDictList).replace("'", '"'))
     writeOpen.close()
 
 def generateReadme(path: str):
