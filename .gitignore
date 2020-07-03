@@ -1,6 +1,6 @@
 *.exe
 
-/scripts/toc/dist/*
+!/scripts/toc/dist/*
 /scripts/toc/build/*
 /scripts/toc/__pycache__/*
 
