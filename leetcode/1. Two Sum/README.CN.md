@@ -4,16 +4,16 @@
 
 >- [标题](#标题)
 >- [解](#解)
->    - [方法一：暴力](#方法一)
->        - [code-cpp-1](#code-cpp-1)
+>    - [方法1：暴力](#方法1)
 >        - [code-js-1](#code-js-1)
->        - [code-python2-1](#code-python2-1)
->    - [方法二：两遍哈希表](#方法二)
->        - [code-cpp-2](#code-cpp-2)
+>        - [code-cpp-1](#code-cpp-1)
+>        - [code-python-1](#code-python-1)
+>    - [方法2：两遍哈希表](#方法2)
 >        - [code-js-2](#code-js-2)
->    - [方法三：一遍哈希表](#方法三)
->        - [code-cpp-3](#code-cpp-3)
+>        - [code-cpp-2](#code-cpp-2)
+>    - [方法3：一遍哈希表](#方法3)
 >        - [code-js-3](#code-js-3)
+>        - [code-cpp-3](#code-cpp-3)
 
 # 标题
 
@@ -26,17 +26,17 @@
 你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。
 
 示例:
-
+```
 给定 nums = [2, 7, 11, 15], target = 9
-
 因为 nums[0] + nums[1] = 2 + 7 = 9
 所以返回 [0, 1]
+```
 
 # 解
 
-## 方法一
+## 方法1
 
->[目录](#目录) | [标题](#标题) | [C++](#code-cpp-1), [JavaScript](#code-js-1), [Python](#code-python2-1)
+>[目录](#目录) | [标题](#标题) | [Javascript](#code-js-1), [C++](#code-cpp-1), [Python](#code-python-1)
 
 暴力
 
@@ -46,11 +46,39 @@
 
 ### 代码
 
+#### code-js-1
+
+>[目录](#目录) | [标题](#标题) | [分析](#方法1) | [index-1.js](./index-1.js "index-1.js")
+
+```Javascript
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function(nums, target) {
+    let a = [-1, -1];
+    let l = nums.length;
+    for(let i = 0; i < l; i++)
+        for(let j = i+1; j < l; j++)
+            if(nums[i]+nums[j] === target) {
+                a[0] = i;
+                a[1] = j;
+                return a;
+            }
+    return a;
+};
+
+let nums = [2, 7, 11, 15];
+let target = 9;
+
+console.log(twoSum(nums, target));
+```
 #### code-cpp-1
 
->[目录](#目录) | [标题](#标题) | [分析](#方法一) | [main-1.cpp](./main-1.cpp "main-1.cpp")
+>[目录](#目录) | [标题](#标题) | [分析](#方法1) | [main-1.cpp](./main-1.cpp "main-1.cpp")
 
-```cpp
+```C++
 #include<iostream>
 #include<vector>
 using namespace std;
@@ -93,41 +121,11 @@ int main() {
     system("pause");
 }
 ```
+#### code-python-1
 
-#### code-js-1
+>[目录](#目录) | [标题](#标题) | [分析](#方法1) | [python2-1.py](./python2-1.py "python2-1.py")
 
->[目录](#目录) | [标题](#标题) | [分析](#方法一) | [index-1.js](./index-1.js "index-1.js")
-
-```js
-/**
- * @param {number[]} nums
- * @param {number} target
- * @return {number[]}
- */
-var twoSum = function(nums, target) {
-    let a = [-1, -1];
-    let l = nums.length;
-    for(let i = 0; i < l; i++)
-        for(let j = i+1; j < l; j++)
-            if(nums[i]+nums[j] === target) {
-                a[0] = i;
-                a[1] = j;
-                return a;
-            }
-    return a;
-};
-
-let nums = [2, 7, 11, 15];
-let target = 9;
-
-console.log(twoSum(nums, target));
-```
-
-#### code-python2-1
-
->[目录](#目录) | [标题](#标题) | [分析](#方法二) | [python2-1.py](./python2-1.py "python2-1.py")
-
-```python
+```Python
 class Solution(object):
     def twoSum(self, nums, target):
         """
@@ -147,11 +145,11 @@ if __name__ == '__main__':
     solution = Solution()
     result = solution.twoSum(nums, target)
     print(result)
+
 ```
+## 方法2
 
-## 方法二
-
->[目录](#目录) | [标题](#标题) | [C++](#code-cpp-2), [JavaScript](#code-js-2)
+>[目录](#目录) | [标题](#标题) | [Javascript](#code-js-2), [C++](#code-cpp-2)
 
 两遍哈希表
 
@@ -161,11 +159,41 @@ if __name__ == '__main__':
 
 ### 代码
 
+#### code-js-2
+
+>[目录](#目录) | [标题](#标题) | [分析](#方法2) | [index-2.js](./index-2.js "index-2.js")
+
+```Javascript
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function(nums, target) {
+    let a = [-1, -1];
+    let b = new Object();
+    let l = nums.length;
+    for(let i = 0; i < l; i++)
+        b[nums[i]] = i;
+    for(let i = 0; i < l; i++)
+        if(typeof b[target-nums[i]] !== "undefined" && b[target-nums[i]] != i) {
+            a[0] = i;
+            a[1] = b[target-nums[i]];
+            return a;
+        }
+    return a;
+};
+
+let nums = [2, 7, 11, 15];
+let target = 9;
+
+console.log(twoSum(nums, target));
+```
 #### code-cpp-2
 
->[目录](#目录) | [标题](#标题) | [分析](#方法二) | [main-2.cpp](./main-2.cpp "main-2.cpp")
+>[目录](#目录) | [标题](#标题) | [分析](#方法2) | [main-2.cpp](./main-2.cpp "main-2.cpp")
 
-```cpp
+```C++
 #include<iostream>
 #include<vector>
 #include<map>
@@ -211,41 +239,9 @@ int main() {
     system("pause");
 }
 ```
+## 方法3
 
-#### code-js-2
-
->[目录](#目录) | [标题](#标题) | [分析](#方法二) | [index-2.js](./index-2.js "index-2.js")
-
-```js
-/**
- * @param {number[]} nums
- * @param {number} target
- * @return {number[]}
- */
-var twoSum = function(nums, target) {
-    let a = [-1, -1];
-    let b = new Object();
-    let l = nums.length;
-    for(let i = 0; i < l; i++)
-        b[nums[i]] = i;
-    for(let i = 0; i < l; i++)
-        if(typeof b[target-nums[i]] !== "undefined" && b[target-nums[i]] != i) {
-            a[0] = i;
-            a[1] = b[target-nums[i]];
-            return a;
-        }
-    return a;
-};
-
-let nums = [2, 7, 11, 15];
-let target = 9;
-
-console.log(twoSum(nums, target));
-```
-
-## 方法三
-
->[目录](#目录) | [标题](#标题) | [C++](#code-cpp-3), [JavaScript](#code-js-3)
+>[目录](#目录) | [标题](#标题) | [Javascript](#code-js-3), [C++](#code-cpp-3)
 
 一遍哈希表
 
@@ -255,11 +251,40 @@ console.log(twoSum(nums, target));
 
 ### 代码
 
+#### code-js-3
+
+>[目录](#目录) | [标题](#标题) | [分析](#方法3) | [index-3.js](./index-3.js "index-3.js")
+
+```Javascript
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function(nums, target) {
+    let a = [-1, -1];
+    let b = new Object();
+    for(let i = 0; i < nums.length; i++) {
+        if(typeof b[target-nums[i]] !== "undefined") {
+            a[0] = b[target-nums[i]];
+            a[1] = i;
+            return a;
+        }
+        b[nums[i]] = i;
+    }
+    return a;
+};
+
+let nums = [2, 7, 11, 15];
+let target = 9;
+
+console.log(twoSum(nums, target));
+```
 #### code-cpp-3
 
->[目录](#目录) | [标题](#标题) | [分析](#方法三) | [main-3.cpp](./main-3.cpp "main-3.cpp")
+>[目录](#目录) | [标题](#标题) | [分析](#方法3) | [main-3.cpp](./main-3.cpp "main-3.cpp")
 
-```cpp
+```C++
 #include<iostream>
 #include<vector>
 #include<map>
@@ -301,34 +326,4 @@ int main() {
 
     system("pause");
 }
-```
-
-#### code-js-3
-
->[目录](#目录) | [标题](#标题) | [分析](#方法三) | [index-3.js](./index-3.js "index-3.js")
-
-```js
-/**
- * @param {number[]} nums
- * @param {number} target
- * @return {number[]}
- */
-var twoSum = function(nums, target) {
-    let a = [-1, -1];
-    let b = new Object();
-    for(let i = 0; i < nums.length; i++) {
-        if(typeof b[target-nums[i]] !== "undefined") {
-            a[0] = b[target-nums[i]];
-            a[1] = i;
-            return a;
-        }
-        b[nums[i]] = i;
-    }
-    return a;
-};
-
-let nums = [2, 7, 11, 15];
-let target = 9;
-
-console.log(twoSum(nums, target));
 ```

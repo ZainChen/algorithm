@@ -62,18 +62,8 @@ def fileAllChildGroupCheckButton():
     fileAllChildBooleanVar.set(True)
     insertEndDisabled(consoleText, '处理所有子文件夹\n', 'showTime')
 
-def readmeAddGroupCheckButton():
-    """README 生成方式复选框，按组单选，增量修正 README"""
-    readmeResetCheckButton.deselect()
-    readmeResetBooleanVar.set(False)
-    readmeAddCheckButton.select()
-    readmeAddBooleanVar.set(True)
-    insertEndDisabled(consoleText, '增量修正 README\n', 'showTime')
-
 def readmeResetGroupCheckButton():
     """README 生成方式复选框，按组单选，重新生成 README"""
-    readmeAddCheckButton.deselect()
-    readmeAddBooleanVar.set(False)
     readmeResetCheckButton.select()
     readmeResetBooleanVar.set(True)
     insertEndDisabled(consoleText, '重新生成 README\n', 'showTime')
@@ -173,8 +163,8 @@ def generateReadmeCN(path: str, files: list):
             langDirectory = programLangDirectoryIndex.get(item.get('fileSuffix'))
             writeContent += '>        - ['+langDirectory+'-'+strKey+'](#'+langDirectory+'-'+strKey+')\n'
     writeContent += '\n# 标题\n\n'
-    writeContent += '\n>[目录](#目录)\n\n'
-    writeContent += '\n[[[题目]]]\n\n\n'
+    writeContent += '>[目录](#目录)\n\n\n'
+    writeContent += '[[[题目]]]\n\n\n'
     writeContent += '# 解\n\n'
     for key, values in methodFilesDictList.items():
         strKey = str(key)
@@ -207,10 +197,61 @@ def generateReadmeCN(path: str, files: list):
     # writeOpen.write(str(methodFilesDictList).replace("'", '"'))
     writeOpen.close()
 
+def generateReadmeEN(path: str, files: list):
+    """处理指定文件夹，智能生成 README.md"""
+    writeContent: str = '[Leetcode](../README.md) | English | [简体中文](./README.CN.md)\n\n'
+    writeContent += '# Directory\n\n'
+    writeContent += '>- [Title](#Title)\n'
+    writeContent += '>- [Solution](#Solution)\n'
+    methodFilesDictList: dict = getMethodFilesDictList(files)
+    programLangDirectoryIndex: dict = getProgramLangDirectoryIndex()
+    programLangSuffixDict = getProgramLangSuffixDict()
+    for key, values in methodFilesDictList.items():
+        strKey = str(key)
+        writeContent += '>    - [Method'+strKey+'](#Method'+strKey+')\n'
+        for item in values:
+            langDirectory = programLangDirectoryIndex.get(item.get('fileSuffix'))
+            writeContent += '>        - ['+langDirectory+'-'+strKey+'](#'+langDirectory+'-'+strKey+')\n'
+    writeContent += '\n# Title\n\n'
+    writeContent += '>[Directory](#Directory)\n\n\n'
+    writeContent += '[[[topic]]]\n\n\n'
+    writeContent += '# Solution\n\n'
+    for key, values in methodFilesDictList.items():
+        strKey = str(key)
+        writeContent += '## Method'+strKey+'\n\n'
+        writeContent += '>[Directory](#Directory) | [Title](#Title) | '
+        for item in values[:-1]:
+            writeContent += '['+programLangSuffixDict.get(item.get('fileSuffix'))+'](#'+programLangDirectoryIndex.get(item.get('fileSuffix'))+'-'+strKey+'), '
+        if values[-1]:
+            writeContent += '['+programLangSuffixDict.get(values[-1].get('fileSuffix'))+'](#'+programLangDirectoryIndex.get(values[-1].get('fileSuffix'))+'-'+strKey+')'
+        writeContent += '\n\n'
+        writeContent += '[[[Method Introduction]]]\n\n'
+        writeContent += '### Analyze\n\n'
+        writeContent += '[[[Method analysis]]]\n\n'
+        writeContent += '### Code\n\n'
+        for item in values:
+            writeContent += '#### '+programLangDirectoryIndex.get(item.get('fileSuffix'))+'-'+strKey+'\n\n'
+            writeContent += '>[Directory](#Directory) | [Title](#Title) | [Analyze](#Method'+strKey+') | ['+item.get('fileNameSuffix')+'](./'+item.get('fileNameSuffix')+' "'+item.get('fileNameSuffix')+'")\n\n'
+            writeContent += '```'+programLangSuffixDict.get(item.get('fileSuffix'))+'\n'
+            readFile = open(item.get('filePath'), 'r', encoding='utf-8')
+            readFileContent: list = readFile.readlines()
+            for content in readFileContent:
+                writeContent += content
+            readFile.close()
+            writeContent += '\n```\n'
+    writeFileName = os.path.join(path, 'README.md')
+    writeOpen = open(writeFileName, 'w', encoding='utf-8')
+    writeOpen.write(writeContent)
+    # writeOpen.write(str(files).replace("'", '"'))
+    # writeOpen.write('\n\n\n')
+    # writeOpen.write(str(methodFilesDictList).replace("'", '"'))
+    writeOpen.close()
+
 def generateReadme(path: str):
     """处理指定文件夹，智能生成 README"""
     files: list = getPathFileListDict(path)
     generateReadmeCN(path, files)
+    generateReadmeEN(path, files)
 
 def generateAllReadme(folderPaths: tuple):
     """对选中的所有文件夹，智能生成 README"""
@@ -313,10 +354,6 @@ readmeResetBooleanVar.set(True)
 readmeResetCheckButton = Checkbutton(funSelectConfirmLeftFrame, text="重新生成 README", command=readmeResetGroupCheckButton)
 readmeResetCheckButton.select()
 readmeResetCheckButton.pack(anchor=W, padx=(16, 0))
-readmeAddBooleanVar = BooleanVar()
-readmeAddBooleanVar.set(False)
-readmeAddCheckButton = Checkbutton(funSelectConfirmLeftFrame, text="增量修正 README", command=readmeAddGroupCheckButton)
-readmeAddCheckButton.pack(anchor=W, padx=(16, 0))
 
 Button(funSelectConfirmRightFrame, text="开始", command=startTack).pack(side=TOP)
 

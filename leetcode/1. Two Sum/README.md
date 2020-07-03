@@ -2,22 +2,22 @@
 
 # Directory
 
->- [Title](#title)
->- [Solution](#solution)
->    - [Method-1: Violence](#method-1)
->        - [code-cpp-1](#code-cpp-1)
+>- [Title](#Title)
+>- [Solution](#Solution)
+>    - [Method1: Violence](#Method1)
 >        - [code-js-1](#code-js-1)
->        - [code-python2-1](#code-python2-1)
->    - [Method-2: Two-pass hash table](#method-2)
->        - [code-cpp-1](#code-cpp-2)
->        - [code-js-1](#code-js-2)
->    - [Method-3: Once hash table](#method-3)
->        - [code-cpp-1](#code-cpp-3)
->        - [code-js-1](#code-js-3)
+>        - [code-cpp-1](#code-cpp-1)
+>        - [code-python-1](#code-python-1)
+>    - [Method2: Two-pass hash table](#Method2)
+>        - [code-js-2](#code-js-2)
+>        - [code-cpp-2](#code-cpp-2)
+>    - [Method3: Once hash table](#Method3)
+>        - [code-js-3](#code-js-3)
+>        - [code-cpp-3](#code-cpp-3)
 
 # Title
 
->[directory](#directory)
+>[Directory](#Directory)
 
 1.&nbsp;Two Sum
 
@@ -26,17 +26,17 @@ Given an array of integers, return indices of the two numbers such that they add
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
 
 Example:
-
+```
 Given nums = [2, 7, 11, 15], target = 9,
-
 Because nums[0] + nums[1] = 2 + 7 = 9,
 return [0, 1].
+```
 
 # Solution
 
-## Method-1
+## Method1
 
->[directory](#directory) | [title](#title) | [C++](#code-cpp-1), [JavaScript](#code-js-1), [Python](#code-python2-1)
+>[Directory](#Directory) | [Title](#Title) | [Javascript](#code-js-1), [C++](#code-cpp-1), [Python](#code-python-1)
 
 Violence
 
@@ -46,11 +46,39 @@ Violence
 
 ### Code
 
+#### code-js-1
+
+>[Directory](#Directory) | [Title](#Title) | [Analyze](#Method1) | [index-1.js](./index-1.js "index-1.js")
+
+```Javascript
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function(nums, target) {
+    let a = [-1, -1];
+    let l = nums.length;
+    for(let i = 0; i < l; i++)
+        for(let j = i+1; j < l; j++)
+            if(nums[i]+nums[j] === target) {
+                a[0] = i;
+                a[1] = j;
+                return a;
+            }
+    return a;
+};
+
+let nums = [2, 7, 11, 15];
+let target = 9;
+
+console.log(twoSum(nums, target));
+```
 #### code-cpp-1
 
->[directory](#directory) | [title](#title) | [analyze](#method-1) | [main-1.cpp](./main-1.cpp "main-1.cpp")
+>[Directory](#Directory) | [Title](#Title) | [Analyze](#Method1) | [main-1.cpp](./main-1.cpp "main-1.cpp")
 
-```cpp
+```C++
 #include<iostream>
 #include<vector>
 using namespace std;
@@ -93,41 +121,11 @@ int main() {
     system("pause");
 }
 ```
+#### code-python-1
 
-#### code-js-1
+>[Directory](#Directory) | [Title](#Title) | [Analyze](#Method1) | [python2-1.py](./python2-1.py "python2-1.py")
 
->[directory](#directory) | [title](#title) | [analyze](#method-1) | [index-1.js](./index-1.js "index-1.js")
-
-```js
-/**
- * @param {number[]} nums
- * @param {number} target
- * @return {number[]}
- */
-var twoSum = function(nums, target) {
-    let a = [-1, -1];
-    let l = nums.length;
-    for(let i = 0; i < l; i++)
-        for(let j = i+1; j < l; j++)
-            if(nums[i]+nums[j] === target) {
-                a[0] = i;
-                a[1] = j;
-                return a;
-            }
-    return a;
-};
-
-let nums = [2, 7, 11, 15];
-let target = 9;
-
-console.log(twoSum(nums, target));
-```
-
-#### code-python2-1
-
->[directory](#directory) | [title](#title) | [analyze](#method-2) | [python2-1.py](./python2-1.py "python2-1.py")
-
-```python
+```Python
 class Solution(object):
     def twoSum(self, nums, target):
         """
@@ -147,11 +145,11 @@ if __name__ == '__main__':
     solution = Solution()
     result = solution.twoSum(nums, target)
     print(result)
+
 ```
+## Method2
 
-## Method-2
-
->[directory](#directory) | [title](#title) | [C++](#code-cpp-2), [JavaScript](#code-js-2)
+>[Directory](#Directory) | [Title](#Title) | [Javascript](#code-js-2), [C++](#code-cpp-2)
 
 Two-pass hash table
 
@@ -161,11 +159,41 @@ Use the map subscript
 
 ### Code
 
+#### code-js-2
+
+>[Directory](#Directory) | [Title](#Title) | [Analyze](#Method2) | [index-2.js](./index-2.js "index-2.js")
+
+```Javascript
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function(nums, target) {
+    let a = [-1, -1];
+    let b = new Object();
+    let l = nums.length;
+    for(let i = 0; i < l; i++)
+        b[nums[i]] = i;
+    for(let i = 0; i < l; i++)
+        if(typeof b[target-nums[i]] !== "undefined" && b[target-nums[i]] != i) {
+            a[0] = i;
+            a[1] = b[target-nums[i]];
+            return a;
+        }
+    return a;
+};
+
+let nums = [2, 7, 11, 15];
+let target = 9;
+
+console.log(twoSum(nums, target));
+```
 #### code-cpp-2
 
->[directory](#directory) | [title](#title) | [analyze](#method-2) | [main-2.cpp](./main-2.cpp "main-2.cpp")
+>[Directory](#Directory) | [Title](#Title) | [Analyze](#Method2) | [main-2.cpp](./main-2.cpp "main-2.cpp")
 
-```cpp
+```C++
 #include<iostream>
 #include<vector>
 #include<map>
@@ -211,41 +239,9 @@ int main() {
     system("pause");
 }
 ```
+## Method3
 
-#### code-js-2
-
->[directory](#directory) | [title](#title) | [analyze](#method-2) | [index-2.js](./index-2.js "index-2.js")
-
-```js
-/**
- * @param {number[]} nums
- * @param {number} target
- * @return {number[]}
- */
-var twoSum = function(nums, target) {
-    let a = [-1, -1];
-    let b = new Object();
-    let l = nums.length;
-    for(let i = 0; i < l; i++)
-        b[nums[i]] = i;
-    for(let i = 0; i < l; i++)
-        if(typeof b[target-nums[i]] !== "undefined" && b[target-nums[i]] != i) {
-            a[0] = i;
-            a[1] = b[target-nums[i]];
-            return a;
-        }
-    return a;
-};
-
-let nums = [2, 7, 11, 15];
-let target = 9;
-
-console.log(twoSum(nums, target));
-```
-
-## Method-3
-
->[directory](#directory) | [title](#title) | [C++](#code-cpp-3), [JavaScript](#code-js-3)
+>[Directory](#Directory) | [Title](#Title) | [Javascript](#code-js-3), [C++](#code-cpp-3)
 
 Once hash table
 
@@ -255,11 +251,40 @@ Use the map subscript.
 
 ### Code
 
+#### code-js-3
+
+>[Directory](#Directory) | [Title](#Title) | [Analyze](#Method3) | [index-3.js](./index-3.js "index-3.js")
+
+```Javascript
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function(nums, target) {
+    let a = [-1, -1];
+    let b = new Object();
+    for(let i = 0; i < nums.length; i++) {
+        if(typeof b[target-nums[i]] !== "undefined") {
+            a[0] = b[target-nums[i]];
+            a[1] = i;
+            return a;
+        }
+        b[nums[i]] = i;
+    }
+    return a;
+};
+
+let nums = [2, 7, 11, 15];
+let target = 9;
+
+console.log(twoSum(nums, target));
+```
 #### code-cpp-3
 
->[directory](#directory) | [title](#title) | [analyze](#method-3) | [main-3.cpp](./main-3.cpp "main-3.cpp")
+>[Directory](#Directory) | [Title](#Title) | [Analyze](#Method3) | [main-3.cpp](./main-3.cpp "main-3.cpp")
 
-```cpp
+```C++
 #include<iostream>
 #include<vector>
 #include<map>
@@ -301,34 +326,4 @@ int main() {
 
     system("pause");
 }
-```
-
-#### code-js-3
-
->[directory](#directory) | [title](#title) | [analyze](#method-3) | [index-3.js](./index-3.js "index-3.js")
-
-```js
-/**
- * @param {number[]} nums
- * @param {number} target
- * @return {number[]}
- */
-var twoSum = function(nums, target) {
-    let a = [-1, -1];
-    let b = new Object();
-    for(let i = 0; i < nums.length; i++) {
-        if(typeof b[target-nums[i]] !== "undefined") {
-            a[0] = b[target-nums[i]];
-            a[1] = i;
-            return a;
-        }
-        b[nums[i]] = i;
-    }
-    return a;
-};
-
-let nums = [2, 7, 11, 15];
-let target = 9;
-
-console.log(twoSum(nums, target));
 ```
