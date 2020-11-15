@@ -4,7 +4,9 @@
 
 >- [标题](#标题)
 >- [解](#解)
->    - [方法一：节点覆盖](#方法一)
+>    - [方法1](#方法1)
+>        - [code-js-1](#code-js-1)
+>        - [code-cpp-1](#code-cpp-1)
 
 # 标题
 
@@ -43,23 +45,32 @@
 
 # 解
 
-## 方法一
+## 方法1
 
->[目录](#目录) | [标题](#标题) | [C++](#code-cpp-1), [JavaScript](#code-js-1)
+>[目录](#目录) | [标题](#标题) | [JavaScript](#code-js-1), [C++](#code-cpp-1)
 
 节点覆盖
 
 ### 分析
 
-...
+[[[方法分析]]]
 
 ### 代码
 
+#### code-js-1
+
+>[目录](#目录) | [标题](#标题) | [分析](#方法1) | [index-1.js](./index-1.js "index-1.js")
+
+```JavaScript
+
+console.log("zain");
+```
+
 #### code-cpp-1
 
->[目录](#目录) | [标题](#标题) | [分析](#方法一) | [main-1.cpp](./main-1.cpp "main-1.cpp")
+>[目录](#目录) | [标题](#标题) | [分析](#方法1) | [main-1.cpp](./main-1.cpp "main-1.cpp")
 
-```cpp
+```C++
 #include<iostream>
 using namespace std;
 
@@ -127,12 +138,5 @@ int main() {
     system("pause");
     return 0;
 }
-```
-
-#### code-js-1
-
->[目录](#目录) | [标题](#标题) | [分析](#方法一) | [index-1.js](./index-1.js "index-1.js")
-
-```js
 
 ```

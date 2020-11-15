@@ -1,14 +1,16 @@
-[Leetcode](../README.CN.md) | English | [简体中文](./README.CN.md)
+[Leetcode](../README.md) | English | [简体中文](./README.CN.md)
 
 # Directory
 
->- [Title](#title)
->- [Solution](#solution)
->    - [Method-1: Node coverage](#Method-1)
+>- [Title](#Title)
+>- [Solution](#Solution)
+>    - [Method1](#Method1)
+>        - [code-js-1](#code-js-1)
+>        - [code-cpp-1](#code-cpp-1)
 
 # Title
 
->[directory](#directory)
+>[Directory](#Directory)
 
 237.&nbsp;Delete Node in a Linked List
 
@@ -43,23 +45,32 @@ Explanation: You are given the third node with value 1, the linked list should b
 
 # Solution
 
-## Method-1
+## Method1
 
->[directory](#directory) | [title](#title) | [C++](#code-cpp-1), [JavaScript](#code-js-1)
+>[Directory](#Directory) | [Title](#Title) | [JavaScript](#code-js-1), [C++](#code-cpp-1)
 
 Node coverage
 
 ### Analyze
 
-...
+[[[Method analysis]]]
 
 ### Code
 
+#### code-js-1
+
+>[Directory](#Directory) | [Title](#Title) | [Analyze](#Method1) | [index-1.js](./index-1.js "index-1.js")
+
+```JavaScript
+
+console.log("zain");
+```
+
 #### code-cpp-1
 
->[directory](#directory) | [title](#title) | [analyze](#method-1) | [main-1.cpp](./main-1.cpp "main-1.cpp")
+>[Directory](#Directory) | [Title](#Title) | [Analyze](#Method1) | [main-1.cpp](./main-1.cpp "main-1.cpp")
 
-```cpp
+```C++
 #include<iostream>
 using namespace std;
 
@@ -127,12 +138,5 @@ int main() {
     system("pause");
     return 0;
 }
-```
-
-#### code-js-1
-
->[directory](#directory) | [title](#title) | [analyze](#method-1) | [index-1.js](./index-1.js "index-1.js")
-
-```js
 
 ```

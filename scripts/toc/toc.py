@@ -68,6 +68,14 @@ def readmeResetGroupCheckButton():
     readmeResetBooleanVar.set(True)
     insertEndDisabled(consoleText, '重新生成 README\n', 'showTime')
 
+def readmeDirectoryGroupCheckButton():
+    """README 总目录生成复选框，选中后只能生成总目录"""
+    if readmeDirectoryBooleanVar.get() == True:
+        readmeDirectoryBooleanVar.set(False)
+        insertEndDisabled(consoleText, '取消 README 总目录生成\n', 'showTime')
+    else:
+        readmeDirectoryBooleanVar.set(True)
+        insertEndDisabled(consoleText, 'README 总目录生成\n', 'showTime')
 
 # --------------------
 # 文件处理生成 README 功能
@@ -77,29 +85,43 @@ def getDeduplicationFolderPaths():
     filePathBoxContent: tuple = filePathListbox.get(0, END)
     return tuple(set(filePathBoxContent))
 
-def getProcessFolder():
-    """根据选择的文件处理类型，获取需要处理的所有文件夹"""
+def getPathChildrenFolderAll(path: str):
+    """获取指定路径下的所有子目录"""
+    folderAll: list = []
+    for root, dirs, files in os.walk(path):
+        if path is not root:
+            folderAll.append(root)
+    return tuple(set(folderAll))
+
+def getChildrenFolderAll():
+    """获取选中路径下的所有子目录"""
     folderDeduplication: tuple = getDeduplicationFolderPaths()
-    if fileSelectBooleanVar.get() == True:
-        return folderDeduplication
-    else:
-        folderAll: list = []
-        for path in folderDeduplication:
-            for root, dirs, files in os.walk(path):
+    folderAll: list = []
+    for path in folderDeduplication:
+        for root, dirs, files in os.walk(path):
+            if path is not root:
                 folderAll.append(root)
                 # print(root)  # 当前目录路径
                 # print(dirs)  # 当前路径下的所有子目录
                 # print(files)
-        return tuple(set(folderAll))
+    return tuple(set(folderAll))
+
+def getProcessFolder():
+    """根据选择的文件处理类型，获取需要处理的所有文件夹"""
+    if fileSelectBooleanVar.get() == True:
+        folderDeduplication: tuple = getDeduplicationFolderPaths()
+        return folderDeduplication
+    else:
+        return getChildrenFolderAll()
 
 def getProgramLangSuffixDict():
     """获取编程语言后缀对应编程语言字典"""
     programLangSuffixDict: dict = {
         '.c': 'C',
         '.cpp': 'C++',
-        '.js': 'Javascript',
+        '.js': 'JavaScript',
         '.py': 'Python',
-        '.ts': 'Typescript'
+        '.ts': 'TypeScript'
     }
     return programLangSuffixDict
 
@@ -189,6 +211,9 @@ def generateReadmeCN(path: str, files: list):
                 writeContent += content
             readFile.close()
             writeContent += '\n```\n'
+            index = values.index(item)
+            if index < len(values) - 1:
+                writeContent += '\n'
     writeFileName = os.path.join(path, 'README.CN.md')
     writeOpen = open(writeFileName, 'w', encoding='utf-8')
     writeOpen.write(writeContent)
@@ -239,12 +264,68 @@ def generateReadmeEN(path: str, files: list):
                 writeContent += content
             readFile.close()
             writeContent += '\n```\n'
+            index = values.index(item)
+            if index < len(values) - 1:
+                writeContent += '\n'
     writeFileName = os.path.join(path, 'README.md')
     writeOpen = open(writeFileName, 'w', encoding='utf-8')
     writeOpen.write(writeContent)
     # writeOpen.write(str(files).replace("'", '"'))
     # writeOpen.write('\n\n\n')
     # writeOpen.write(str(methodFilesDictList).replace("'", '"'))
+    writeOpen.close()
+
+def sortfolderChildrenPaths(path: str, folderChildrenPaths: tuple):
+    """排序子路径"""
+    pathsList: list = []
+    for childrenPaths in folderChildrenPaths:
+        pathDict: dict = {}
+        pathDict['Path'] = childrenPaths
+        pathDict['FolderName'] = childrenPaths.replace(path+'\\', '')
+        splitName = pathDict['FolderName'].split(". ", 1)
+        if len(splitName) > 1:
+            pathDict['NoStr'] = splitName[0]
+            pathDict['Name'] = splitName[1]
+            pathDict['No'] = int(pathDict['NoStr'])
+        pathsList.append(pathDict)
+    pathsList = sorted(pathsList, key=lambda x:x["No"])
+    return pathsList
+
+def generateReadmeDirectoryCN(path: str, folderChildrenPaths: tuple):
+    """生成总目录索引，中文"""
+    insertEndDisabled(consoleText, 'zain>>>>'+path+'\n', 'showTime')
+
+def generateReadmeDirectoryEN(path: str, folderChildrenPaths: tuple):
+    """生成总目录索引，英文"""
+    writeContent: str = 'English | [简体中文](./README.CN.md)\n\n'
+    splitPath = path.split('\\')
+    if splitPath:
+        writeContent += '# ' + splitPath[len(splitPath) - 1] + '\n\n'
+    writeContent += '**#**|**Title**|**Solution**\n'
+    writeContent += ':-:|:--|:--\n'
+    programLangSuffixDict: dict = getProgramLangSuffixDict()
+    sortChildrenPaths: list = sortfolderChildrenPaths(path, folderChildrenPaths)
+    for childrenPath in sortChildrenPaths:
+        splitFolderName = childrenPath['FolderName'].split('\\')
+        if len(splitFolderName) == 1:
+            writeContent += childrenPath['NoStr'] + ' | [' + childrenPath['Name'] + '](./' + childrenPath['FolderName'].replace(' ', '%20') + '/README.md) | '
+            files: list = getPathFileListDict(childrenPath['Path'])
+            markHasLang: dict = {}
+            langList: list = []
+            for fileItem in files:
+                if programLangSuffixDict.get(fileItem['fileSuffix']):
+                    if markHasLang.get(fileItem['fileSuffix']) is not True:
+                        markHasLang[fileItem['fileSuffix']] = True
+                        langList.append(programLangSuffixDict.get(fileItem['fileSuffix']))
+            for lang in langList:
+                writeContent += lang
+                index = langList.index(lang)
+                if index < len(langList) - 1:
+                    writeContent += ', '
+            writeContent += '\n'
+    writeFileName = os.path.join(path, 'README.md')
+    writeOpen = open(writeFileName, 'w', encoding='utf-8')
+    writeOpen.write(writeContent)
     writeOpen.close()
 
 def generateReadme(path: str):
@@ -258,8 +339,31 @@ def generateAllReadme(folderPaths: tuple):
     for path in folderPaths:
         generateReadme(path)
 
-def startTack():
-    """文件处理开始"""
+def generateReadmeDirectory(folderDeduplication: tuple):
+    """生成总目录索引"""
+    for path in folderDeduplication:
+        folderChildrenPaths: list = getPathChildrenFolderAll(path)
+        generateReadmeDirectoryCN(path, folderChildrenPaths)
+        generateReadmeDirectoryEN(path, folderChildrenPaths)
+
+def readmeDirectoryStart():
+    """总目录索引表生成"""
+    insertEndDisabled(consoleText, '总目录索引表生成开始.\n', 'showTime')
+    insertEndDisabled(consoleText, '开始获取所有文件夹路径.\n', 'showTime')
+    taskProgressbar.config(maximum=1000, value=0)
+    folderDeduplication: tuple = getDeduplicationFolderPaths()
+    taskProgressbar.config(maximum=1000, value=200)
+    if folderDeduplication:
+        insertEndDisabled(consoleText, '所有文件夹路径获取完成.\n', 'showTime')
+        print(folderDeduplication)
+        generateReadmeDirectory(folderDeduplication)
+        insertEndDisabled(consoleText, '总目录索引表生成完成.\n', 'showTime')
+    else:
+        insertEndDisabled(consoleText, '没有要处理的文件夹.\n', 'showTime')
+    taskProgressbar.config(maximum=1000, value=1000)
+
+def topicReadmeStart():
+    """具体题目 readme 生成"""
     insertEndDisabled(consoleText, '文件处理开始.\n', 'showTime')
     insertEndDisabled(consoleText, '开始获取所有文件夹路径.\n', 'showTime')
     taskProgressbar.config(maximum=1000, value=0)
@@ -274,7 +378,12 @@ def startTack():
         insertEndDisabled(consoleText, '没有要处理的文件夹.\n', 'showTime')
     taskProgressbar.config(maximum=1000, value=1000)
 
-
+def startTack():
+    """文件处理开始"""
+    if readmeDirectoryBooleanVar.get() == True:
+        readmeDirectoryStart()
+    else:
+        topicReadmeStart()
 
 # ===========================================================
 # tkinter 控件创建及关联
@@ -340,12 +449,12 @@ funSelectConfirmRightFrame.pack(side=RIGHT, fill=Y)
 Label(funSelectConfirmLeftFrame, text="文件处理类型：", width=28, anchor=W).pack()
 fileSelectBooleanVar = BooleanVar()
 fileSelectBooleanVar.set(True)
-fileSelectCheckButton = Checkbutton(funSelectConfirmLeftFrame, text="处理当前选中文件夹", command=fileSelectGroupCheckButton)
+fileSelectCheckButton = Checkbutton(funSelectConfirmLeftFrame, text="处理列表所有文件夹", command=fileSelectGroupCheckButton)
 fileSelectCheckButton.select()
 fileSelectCheckButton.pack(anchor=W, padx=(16, 0))
 fileAllChildBooleanVar = BooleanVar()
 fileAllChildBooleanVar.set(False)
-fileAllChildCheckButton = Checkbutton(funSelectConfirmLeftFrame, text="处理所有子文件夹", command=fileAllChildGroupCheckButton)
+fileAllChildCheckButton = Checkbutton(funSelectConfirmLeftFrame, text="处理列表所有子文件夹", command=fileAllChildGroupCheckButton)
 fileAllChildCheckButton.pack(anchor=W, padx=(16, 0))
 
 Label(funSelectConfirmLeftFrame, text="README 生成：").pack(anchor=W, pady=(8, 0))
@@ -354,6 +463,12 @@ readmeResetBooleanVar.set(True)
 readmeResetCheckButton = Checkbutton(funSelectConfirmLeftFrame, text="重新生成 README", command=readmeResetGroupCheckButton)
 readmeResetCheckButton.select()
 readmeResetCheckButton.pack(anchor=W, padx=(16, 0))
+
+Label(funSelectConfirmLeftFrame, text="README 总目录：").pack(anchor=W, pady=(8, 0))
+readmeDirectoryBooleanVar = BooleanVar()
+readmeDirectoryBooleanVar.set(False)
+readmeDirectoryCheckButton = Checkbutton(funSelectConfirmLeftFrame, text="生成 README 总目录", command=readmeDirectoryGroupCheckButton)
+readmeDirectoryCheckButton.pack(anchor=W, padx=(16, 0))
 
 Button(funSelectConfirmRightFrame, text="开始", command=startTack).pack(side=TOP)
 
