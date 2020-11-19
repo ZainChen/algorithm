@@ -2,6 +2,7 @@
 from tkinter import *
 from tkinter import ttk
 import os
+import json
 import windnd
 import time
 
@@ -169,6 +170,13 @@ def getMethodFilesDictList(files: list):
                 methodToFilesDictList[methodNumber].append(item)
     return methodToFilesDictList
 
+def getLeetcodeProblemsList():
+    """从文件获取 leetcode 题目列表"""
+    # 这里加载文件要注意，调试的时候路径在当前工程文件夹根目录，编译后的引用文件路径在 toc.exe 文件同级
+    with open('leetcode-problems-list.json', encoding="utf-8") as f:
+        data: list = json.load(f)
+        return data
+
 def generateReadmeCN(path: str, files: list):
     """处理指定文件夹，智能生成 README.CN.md"""
     writeContent: str = '[Leetcode](../README.CN.md) | [English](./README.md) | 简体中文\n\n'
@@ -291,10 +299,6 @@ def sortfolderChildrenPaths(path: str, folderChildrenPaths: tuple):
     pathsList = sorted(pathsList, key=lambda x:x["No"])
     return pathsList
 
-def generateReadmeDirectoryCN(path: str, folderChildrenPaths: tuple):
-    """生成总目录索引，中文"""
-    insertEndDisabled(consoleText, 'zain>>>>'+path+'\n', 'showTime')
-
 def generateReadmeDirectoryEN(path: str, folderChildrenPaths: tuple):
     """生成总目录索引，英文"""
     writeContent: str = 'English | [简体中文](./README.CN.md)\n\n'
@@ -328,6 +332,48 @@ def generateReadmeDirectoryEN(path: str, folderChildrenPaths: tuple):
     writeOpen.write(writeContent)
     writeOpen.close()
 
+def generateReadmeDirectoryCN(path: str, folderChildrenPaths: tuple):
+    """生成总目录索引，中文"""
+    leetcodeProblemsList: list = getLeetcodeProblemsList()
+    leetcodeIdToCnTitle: dict = {}
+    for leetcodeData in leetcodeProblemsList:
+        leetcodeIdToCnTitle[leetcodeData['id']] = leetcodeData['title']
+    writeContent: str = '[English](./README.md) | 简体中文\n\n'
+    splitPath = path.split('\\')
+    if splitPath:
+        writeContent += '# ' + splitPath[len(splitPath) - 1] + '\n\n'
+    writeContent += '**#**|**标题**|**解法**\n'
+    writeContent += ':-:|:--|:--\n'
+    programLangSuffixDict: dict = getProgramLangSuffixDict()
+    sortChildrenPaths: list = sortfolderChildrenPaths(path, folderChildrenPaths)
+    for childrenPath in sortChildrenPaths:
+        splitFolderName = childrenPath['FolderName'].split('\\')
+        if len(splitFolderName) == 1:
+            titleName: str = ''
+            if leetcodeIdToCnTitle.get(childrenPath['NoStr']):
+                titleName = leetcodeIdToCnTitle.get(childrenPath['NoStr'])
+            else:
+                titleName = childrenPath['Name']
+            writeContent += childrenPath['NoStr'] + ' | [' + titleName + '](./' + childrenPath['FolderName'].replace(' ', '%20') + '/README.CN.md) | '
+            files: list = getPathFileListDict(childrenPath['Path'])
+            markHasLang: dict = {}
+            langList: list = []
+            for fileItem in files:
+                if programLangSuffixDict.get(fileItem['fileSuffix']):
+                    if markHasLang.get(fileItem['fileSuffix']) is not True:
+                        markHasLang[fileItem['fileSuffix']] = True
+                        langList.append(programLangSuffixDict.get(fileItem['fileSuffix']))
+            for lang in langList:
+                writeContent += lang
+                index = langList.index(lang)
+                if index < len(langList) - 1:
+                    writeContent += ', '
+            writeContent += '\n'
+    writeFileName = os.path.join(path, 'README.CN.md')
+    writeOpen = open(writeFileName, 'w', encoding='utf-8')
+    writeOpen.write(writeContent)
+    writeOpen.close()
+
 def generateReadme(path: str):
     """处理指定文件夹，智能生成 README"""
     files: list = getPathFileListDict(path)
@@ -343,8 +389,8 @@ def generateReadmeDirectory(folderDeduplication: tuple):
     """生成总目录索引"""
     for path in folderDeduplication:
         folderChildrenPaths: list = getPathChildrenFolderAll(path)
-        generateReadmeDirectoryCN(path, folderChildrenPaths)
         generateReadmeDirectoryEN(path, folderChildrenPaths)
+        generateReadmeDirectoryCN(path, folderChildrenPaths)
 
 def readmeDirectoryStart():
     """总目录索引表生成"""
