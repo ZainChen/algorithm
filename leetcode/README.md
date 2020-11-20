@@ -15,3 +15,4 @@ English | [简体中文](./README.CN.md)
 1295 | [Find Numbers with Even Number of Digits](./1295.%20Find%20Numbers%20with%20Even%20Number%20of%20Digits/README.md) | JavaScript, C++
 1410 | [HTML Entity Parser](./1410.%20HTML%20Entity%20Parser/README.md) | JavaScript
 1431 | [Kids With the Greatest Number of Candies](./1431.%20Kids%20With%20the%20Greatest%20Number%20of%20Candies/README.md) | C++
+1480 | [Running Sum of 1d Array](./1480.%20Running%20Sum%20of%201d%20Array/README.md) | JavaScript, C++, Python
