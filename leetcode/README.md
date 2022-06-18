@@ -1,10 +1,11 @@
 English | [简体中文](./README.CN.md)
 
-# leetcode
+# LeetCode
 
 **#**|**Title**|**Solution**
 :-:|:--|:--
 1 | [Two Sum](./1.%20Two%20Sum/README.md) | JavaScript, C++, Python
+9 | [Palindrome Number](./9.%20Palindrome%20Number/README.md) | JavaScript
 14 | [Longest Common Prefix](./14.%20Longest%20Common%20Prefix/README.md) | JavaScript, C++
 20 | [Valid Parentheses](./20.%20Valid%20Parentheses/README.md) | JavaScript
 25 | [Reverse Nodes in k-Group](./25.%20Reverse%20Nodes%20in%20k-Group/README.md) | JavaScript

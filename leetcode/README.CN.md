@@ -1,10 +1,11 @@
 [English](./README.md) | 简体中文
 
-# leetcode
+# LeetCode
 
 **#**|**标题**|**解法**
 :-:|:--|:--
 1 | [两数之和](./1.%20Two%20Sum/README.CN.md) | JavaScript, C++, Python
+9 | [回文数](./9.%20Palindrome%20Number/README.CN.md) | JavaScript
 14 | [最长公共前缀](./14.%20Longest%20Common%20Prefix/README.CN.md) | JavaScript, C++
 20 | [有效的括号](./20.%20Valid%20Parentheses/README.CN.md) | JavaScript
 25 | [K 个一组翻转链表](./25.%20Reverse%20Nodes%20in%20k-Group/README.CN.md) | JavaScript
