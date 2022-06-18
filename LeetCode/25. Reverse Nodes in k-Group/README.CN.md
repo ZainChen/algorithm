@@ -1,4 +1,4 @@
-[Leetcode](../README.CN.md) | [English](./README.md) | 简体中文
+[LeetCode](../README.CN.md) | [English](./README.md) | 简体中文
 
 # 目录
 
