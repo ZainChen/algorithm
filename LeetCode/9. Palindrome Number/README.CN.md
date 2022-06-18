@@ -93,7 +93,7 @@ console.log(isPalindrome(0))
 
 #### code-js-2
 
->[目录](#目录) | [标题](#标题) | [分析](#方法一) | [index-2.js](./index-2.js "index-2.js")
+>[目录](#目录) | [标题](#标题) | [分析](#方法二) | [index-2.js](./index-2.js "index-2.js")
 
 ```js
 /**

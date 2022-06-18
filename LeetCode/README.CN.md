@@ -18,3 +18,4 @@
 1431 | [拥有最多糖果的孩子](./1431.%20Kids%20With%20the%20Greatest%20Number%20of%20Candies/README.CN.md) | C++
 1480 | [一维数组的动态和](./1480.%20Running%20Sum%20of%201d%20Array/README.CN.md) | JavaScript, C++, Python
 剑指 Offer 09 | [用两个栈实现队列](./剑指%20Offer%2009.%20用两个栈实现队列/README.CN.md) | JavaScript
+剑指 Offer 30 | [包含min函数的栈](./剑指%20Offer%2030.%20包含min函数的栈/README.CN.md) | JavaScript
