@@ -8,6 +8,7 @@
 9 | [回文数](./9.%20Palindrome%20Number/README.CN.md) | JavaScript
 14 | [最长公共前缀](./14.%20Longest%20Common%20Prefix/README.CN.md) | JavaScript, C++
 20 | [有效的括号](./20.%20Valid%20Parentheses/README.CN.md) | JavaScript
+21 | [合并两个有序链表](./21.%20Merge%20Two%20Sorted%20Lists/README.CN.md) | JavaScript
 25 | [K 个一组翻转链表](./25.%20Reverse%20Nodes%20in%20k-Group/README.CN.md) | JavaScript
 237 | [删除链表中的节点](./237.%20Delete%20Node%20in%20a%20Linked%20List/README.CN.md) | JavaScript, C++
 560 | [和为K的子数组](./560.%20Subarray%20Sum%20Equals%20K/README.CN.md) | JavaScript

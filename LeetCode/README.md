@@ -8,6 +8,7 @@ English | [简体中文](./README.CN.md)
 9 | [Palindrome Number](./9.%20Palindrome%20Number/README.md) | JavaScript
 14 | [Longest Common Prefix](./14.%20Longest%20Common%20Prefix/README.md) | JavaScript, C++
 20 | [Valid Parentheses](./20.%20Valid%20Parentheses/README.md) | JavaScript
+21 | [Merge Two Sorted Lists](./21.%20Merge%20Two%20Sorted%20Lists/README.md) | JavaScript
 25 | [Reverse Nodes in k-Group](./25.%20Reverse%20Nodes%20in%20k-Group/README.md) | JavaScript
 237 | [Delete Node in a Linked List](./237.%20Delete%20Node%20in%20a%20Linked%20List/README.md) | JavaScript, C++
 560 | [Subarray Sum Equals K](./560.%20Subarray%20Sum%20Equals%20K/README.md) | JavaScript
