@@ -6,6 +6,7 @@
 >- [解](#解)
 >    - [方法一](#方法一)
 >        - [code-js-1](#code-js-1)
+>        - [code-ts-1](#code-ts-1)
 
 # 标题
 
@@ -106,6 +107,68 @@ var obj2 = new CQueue()
 result.push(obj2.deleteHead())
 result.push(obj2.appendTail(5))
 result.push(obj2.appendTail(2))
+result.push(obj2.deleteHead())
+result.push(obj2.deleteHead())
+console.log(result)
+```
+
+#### code-ts-1
+
+>[目录](#目录) | [标题](#标题) | [分析](#方法一) | [index-1.ts](./index-1.ts "index-1.ts")
+
+```ts
+class CQueue {
+  constructor() {
+    this.stackOne = []
+    this.stackTwo = []
+  }
+
+  stackOne: number[]
+
+  stackTwo: number[]
+
+  appendTail(value: number): void {
+    this.stackOne.push(value)
+  }
+
+  deleteHead(): number {
+    if (this.stackTwo.length === 0 && this.stackOne.length === 0) {
+      return -1
+    }
+    if (this.stackTwo.length === 0) {
+      while(this.stackOne.length > 0) {
+        this.stackTwo.push(this.stackOne.pop())
+      }
+      return this.stackTwo.pop()
+    }
+    return this.stackTwo.pop()
+  }
+}
+
+/**
+* Your CQueue object will be instantiated and called as such:
+* var obj = new CQueue()
+* obj.appendTail(value)
+* var param_2 = obj.deleteHead()
+*/
+
+let result: number[] = [null]
+
+var obj = new CQueue()
+obj.appendTail(3)
+result.push(null)
+result.push(obj.deleteHead())
+result.push(obj.deleteHead())
+console.log(result)
+
+result = [null]
+
+var obj2 = new CQueue()
+result.push(obj2.deleteHead())
+obj2.appendTail(5)
+result.push(null)
+obj2.appendTail(2)
+result.push(null)
 result.push(obj2.deleteHead())
 result.push(obj2.deleteHead())
 console.log(result)

@@ -26,9 +26,20 @@
             "preLaunchTask": "g++"
         },
         {
+            "name": "TypeScript",
             "type": "node",
             "request": "launch",
-            "name": "Node debug (js)",
+            "program": "${workspaceRoot}/node_modules/ts-node/dist/bin.js",
+            "args": [
+                "${relativeFile}"
+            ],
+            "cwd": "${workspaceRoot}",
+            // "protocol": "inspector"
+        },
+        {
+            "name": "JavaScript",
+            "type": "node",
+            "request": "launch",
             "program": "${file}",
             "sourceMaps": true
         },

@@ -140,7 +140,7 @@ let sample1 = ["flower", "flow", "flight"];
 let sample2 = ["dog", "racecar", "car"];
 let sample3 = ["aca", "cba"];
 
-console.log('zain>>>>>', longestCommonPrefix(sample1));
-console.log('zain>>>>>', longestCommonPrefix(sample2));
-console.log('zain>>>>>', longestCommonPrefix(sample3));
+console.log(longestCommonPrefix(sample1));
+console.log(longestCommonPrefix(sample2));
+console.log(longestCommonPrefix(sample3));
 ```

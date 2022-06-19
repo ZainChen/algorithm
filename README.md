@@ -5,7 +5,13 @@ English | [简体中文](./README.CN.md)
 # 目录
 
 >- [说明](#说明)
->- [windows编译及调试环境配置](#编译及调试环境配置)
+>- [Mac编译及调试环境配置](#Mac编译及调试环境配置)
+>    - [TypeScript](#TypeScript)
+>       - [安装npm依赖包](#安装npm依赖包)
+>       - [配置tsconfig.json](#配置tsconfig.json)
+>       - [配置launch.json](#配置launch.json)
+>       - [调试TypeScript](#调试TypeScript)
+>- [Windows编译及调试环境配置](#Windows编译及调试环境配置)
 >    - [CPP](#CPP)
 >       - [安装CPP扩展](#安装CPP扩展)
 >       - [配置MinGw](#配置MinGw)
@@ -37,7 +43,69 @@ English | [简体中文](./README.CN.md)
 
 刷题，算法总结，算法库。包含语言：`C/C++`、`JavaScript`、`Python` ...
 
-# 编译及调试环境配置
+# Mac编译及调试环境配置
+
+## TypeScript
+
+>[目录](#目录) | [说明](#说明)
+
+### 安装npm依赖包
+
+```
+npm init
+npm i typescript -D
+npm i typescript -D
+```
+
+### 配置tsconfig.json
+
+根目录下新建 `tsconfig.json` 文件
+
+```json
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "noImplicitAny": true,
+    "sourceMap": true,
+    "outDir": "./dist"
+  },
+  "include": [
+    "LeetCode/**/*"
+  ]
+}
+```
+
+### 配置launch.json
+
+打开 `DEBUG` 界面，添加配置
+
+```json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "TypeScript",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/node_modules/ts-node/dist/bin.js",
+            "args": [
+                "${relativeFile}"
+            ],
+            "cwd": "${workspaceRoot}",
+            // "protocol": "inspector"
+        }
+    ]
+}
+```
+
+
+### 调试TypeScript
+
+- 打开 `debug` 界面, 将运行和调试的语言切换为 `TypeScript`
+- 任意位置新建 `*.ts` 文件, 按 `F5` 或 `debug` 界面的调试按钮
+
+# Windows编译及调试环境配置
 
 这里用的是 `vscode` 配置各种语言的编译和调试环境，系统为windows。
 
