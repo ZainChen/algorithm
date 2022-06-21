@@ -40,7 +40,7 @@
 
 ## 方法一
 
->[目录](#目录) | [标题](#标题) | [JavaScript](#code-js-1)
+>[目录](#目录) | [标题](#标题) | [JavaScript](#code-js-1), [TypeScript](#code-ts-1)
 
 ...
 

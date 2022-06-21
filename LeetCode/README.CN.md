@@ -10,6 +10,7 @@
 20 | [有效的括号](./20.%20Valid%20Parentheses/README.CN.md) | JavaScript
 21 | [合并两个有序链表](./21.%20Merge%20Two%20Sorted%20Lists/README.CN.md) | JavaScript
 25 | [K 个一组翻转链表](./25.%20Reverse%20Nodes%20in%20k-Group/README.CN.md) | JavaScript
+146 | [LRU 缓存](./146.%20LRU%20Cache/README.CN.md) | JavaScript, TypeScript
 237 | [删除链表中的节点](./237.%20Delete%20Node%20in%20a%20Linked%20List/README.CN.md) | JavaScript, C++
 560 | [和为K的子数组](./560.%20Subarray%20Sum%20Equals%20K/README.CN.md) | JavaScript
 654 | [最大二叉树](./654.%20Maximum%20Binary%20Tree/README.CN.md) | JavaScript, C++
@@ -18,5 +19,5 @@
 1410 | [HTML 实体解析器](./1410.%20HTML%20Entity%20Parser/README.CN.md) | JavaScript
 1431 | [拥有最多糖果的孩子](./1431.%20Kids%20With%20the%20Greatest%20Number%20of%20Candies/README.CN.md) | C++
 1480 | [一维数组的动态和](./1480.%20Running%20Sum%20of%201d%20Array/README.CN.md) | JavaScript, C++, Python
-剑指 Offer 09 | [用两个栈实现队列](./剑指%20Offer%2009.%20用两个栈实现队列/README.CN.md) | JavaScript
+剑指 Offer 09 | [用两个栈实现队列](./剑指%20Offer%2009.%20用两个栈实现队列/README.CN.md) | JavaScript, TypeScript
 剑指 Offer 30 | [包含min函数的栈](./剑指%20Offer%2030.%20包含min函数的栈/README.CN.md) | JavaScript
