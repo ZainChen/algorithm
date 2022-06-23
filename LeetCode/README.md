@@ -5,6 +5,7 @@ English | [简体中文](./README.CN.md)
 **#**|**Title**|**Solution**
 :-:|:--|:--
 1 | [Two Sum](./1.%20Two%20Sum/README.md) | JavaScript, C++, Python
+7 | [Reverse Integer](./7.%20Reverse%20Integer/README.md) | JavaScript
 9 | [Palindrome Number](./9.%20Palindrome%20Number/README.md) | JavaScript
 14 | [Longest Common Prefix](./14.%20Longest%20Common%20Prefix/README.md) | JavaScript, C++
 20 | [Valid Parentheses](./20.%20Valid%20Parentheses/README.md) | JavaScript

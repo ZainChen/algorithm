@@ -5,6 +5,7 @@
 **#**|**标题**|**解法**
 :-:|:--|:--
 1 | [两数之和](./1.%20Two%20Sum/README.CN.md) | JavaScript, C++, Python
+7 | [整数反转](./7.%20Reverse%20Integer/README.CN.md) | JavaScript
 9 | [回文数](./9.%20Palindrome%20Number/README.CN.md) | JavaScript
 14 | [最长公共前缀](./14.%20Longest%20Common%20Prefix/README.CN.md) | JavaScript, C++
 20 | [有效的括号](./20.%20Valid%20Parentheses/README.CN.md) | JavaScript
