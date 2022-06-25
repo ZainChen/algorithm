@@ -13,6 +13,7 @@
 25 | [K 个一组翻转链表](./25.%20Reverse%20Nodes%20in%20k-Group/README.CN.md) | JavaScript
 146 | [LRU 缓存](./146.%20LRU%20Cache/README.CN.md) | JavaScript, TypeScript
 237 | [删除链表中的节点](./237.%20Delete%20Node%20in%20a%20Linked%20List/README.CN.md) | JavaScript, C++
+543 | [二叉树的直径](./543.%20Diameter%20of%20Binary%20Tree/README.CN.md) | JavaScript
 560 | [和为K的子数组](./560.%20Subarray%20Sum%20Equals%20K/README.CN.md) | JavaScript
 654 | [最大二叉树](./654.%20Maximum%20Binary%20Tree/README.CN.md) | JavaScript, C++
 1108 | [IP 地址无效化](./1108.%20Defanging%20an%20IP%20Address/README.CN.md) | JavaScript, C++

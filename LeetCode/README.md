@@ -13,6 +13,7 @@ English | [简体中文](./README.CN.md)
 25 | [Reverse Nodes in k-Group](./25.%20Reverse%20Nodes%20in%20k-Group/README.md) | JavaScript
 146 | [LRU Cache](./146.%20LRU%20Cache/README.md) | JavaScript, TypeScript
 237 | [Delete Node in a Linked List](./237.%20Delete%20Node%20in%20a%20Linked%20List/README.md) | JavaScript, C++
+543 | [Diameter of Binary Tree](./543.%20Diameter%20of%20Binary%20Tree/README.md) | JavaScript
 560 | [Subarray Sum Equals K](./560.%20Subarray%20Sum%20Equals%20K/README.md) | JavaScript
 654 | [Maximum Binary Tree](./654.%20Maximum%20Binary%20Tree/README.md) | JavaScript, C++
 1108 | [Defanging an IP Address](./1108.%20Defanging%20an%20IP%20Address/README.md) | JavaScript, C++
