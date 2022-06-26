@@ -2,7 +2,7 @@
 
 # LeetCode
 
-**#**|**标题**|**解法**
+**#**|**标题**|**编程语言**
 :-:|:--|:--
 1 | [两数之和](./1.%20Two%20Sum/README.CN.md) | JavaScript, C++, Python
 7 | [整数反转](./7.%20Reverse%20Integer/README.CN.md) | JavaScript

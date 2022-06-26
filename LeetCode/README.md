@@ -2,7 +2,7 @@ English | [简体中文](./README.CN.md)
 
 # LeetCode
 
-**#**|**Title**|**Solution**
+**#**|**Title**|**Programming Languages**
 :-:|:--|:--
 1 | [Two Sum](./1.%20Two%20Sum/README.md) | JavaScript, C++, Python
 7 | [Reverse Integer](./7.%20Reverse%20Integer/README.md) | JavaScript
