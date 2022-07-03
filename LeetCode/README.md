@@ -15,6 +15,7 @@ English | [简体中文](./README.CN.md)
 103 | [Binary Tree Zigzag Level Order Traversal](./103.%20Binary%20Tree%20Zigzag%20Level%20Order%20Traversal/README.md) | JavaScript
 108 | [Convert Sorted Array to Binary Search Tree](./108.%20Convert%20Sorted%20Array%20to%20Binary%20Search%20Tree/README.md) | JavaScript
 146 | [LRU Cache](./146.%20LRU%20Cache/README.md) | JavaScript, TypeScript
+160 | [Intersection of Two Linked Lists](./160.%20Intersection%20of%20Two%20Linked%20Lists/README.md) | JavaScript
 236 | [Lowest Common Ancestor of a Binary Tree](./236.%20Lowest%20Common%20Ancestor%20of%20a%20Binary%20Tree/README.md) | JavaScript
 237 | [Delete Node in a Linked List](./237.%20Delete%20Node%20in%20a%20Linked%20List/README.md) | JavaScript, C++
 543 | [Diameter of Binary Tree](./543.%20Diameter%20of%20Binary%20Tree/README.md) | JavaScript
@@ -27,4 +28,3 @@ English | [简体中文](./README.CN.md)
 1480 | [Running Sum of 1d Array](./1480.%20Running%20Sum%20of%201d%20Array/README.md) | JavaScript, C++, Python
 剑指 Offer 09 | [用两个栈实现队列](./剑指%20Offer%2009.%20用两个栈实现队列/README.CN.md) | JavaScript
 剑指 Offer 30 | [包含min函数的栈](./剑指%20Offer%2030.%20包含min函数的栈/README.CN.md) | JavaScript
-面试题 02.07. 链表相交 | [面试题 02.07. 链表相交](./面试题%2002.07.%20链表相交/README.CN.md) | JavaScript

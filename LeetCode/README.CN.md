@@ -15,6 +15,7 @@
 103 | [二叉树的锯齿形层序遍历](./103.%20Binary%20Tree%20Zigzag%20Level%20Order%20Traversal/README.CN.md) | JavaScript
 108 | [将有序数组转换为二叉搜索树](./108.%20Convert%20Sorted%20Array%20to%20Binary%20Search%20Tree/README.CN.md) | JavaScript
 146 | [LRU 缓存](./146.%20LRU%20Cache/README.CN.md) | JavaScript, TypeScript
+160 | [相交链表](./160.%20Intersection%20of%20Two%20Linked%20Lists/README.CN.md) | JavaScript
 236 | [二叉树的最近公共祖先](./236.%20Lowest%20Common%20Ancestor%20of%20a%20Binary%20Tree/README.CN.md) | JavaScript
 237 | [删除链表中的节点](./237.%20Delete%20Node%20in%20a%20Linked%20List/README.CN.md) | JavaScript, C++
 543 | [二叉树的直径](./543.%20Diameter%20of%20Binary%20Tree/README.CN.md) | JavaScript
@@ -27,4 +28,3 @@
 1480 | [一维数组的动态和](./1480.%20Running%20Sum%20of%201d%20Array/README.CN.md) | JavaScript, C++, Python
 剑指 Offer 09 | [用两个栈实现队列](./剑指%20Offer%2009.%20用两个栈实现队列/README.CN.md) | JavaScript, TypeScript
 剑指 Offer 30 | [包含min函数的栈](./剑指%20Offer%2030.%20包含min函数的栈/README.CN.md) | JavaScript
-面试题 02.07. 链表相交 | [面试题 02.07. 链表相交](./面试题%2002.07.%20链表相交/README.CN.md) | JavaScript
