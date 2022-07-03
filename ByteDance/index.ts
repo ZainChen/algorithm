@@ -1,7 +1,17 @@
-const printZain = (count: number) => {
-  for (let i = 0 ; i < count; i++) {
-    console.log(i)
+const sort = (nums: number[]) => {
+  const result: number[] = Object.assign([], nums)
+  for (let i = 0; i < result.length - 1;  i++) {
+    for (let j = i + 1; j < result.length; j++) {
+      if (result[j] < result[i]) {
+        const temp = result[i]
+        result[i] = result[j]
+        result[j] = temp
+      }
+    }
   }
+  return result
 }
 
-printZain(20)
+const nums = [0, 9, 7, 9, 5, 5, 1]
+
+console.log('sort', nums, sort(nums))
