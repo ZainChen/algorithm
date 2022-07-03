@@ -21,6 +21,7 @@ English | [简体中文](./README.CN.md)
 543 | [Diameter of Binary Tree](./543.%20Diameter%20of%20Binary%20Tree/README.md) | JavaScript
 560 | [Subarray Sum Equals K](./560.%20Subarray%20Sum%20Equals%20K/README.md) | JavaScript
 654 | [Maximum Binary Tree](./654.%20Maximum%20Binary%20Tree/README.md) | JavaScript, C++
+912 | [Sort an Array](./912.%20Sort%20an%20Array/README.md) | TypeScript
 1108 | [Defanging an IP Address](./1108.%20Defanging%20an%20IP%20Address/README.md) | JavaScript, C++
 1295 | [Find Numbers with Even Number of Digits](./1295.%20Find%20Numbers%20with%20Even%20Number%20of%20Digits/README.md) | JavaScript, C++
 1410 | [HTML Entity Parser](./1410.%20HTML%20Entity%20Parser/README.md) | JavaScript

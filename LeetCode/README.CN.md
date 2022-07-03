@@ -21,6 +21,7 @@
 543 | [二叉树的直径](./543.%20Diameter%20of%20Binary%20Tree/README.CN.md) | JavaScript
 560 | [和为K的子数组](./560.%20Subarray%20Sum%20Equals%20K/README.CN.md) | JavaScript
 654 | [最大二叉树](./654.%20Maximum%20Binary%20Tree/README.CN.md) | JavaScript, C++
+912 | [排序数组](./912.%20Sort%20an%20Array/README.CN.md) | TypeScript
 1108 | [IP 地址无效化](./1108.%20Defanging%20an%20IP%20Address/README.CN.md) | JavaScript, C++
 1295 | [统计位数为偶数的数字](./1295.%20Find%20Numbers%20with%20Even%20Number%20of%20Digits/README.CN.md) | JavaScript, C++
 1410 | [HTML 实体解析器](./1410.%20HTML%20Entity%20Parser/README.CN.md) | JavaScript
