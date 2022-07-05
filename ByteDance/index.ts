@@ -1,17 +1,13 @@
-const sort = (nums: number[]) => {
-  const result: number[] = Object.assign([], nums)
-  for (let i = 0; i < result.length - 1;  i++) {
-    for (let j = i + 1; j < result.length; j++) {
-      if (result[j] < result[i]) {
-        const temp = result[i]
-        result[i] = result[j]
-        result[j] = temp
-      }
+var twoSum = function(nums: number[], sum: number) {
+  const map = new Map<number, boolean>()
+  for (let i = 0; i < nums.length; i++) {
+    const valueOne = sum - nums[i]
+    if (map.has(nums[i])) {
+      return [valueOne, nums[i]]
     }
+    map.set(valueOne, true)
   }
-  return result
+  return null
 }
 
-const nums = [0, 9, 7, 9, 5, 5, 1]
-
-console.log('sort', nums, sort(nums))
+console.log(twoSum([9, 2, 1, 4, 30, 6], 31))
