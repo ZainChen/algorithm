@@ -11,6 +11,7 @@ English | [简体中文](./README.CN.md)
 20 | [Valid Parentheses](./20.%20Valid%20Parentheses/README.md) | JavaScript
 21 | [Merge Two Sorted Lists](./21.%20Merge%20Two%20Sorted%20Lists/README.md) | JavaScript
 25 | [Reverse Nodes in k-Group](./25.%20Reverse%20Nodes%20in%20k-Group/README.md) | JavaScript
+88 | [Merge Sorted Array](./88.%20Merge%20Sorted%20Array/README.md) | JavaScript
 102 | [Binary Tree Level Order Traversal](./102.%20Binary%20Tree%20Level%20Order%20Traversal/README.md) | JavaScript
 103 | [Binary Tree Zigzag Level Order Traversal](./103.%20Binary%20Tree%20Zigzag%20Level%20Order%20Traversal/README.md) | JavaScript
 108 | [Convert Sorted Array to Binary Search Tree](./108.%20Convert%20Sorted%20Array%20to%20Binary%20Search%20Tree/README.md) | JavaScript
