@@ -15,6 +15,7 @@ English | [简体中文](./README.CN.md)
 102 | [Binary Tree Level Order Traversal](./102.%20Binary%20Tree%20Level%20Order%20Traversal/README.md) | JavaScript
 103 | [Binary Tree Zigzag Level Order Traversal](./103.%20Binary%20Tree%20Zigzag%20Level%20Order%20Traversal/README.md) | JavaScript
 108 | [Convert Sorted Array to Binary Search Tree](./108.%20Convert%20Sorted%20Array%20to%20Binary%20Search%20Tree/README.md) | JavaScript
+112 | [Path Sum](./112.%20Path%20Sum/README.md) | JavaScript
 146 | [LRU Cache](./146.%20LRU%20Cache/README.md) | JavaScript, TypeScript
 160 | [Intersection of Two Linked Lists](./160.%20Intersection%20of%20Two%20Linked%20Lists/README.md) | JavaScript
 236 | [Lowest Common Ancestor of a Binary Tree](./236.%20Lowest%20Common%20Ancestor%20of%20a%20Binary%20Tree/README.md) | JavaScript
