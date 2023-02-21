@@ -1,60 +1,32 @@
-[LeetCode](../README.CN.md) | [English](./README.md) | 简体中文
+[LeetCode](../README.md) | English | [简体中文](./README.CN.md)
 
-# 目录
+# Directory
 
->- [标题](#标题)
->- [解](#解)
->    - [方法1](#方法1)
+>- [Title](#Title)
+>- [Solution](#Solution)
+>    - [Method1](#Method1)
 >        - [code-js-1](#code-js-1)
 >        - [code-ts-1](#code-ts-1)
 
-# 标题
+# Title
 
->[目录](#目录)
+>[Directory](#Directory)
 
-剑指 Offer 09&nbsp;用两个栈实现队列
+剑指 Offer 09&nbsp;用两个栈实现队列 LCOF
 
-<p>用两个栈实现一个队列。队列的声明如下，请实现它的两个函数 <code>appendTail</code> 和 <code>deleteHead</code> ，分别完成在队列尾部插入整数和在队列头部删除整数的功能。(若队列中没有元素，<code>deleteHead</code>&nbsp;操作返回 -1 )</p>
+English description is not available for the problem. Please switch to Chinese.
 
-<p>&nbsp;</p>
+# Solution
 
-<p><strong>示例 1：</strong></p>
+## Method1
 
-<pre>
-<strong>输入：</strong>
-["CQueue","appendTail","deleteHead","deleteHead","deleteHead"]
-[[],[3],[],[],[]]
-<strong>输出：</strong>[null,null,3,-1,-1]
-</pre>
+>[Directory](#Directory) | [Title](#Title) | [JavaScript](#code-js-1), [TypeScript](#code-ts-1)
 
-<p><strong>示例 2：</strong></p>
-
-<pre>
-<strong>输入：</strong>
-["CQueue","deleteHead","appendTail","appendTail","deleteHead","deleteHead"]
-[[],[],[5],[2],[],[]]
-<strong>输出：</strong>[null,-1,null,null,5,2]
-</pre>
-
-<p><strong>提示：</strong></p>
-
-<ul>
-	<li><code>1 &lt;= values &lt;= 10000</code></li>
-	<li>最多会对<code>&nbsp;appendTail、deleteHead </code>进行<code>&nbsp;10000</code>&nbsp;次调用</li>
-</ul>
-
-
-# 解
-
-## 方法1
-
->[目录](#目录) | [标题](#标题) | [JavaScript](#code-js-1), [TypeScript](#code-ts-1)
-
-### 代码
+### Code
 
 #### code-js-1
 
->[目录](#目录) | [标题](#标题) | [方法1](#方法1) | [index-1.js](./index-1.js "index-1.js")
+>[Directory](#Directory) | [Title](#Title) | [Method1](#Method1) | [index-1.js](./index-1.js "index-1.js")
 
 ```JavaScript
 var CQueue = function() {
@@ -117,7 +89,7 @@ console.log(result)
 
 #### code-ts-1
 
->[目录](#目录) | [标题](#标题) | [方法1](#方法1) | [index-1.ts](./index-1.ts "index-1.ts")
+>[Directory](#Directory) | [Title](#Title) | [Method1](#Method1) | [index-1.ts](./index-1.ts "index-1.ts")
 
 ```TypeScript
 class CQueue {

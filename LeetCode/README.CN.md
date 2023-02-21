@@ -21,7 +21,7 @@
 236 | [二叉树的最近公共祖先](./236.%20Lowest%20Common%20Ancestor%20of%20a%20Binary%20Tree/README.CN.md) | JavaScript
 237 | [删除链表中的节点](./237.%20Delete%20Node%20in%20a%20Linked%20List/README.CN.md) | JavaScript, C++
 543 | [二叉树的直径](./543.%20Diameter%20of%20Binary%20Tree/README.CN.md) | JavaScript
-560 | [和为K的子数组](./560.%20Subarray%20Sum%20Equals%20K/README.CN.md) | JavaScript
+560 | [和为 K 的子数组](./560.%20Subarray%20Sum%20Equals%20K/README.CN.md) | JavaScript
 654 | [最大二叉树](./654.%20Maximum%20Binary%20Tree/README.CN.md) | JavaScript, C++
 912 | [排序数组](./912.%20Sort%20an%20Array/README.CN.md) | TypeScript
 1108 | [IP 地址无效化](./1108.%20Defanging%20an%20IP%20Address/README.CN.md) | JavaScript, C++

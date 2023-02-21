@@ -4,14 +4,14 @@
 
 >- [标题](#标题)
 >- [解](#解)
->    - [方法1：暴力](#方法1)
+>    - [方法1](#方法1)
 >        - [code-js-1](#code-js-1)
 >        - [code-cpp-1](#code-cpp-1)
 >        - [code-python-1](#code-python-1)
->    - [方法2：两遍哈希表](#方法2)
+>    - [方法2](#方法2)
 >        - [code-js-2](#code-js-2)
 >        - [code-cpp-2](#code-cpp-2)
->    - [方法3：一遍哈希表](#方法3)
+>    - [方法3](#方法3)
 >        - [code-js-3](#code-js-3)
 >        - [code-cpp-3](#code-cpp-3)
 
@@ -19,38 +19,67 @@
 
 >[目录](#目录)
 
-1.&nbsp;两数之和
+1&nbsp;两数之和
 
-给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
+<p>给定一个整数数组 <code>nums</code>&nbsp;和一个整数目标值 <code>target</code>，请你在该数组中找出 <strong>和为目标值 </strong><em><code>target</code></em>&nbsp; 的那&nbsp;<strong>两个</strong>&nbsp;整数，并返回它们的数组下标。</p>
 
-你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。
+<p>你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。</p>
 
-示例:
-```
-给定 nums = [2, 7, 11, 15], target = 9
-因为 nums[0] + nums[1] = 2 + 7 = 9
-所以返回 [0, 1]
-```
+<p>你可以按任意顺序返回答案。</p>
+
+<p>&nbsp;</p>
+
+<p><strong class="example">示例 1：</strong></p>
+
+<pre>
+<strong>输入：</strong>nums = [2,7,11,15], target = 9
+<strong>输出：</strong>[0,1]
+<strong>解释：</strong>因为 nums[0] + nums[1] == 9 ，返回 [0, 1] 。
+</pre>
+
+<p><strong class="example">示例 2：</strong></p>
+
+<pre>
+<strong>输入：</strong>nums = [3,2,4], target = 6
+<strong>输出：</strong>[1,2]
+</pre>
+
+<p><strong class="example">示例 3：</strong></p>
+
+<pre>
+<strong>输入：</strong>nums = [3,3], target = 6
+<strong>输出：</strong>[0,1]
+</pre>
+
+<p>&nbsp;</p>
+
+<p><strong>提示：</strong></p>
+
+<ul>
+	<li><code>2 &lt;= nums.length &lt;= 10<sup>4</sup></code></li>
+	<li><code>-10<sup>9</sup> &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>
+	<li><code>-10<sup>9</sup> &lt;= target &lt;= 10<sup>9</sup></code></li>
+	<li><strong>只会存在一个有效答案</strong></li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p><strong>进阶：</strong>你可以想出一个时间复杂度小于 <code>O(n<sup>2</sup>)</code> 的算法吗？</p>
+
 
 # 解
 
 ## 方法1
 
->[目录](#目录) | [标题](#标题) | [Javascript](#code-js-1), [C++](#code-cpp-1), [Python](#code-python-1)
-
-暴力
-
-### 分析
-
-...
+>[目录](#目录) | [标题](#标题) | [JavaScript](#code-js-1), [C++](#code-cpp-1), [Python](#code-python-1)
 
 ### 代码
 
 #### code-js-1
 
->[目录](#目录) | [标题](#标题) | [分析](#方法1) | [index-1.js](./index-1.js "index-1.js")
+>[目录](#目录) | [标题](#标题) | [方法1](#方法1) | [index-1.js](./index-1.js "index-1.js")
 
-```Javascript
+```JavaScript
 /**
  * @param {number[]} nums
  * @param {number} target
@@ -74,9 +103,10 @@ let target = 9;
 
 console.log(twoSum(nums, target));
 ```
+
 #### code-cpp-1
 
->[目录](#目录) | [标题](#标题) | [分析](#方法1) | [main-1.cpp](./main-1.cpp "main-1.cpp")
+>[目录](#目录) | [标题](#标题) | [方法1](#方法1) | [main-1.cpp](./main-1.cpp "main-1.cpp")
 
 ```C++
 #include<iostream>
@@ -121,9 +151,10 @@ int main() {
     system("pause");
 }
 ```
+
 #### code-python-1
 
->[目录](#目录) | [标题](#标题) | [分析](#方法1) | [python2-1.py](./python2-1.py "python2-1.py")
+>[目录](#目录) | [标题](#标题) | [方法1](#方法1) | [python2-1.py](./python2-1.py "python2-1.py")
 
 ```Python
 class Solution(object):
@@ -147,23 +178,18 @@ if __name__ == '__main__':
     print(result)
 
 ```
+
 ## 方法2
 
->[目录](#目录) | [标题](#标题) | [Javascript](#code-js-2), [C++](#code-cpp-2)
-
-两遍哈希表
-
-### 分析
-
-利用 map 下标
+>[目录](#目录) | [标题](#标题) | [JavaScript](#code-js-2), [C++](#code-cpp-2)
 
 ### 代码
 
 #### code-js-2
 
->[目录](#目录) | [标题](#标题) | [分析](#方法2) | [index-2.js](./index-2.js "index-2.js")
+>[目录](#目录) | [标题](#标题) | [方法2](#方法2) | [index-2.js](./index-2.js "index-2.js")
 
-```Javascript
+```JavaScript
 /**
  * @param {number[]} nums
  * @param {number} target
@@ -189,9 +215,10 @@ let target = 9;
 
 console.log(twoSum(nums, target));
 ```
+
 #### code-cpp-2
 
->[目录](#目录) | [标题](#标题) | [分析](#方法2) | [main-2.cpp](./main-2.cpp "main-2.cpp")
+>[目录](#目录) | [标题](#标题) | [方法2](#方法2) | [main-2.cpp](./main-2.cpp "main-2.cpp")
 
 ```C++
 #include<iostream>
@@ -239,23 +266,18 @@ int main() {
     system("pause");
 }
 ```
+
 ## 方法3
 
->[目录](#目录) | [标题](#标题) | [Javascript](#code-js-3), [C++](#code-cpp-3)
-
-一遍哈希表
-
-### 分析
-
-利用 map 下标
+>[目录](#目录) | [标题](#标题) | [JavaScript](#code-js-3), [C++](#code-cpp-3)
 
 ### 代码
 
 #### code-js-3
 
->[目录](#目录) | [标题](#标题) | [分析](#方法3) | [index-3.js](./index-3.js "index-3.js")
+>[目录](#目录) | [标题](#标题) | [方法3](#方法3) | [index-3.js](./index-3.js "index-3.js")
 
-```Javascript
+```JavaScript
 /**
  * @param {number[]} nums
  * @param {number} target
@@ -280,9 +302,10 @@ let target = 9;
 
 console.log(twoSum(nums, target));
 ```
+
 #### code-cpp-3
 
->[目录](#目录) | [标题](#标题) | [分析](#方法3) | [main-3.cpp](./main-3.cpp "main-3.cpp")
+>[目录](#目录) | [标题](#标题) | [方法3](#方法3) | [main-3.cpp](./main-3.cpp "main-3.cpp")
 
 ```C++
 #include<iostream>
@@ -327,3 +350,4 @@ int main() {
     system("pause");
 }
 ```
+

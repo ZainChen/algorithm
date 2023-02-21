@@ -4,57 +4,81 @@
 
 >- [标题](#标题)
 >- [解](#解)
->    - [方法一：暴力](#方法一)
->        - [code-cpp-1](#code-cpp-1)
+>    - [方法1](#方法1)
 >        - [code-js-1](#code-js-1)
+>        - [code-cpp-1](#code-cpp-1)
 
 # 标题
 
 >[目录](#目录)
 
-1108.&nbsp;IP 地址无效化
+1108&nbsp;IP 地址无效化
 
-给你一个有效的 IPv4 地址 address，返回这个 IP 地址的无效化版本。
+<p>给你一个有效的 <a href="https://baike.baidu.com/item/IPv4" target="_blank">IPv4</a> 地址&nbsp;<code>address</code>，返回这个 IP 地址的无效化版本。</p>
 
-所谓无效化 IP 地址，其实就是用 "[.]" 代替了每个 "."。
+<p>所谓无效化&nbsp;IP 地址，其实就是用&nbsp;<code>&quot;[.]&quot;</code>&nbsp;代替了每个 <code>&quot;.&quot;</code>。</p>
 
-示例 1：
+<p>&nbsp;</p>
 
-```
-输入：address = "1.1.1.1"
-输出："1[.]1[.]1[.]1"
-```
+<p><strong>示例 1：</strong></p>
 
-示例 2：
+<pre><strong>输入：</strong>address = &quot;1.1.1.1&quot;
+<strong>输出：</strong>&quot;1[.]1[.]1[.]1&quot;
+</pre>
 
-```
-输入：address = "255.100.50.0"
-输出："255[.]100[.]50[.]0"
-```
+<p><strong>示例 2：</strong></p>
 
-提示：
+<pre><strong>输入：</strong>address = &quot;255.100.50.0&quot;
+<strong>输出：</strong>&quot;255[.]100[.]50[.]0&quot;
+</pre>
 
-给出的 address 是一个有效的 IPv4 地址
+<p>&nbsp;</p>
+
+<p><strong>提示：</strong></p>
+
+<ul>
+	<li>给出的&nbsp;<code>address</code>&nbsp;是一个有效的 IPv4 地址</li>
+</ul>
+
 
 # 解
 
-## 方法一
+## 方法1
 
->[目录](#目录) | [标题](#标题) | [C++](#code-cpp-1), [JavaScript](#code-js-1)
-
-暴力
-
-### 分析
-
-...
+>[目录](#目录) | [标题](#标题) | [JavaScript](#code-js-1), [C++](#code-cpp-1)
 
 ### 代码
 
+#### code-js-1
+
+>[目录](#目录) | [标题](#标题) | [方法1](#方法1) | [index-1.js](./index-1.js "index-1.js")
+
+```JavaScript
+/**
+ * @param {string} address
+ * @return {string}
+ */
+var defangIPaddr = function (address) {
+    let s = '';
+    for (let i = 0; i < address.length; i++) {
+        s += address[i] === '.' ? '[.]' : address[i];
+    }
+    return s;
+};
+
+let sample1 = "1.1.1.1";
+let sample2 = "255.100.50.0";
+
+console.log('zain1>>>>>', defangIPaddr(sample1));
+console.log('zain2>>>>>', defangIPaddr(sample2));
+
+```
+
 #### code-cpp-1
 
->[目录](#目录) | [标题](#标题) | [分析](#方法一) | [main-1.cpp](./main-1.cpp "main-1.cpp")
+>[目录](#目录) | [标题](#标题) | [方法1](#方法1) | [main-1.cpp](./main-1.cpp "main-1.cpp")
 
-```cpp
+```C++
 #include<iostream>
 using namespace std;
 
@@ -85,26 +109,3 @@ int main() {
 }
 ```
 
-#### code-js-1
-
->[目录](#目录) | [标题](#标题) | [分析](#方法一) | [index-1.js](./index-1.js "index-1.js")
-
-```js
-/**
- * @param {string} address
- * @return {string}
- */
-var defangIPaddr = function (address) {
-    let s = '';
-    for (let i = 0; i < address.length; i++) {
-        s += address[i] === '.' ? '[.]' : address[i];
-    }
-    return s;
-};
-
-let sample1 = "1.1.1.1";
-let sample2 = "255.100.50.0";
-
-console.log('zain1>>>>>', defangIPaddr(sample1));
-console.log('zain2>>>>>', defangIPaddr(sample2));
-```

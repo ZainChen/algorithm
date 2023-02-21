@@ -4,60 +4,85 @@
 
 >- [标题](#标题)
 >- [解](#解)
->    - [方法一：分区递归](#方法一)
+>    - [方法1](#方法1)
+>        - [code-js-1](#code-js-1)
+>        - [code-cpp-1](#code-cpp-1)
 
 # 标题
 
 >[目录](#目录)
 
-654.&nbsp;最大二叉树
+654&nbsp;最大二叉树
 
-给定一个不含重复元素的整数数组。一个以此数组构建的最大二叉树定义如下：
+<p>给定一个不重复的整数数组&nbsp;<code>nums</code> 。&nbsp;<strong>最大二叉树</strong>&nbsp;可以用下面的算法从&nbsp;<code>nums</code> 递归地构建:</p>
 
-二叉树的根是数组中的最大元素。
+<ol>
+	<li>创建一个根节点，其值为&nbsp;<code>nums</code> 中的最大值。</li>
+	<li>递归地在最大值&nbsp;<strong>左边</strong>&nbsp;的&nbsp;<strong>子数组前缀上</strong>&nbsp;构建左子树。</li>
+	<li>递归地在最大值 <strong>右边</strong> 的&nbsp;<strong>子数组后缀上</strong>&nbsp;构建右子树。</li>
+</ol>
 
-    1.左子树是通过数组中最大值左边部分构造出的最大二叉树。
-    2.右子树是通过数组中最大值右边部分构造出的最大二叉树。
-    3.通过给定的数组构建最大二叉树，并且输出这个树的根节点。
+<p>返回&nbsp;<em><code>nums</code> 构建的 </em><strong><em>最大二叉树</em> </strong>。</p>
 
-#### Example 1:
+<p>&nbsp;</p>
 
-```c++
-输入: [3,2,1,6,0,5]
-输入: 返回下面这棵树的根节点：
+<p><strong>示例 1：</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/12/24/tree1.jpg" />
+<pre>
+<strong>输入：</strong>nums = [3,2,1,6,0,5]
+<strong>输出：</strong>[6,3,5,null,2,0,null,null,1]
+<strong>解释：</strong>递归调用如下所示：
+- [3,2,1,6,0,5] 中的最大值是 6 ，左边部分是 [3,2,1] ，右边部分是 [0,5] 。
+    - [3,2,1] 中的最大值是 3 ，左边部分是 [] ，右边部分是 [2,1] 。
+        - 空数组，无子节点。
+        - [2,1] 中的最大值是 2 ，左边部分是 [] ，右边部分是 [1] 。
+            - 空数组，无子节点。
+            - 只有一个元素，所以子节点是一个值为 1 的节点。
+    - [0,5] 中的最大值是 5 ，左边部分是 [0] ，右边部分是 [] 。
+        - 只有一个元素，所以子节点是一个值为 0 的节点。
+        - 空数组，无子节点。
+</pre>
 
-      6
-    /   \
-   3     5
-    \    / 
-     2  0   
-       \
-        1
-```
+<p><strong>示例 2：</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/12/24/tree2.jpg" />
+<pre>
+<strong>输入：</strong>nums = [3,2,1]
+<strong>输出：</strong>[3,null,2,null,1]
+</pre>
 
-注意:
+<p>&nbsp;</p>
 
-给定的数组的大小在 [1, 1000] 之间。
+<p><strong>提示：</strong></p>
+
+<ul>
+	<li><code>1 &lt;= nums.length &lt;= 1000</code></li>
+	<li><code>0 &lt;= nums[i] &lt;= 1000</code></li>
+	<li><code>nums</code> 中的所有整数 <strong>互不相同</strong></li>
+</ul>
+
 
 # 解
 
-## 方法一
+## 方法1
 
->[目录](#目录) | [标题](#标题) | [C++](#code-cpp-1), [JavaScript](#code-js-1)
-
-分区递归
-
-### 分析
-
-确认最大值下标，分区，递归。
+>[目录](#目录) | [标题](#标题) | [JavaScript](#code-js-1), [C++](#code-cpp-1)
 
 ### 代码
 
+#### code-js-1
+
+>[目录](#目录) | [标题](#标题) | [方法1](#方法1) | [index-1.js](./index-1.js "index-1.js")
+
+```JavaScript
+
+console.log("zain");
+```
+
 #### code-cpp-1
 
->[目录](#目录) | [标题](#标题) | [分析](#方法一) | [main-1.cpp](./main-1.cpp "main-1.cpp")
+>[目录](#目录) | [标题](#标题) | [方法1](#方法1) | [main-1.cpp](./main-1.cpp "main-1.cpp")
 
-```cpp
+```C++
 #include<iostream>
 #include<vector>
 #include<queue>
@@ -156,10 +181,3 @@ int main() {
 }
 ```
 
-#### code-js-1
-
->[目录](#目录) | [标题](#标题) | [分析](#方法一) | [index-1.js](./index-1.js "index-1.js")
-
-```js
-
-```

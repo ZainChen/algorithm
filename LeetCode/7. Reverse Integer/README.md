@@ -11,32 +11,41 @@
 
 >[Directory](#Directory)
 
-7.&nbsp;Reverse Integer
+7&nbsp;Reverse Integer
 
-Given a signed 32-bit integer x, return x with its digits reversed. If reversing x causes the value to go outside the signed 32-bit integer range [-2^31, 2^31 - 1], then return 0.
+<p>Given a signed 32-bit integer <code>x</code>, return <code>x</code><em> with its digits reversed</em>. If reversing <code>x</code> causes the value to go outside the signed 32-bit integer range <code>[-2<sup>31</sup>, 2<sup>31</sup> - 1]</code>, then return <code>0</code>.</p>
 
-**Assume the environment does not allow you to store 64-bit integers (signed or unsigned).**
+<p><strong>Assume the environment does not allow you to store 64-bit integers (signed or unsigned).</strong></p>
 
-Example 1:
-```
-Input: x = 123
-Output: 321
-```
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
 
-Example 2:
-```
-Input: x = -123
-Output: -321
-```
+<pre>
+<strong>Input:</strong> x = 123
+<strong>Output:</strong> 321
+</pre>
 
-Example 3:
-```
-Input: x = 120
-Output: 21
-```
+<p><strong class="example">Example 2:</strong></p>
 
-Constraints:
-- -2^31 <= x <= 2^31 - 1
+<pre>
+<strong>Input:</strong> x = -123
+<strong>Output:</strong> -321
+</pre>
+
+<p><strong class="example">Example 3:</strong></p>
+
+<pre>
+<strong>Input:</strong> x = 120
+<strong>Output:</strong> 21
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>-2<sup>31</sup> &lt;= x &lt;= 2<sup>31</sup> - 1</code></li>
+</ul>
+
 
 # Solution
 
@@ -44,17 +53,11 @@ Constraints:
 
 >[Directory](#Directory) | [Title](#Title) | [JavaScript](#code-js-1)
 
-[[[Method Introduction]]]
-
-### Analyze
-
-[[[Method analysis]]]
-
 ### Code
 
 #### code-js-1
 
->[Directory](#Directory) | [Title](#Title) | [Analyze](#Method1) | [index-1.js](./index-1.js "index-1.js")
+>[Directory](#Directory) | [Title](#Title) | [Method1](#Method1) | [index-1.js](./index-1.js "index-1.js")
 
 ```JavaScript
 /**
@@ -75,4 +78,6 @@ var reverse = function(value) {
 
 console.log(reverse(-1230922))
 console.log(reverse(2123456789))
+
 ```
+

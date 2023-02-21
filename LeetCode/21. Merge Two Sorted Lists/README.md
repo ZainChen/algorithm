@@ -2,70 +2,70 @@
 
 # Directory
 
->- [Title](#title)
->- [Solution](#solution)
->    - [Method-1](#method-1)
+>- [Title](#Title)
+>- [Solution](#Solution)
+>    - [Method1](#Method1)
 >        - [code-js-1](#code-js-1)
->    - [Method-2](#method-2)
+>    - [Method2](#Method2)
 >        - [code-js-2](#code-js-2)
 
 # Title
 
->[directory](#directory)
+>[Directory](#Directory)
 
-21.&nbsp;Merge Two Sorted Lists
+21&nbsp;Merge Two Sorted Lists
 
-You are given the heads of two sorted linked lists list1 and list2.
+<p>You are given the heads of two sorted linked lists <code>list1</code> and <code>list2</code>.</p>
 
-Merge the two lists in a one sorted list. The list should be made by splicing together the nodes of the first two lists.
+<p>Merge the two lists in a one <strong>sorted</strong> list. The list should be made by splicing together the nodes of the first two lists.</p>
 
-Return the head of the merged linked list.
+<p>Return <em>the head of the merged linked list</em>.</p>
 
-Example 1:
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/10/03/merge_ex1.jpg" style="width: 662px; height: 302px;" />
+<pre>
+<strong>Input:</strong> list1 = [1,2,4], list2 = [1,3,4]
+<strong>Output:</strong> [1,1,2,3,4,4]
+</pre>
 
-![merge-lists.jpeg](./image/merge-lists.jpeg "merge-lists.jpeg")
+<p><strong class="example">Example 2:</strong></p>
 
-```
-Input: list1 = [1,2,4], list2 = [1,3,4]
-Output: [1,1,2,3,4,4]
-```
+<pre>
+<strong>Input:</strong> list1 = [], list2 = []
+<strong>Output:</strong> []
+</pre>
 
-Example 2:
-```
-Input: list1 = [], list2 = []
-Output: []
-```
+<p><strong class="example">Example 3:</strong></p>
 
-Example 3:
-```
-Input: list1 = [], list2 = [0]
-Output: [0]
-```
+<pre>
+<strong>Input:</strong> list1 = [], list2 = [0]
+<strong>Output:</strong> [0]
+</pre>
 
-Constraints:
-- The number of nodes in both lists is in the range [0, 50].
-- -100 <= Node.val <= 100
-- Both list1 and list2 are sorted in non-decreasing order.
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li>The number of nodes in both lists is in the range <code>[0, 50]</code>.</li>
+	<li><code>-100 &lt;= Node.val &lt;= 100</code></li>
+	<li>Both <code>list1</code> and <code>list2</code> are sorted in <strong>non-decreasing</strong> order.</li>
+</ul>
+
 
 # Solution
 
-## Method-1
+## Method1
 
->[directory](#directory) | [title](#title) | [JavaScript](#code-js-1)
-
-...
-
-### Analyze
-
-...
+>[Directory](#Directory) | [Title](#Title) | [JavaScript](#code-js-1)
 
 ### Code
 
 #### code-js-1
 
->[directory](#directory) | [title](#title) | [analyze](#method-1) | [index-1.js](./index-1.js "index-1.js")
+>[Directory](#Directory) | [Title](#Title) | [Method1](#Method1) | [index-1.js](./index-1.js "index-1.js")
 
-```js
+```JavaScript
 /**
  * Definition for singly-linked list.
  * function ListNode(val, next) {
@@ -156,25 +156,20 @@ let linkTwo = generateLink([1,3,4])
 printLinkNode(linkTwo)
 const mergeLink = mergeTwoLists(linkOne, linkTwo)
 printLinkNode(mergeLink)
+
 ```
 
-## Method-2
+## Method2
 
->[directory](#directory) | [title](#title) | [JavaScript](#code-js-2)
-
-...
-
-### Analyze
-
-...
+>[Directory](#Directory) | [Title](#Title) | [JavaScript](#code-js-2)
 
 ### Code
 
 #### code-js-2
 
->[directory](#directory) | [title](#title) | [analyze](#method-2) | [index-2.js](./index-2.js "index-2.js")
+>[Directory](#Directory) | [Title](#Title) | [Method2](#Method2) | [index-2.js](./index-2.js "index-2.js")
 
-```js
+```JavaScript
 /**
  * Definition for singly-linked list.
  * function ListNode(val, next) {
@@ -254,4 +249,6 @@ let linkTwo = generateLink([1,3,4])
 printLinkNode(linkTwo)
 const mergeLink = mergeTwoLists(linkOne, linkTwo)
 printLinkNode(mergeLink)
+
 ```
+

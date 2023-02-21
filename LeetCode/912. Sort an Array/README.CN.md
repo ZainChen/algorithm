@@ -4,54 +4,59 @@
 
 >- [标题](#标题)
 >- [解](#解)
->    - [方法一](#方法一)
+>    - [方法1](#方法1)
 >        - [code-ts-1](#code-ts-1)
 
 # 标题
 
 >[目录](#目录)
 
-912.&nbsp;排序数组
+912&nbsp;排序数组
 
-给你一个整数数组 nums，请你将该数组升序排列。
+<p>给你一个整数数组&nbsp;<code>nums</code>，请你将该数组升序排列。</p>
 
-示例 1：
+<p>&nbsp;</p>
 
-```
-输入：nums = [5,2,3,1]
-输出：[1,2,3,5]
-```
+<ol>
+</ol>
 
-示例 2：
+<p><strong>示例 1：</strong></p>
 
-```
-输入：nums = [5,1,1,2,0,0]
-输出：[0,0,1,1,2,5]
-```
+<pre>
+<strong>输入：</strong>nums = [5,2,3,1]
+<strong>输出：</strong>[1,2,3,5]
+</pre>
 
-提示：
-- 1 <= nums.length <= 5 * 10^4
-- -5 * 10^4 <= nums[i] <= 5 * 10^4
+<p><strong>示例 2：</strong></p>
+
+<pre>
+<strong>输入：</strong>nums = [5,1,1,2,0,0]
+<strong>输出：</strong>[0,0,1,1,2,5]
+</pre>
+
+<p>&nbsp;</p>
+
+<p><strong>提示：</strong></p>
+
+<ul>
+	<li><code>1 &lt;= nums.length &lt;= 5 * 10<sup>4</sup></code></li>
+	<li><code>-5 * 10<sup>4</sup> &lt;= nums[i] &lt;= 5 * 10<sup>4</sup></code></li>
+</ul>
+
 
 # 解
 
-## 方法一
+## 方法1
 
 >[目录](#目录) | [标题](#标题) | [TypeScript](#code-ts-1)
-
-...
-
-### 分析
-
-...
 
 ### 代码
 
 #### code-ts-1
 
->[目录](#目录) | [标题](#标题) | [分析](#方法一) | [index-1.ts](./index-1.ts "index-1.ts")
+>[目录](#目录) | [标题](#标题) | [方法1](#方法1) | [index-1.ts](./index-1.ts "index-1.ts")
 
-```js
+```TypeScript
 // js 内置排序函数
 // function sortArray(nums: number[]): number[] {
 //   return nums.sort((a, b) => a - b)
@@ -79,4 +84,6 @@ function sortArray(nums: number[]): number[] {
 };
 
 console.log('sortArray', sortArray([5,2,3,1,4]))
+
 ```
+

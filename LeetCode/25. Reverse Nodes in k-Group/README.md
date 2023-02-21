@@ -11,51 +11,41 @@
 
 >[Directory](#Directory)
 
-25.&nbsp;Reverse Nodes in k-Group
+25&nbsp;Reverse Nodes in k-Group
 
-Given a linked list, reverse the nodes of a linked list k at a time and return its modified list.
+<p>Given the <code>head</code> of a linked list, reverse the nodes of the list <code>k</code> at a time, and return <em>the modified list</em>.</p>
 
-k is a positive integer and is less than or equal to the length of the linked list. If the number of nodes is not a multiple of k then left-out nodes, in the end, should remain as it is.
+<p><code>k</code> is a positive integer and is less than or equal to the length of the linked list. If the number of nodes is not a multiple of <code>k</code> then left-out nodes, in the end, should remain as it is.</p>
 
-Follow up:
-- Could you solve the problem in O(1) extra memory space?
-- You may not alter the values in the list's nodes, only nodes itself may be changed.
+<p>You may not alter the values in the list&#39;s nodes, only nodes themselves may be changed.</p>
 
-Example 1:
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/10/03/reverse_ex1.jpg" style="width: 542px; height: 222px;" />
+<pre>
+<strong>Input:</strong> head = [1,2,3,4,5], k = 2
+<strong>Output:</strong> [2,1,4,3,5]
+</pre>
 
-![reverse_ex1](./image/reverse_ex1.jpg "reverse_ex1")
+<p><strong class="example">Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/10/03/reverse_ex2.jpg" style="width: 542px; height: 222px;" />
+<pre>
+<strong>Input:</strong> head = [1,2,3,4,5], k = 3
+<strong>Output:</strong> [3,2,1,4,5]
+</pre>
 
-```
-Input: head = [1,2,3,4,5], k = 2
-Output: [2,1,4,3,5]
-```
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
 
-Example 2:
+<ul>
+	<li>The number of nodes in the list is <code>n</code>.</li>
+	<li><code>1 &lt;= k &lt;= n &lt;= 5000</code></li>
+	<li><code>0 &lt;= Node.val &lt;= 1000</code></li>
+</ul>
 
-![reverse_ex2](./image/reverse_ex2.jpg "reverse_ex2")
+<p>&nbsp;</p>
+<p><strong>Follow-up:</strong> Can you solve the problem in <code>O(1)</code> extra memory space?</p>
 
-```
-Input: head = [1,2,3,4,5], k = 3
-Output: [3,2,1,4,5]
-```
-
-Example 3:
-```
-Input: head = [1,2,3,4,5], k = 1
-Output: [1,2,3,4,5]
-```
-
-Example 4:
-```
-Input: head = [1], k = 1
-Output: [1]
-```
-
-Constraints:
-- The number of nodes in the list is in the range sz.
-- 1 <= sz <= 5000
-- 0 <= Node.val <= 1000
-- 1 <= k <= sz
 
 # Solution
 
@@ -63,17 +53,11 @@ Constraints:
 
 >[Directory](#Directory) | [Title](#Title) | [JavaScript](#code-js-1)
 
-[[[Method Introduction]]]
-
-### Analyze
-
-[[[Method analysis]]]
-
 ### Code
 
 #### code-js-1
 
->[Directory](#Directory) | [Title](#Title) | [Analyze](#Method1) | [index-1.js](./index-1.js "index-1.js")
+>[Directory](#Directory) | [Title](#Title) | [Method1](#Method1) | [index-1.js](./index-1.js "index-1.js")
 
 ```JavaScript
 /**
@@ -195,3 +179,4 @@ printLinkNode(headNode1);
 printLinkNode(reverseKGroup(headNode1, 2));
 
 ```
+

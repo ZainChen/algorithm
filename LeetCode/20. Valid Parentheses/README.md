@@ -2,81 +2,71 @@
 
 # Directory
 
->- [Title](#title)
->- [Solution](#solution)
->    - [Method-1: Violence](#method-1)
+>- [Title](#Title)
+>- [Solution](#Solution)
+>    - [Method1](#Method1)
 >        - [code-js-1](#code-js-1)
 
 # Title
 
->[directory](#directory)
+>[Directory](#Directory)
 
-20.&nbsp;Valid Parentheses
+20&nbsp;Valid Parentheses
 
-Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+<p>Given a string <code>s</code> containing just the characters <code>&#39;(&#39;</code>, <code>&#39;)&#39;</code>, <code>&#39;{&#39;</code>, <code>&#39;}&#39;</code>, <code>&#39;[&#39;</code> and <code>&#39;]&#39;</code>, determine if the input string is valid.</p>
 
-An input string is valid if:
+<p>An input string is valid if:</p>
 
-Open brackets must be closed by the same type of brackets.
+<ol>
+	<li>Open brackets must be closed by the same type of brackets.</li>
+	<li>Open brackets must be closed in the correct order.</li>
+	<li>Every close bracket has a corresponding open bracket of the same type.</li>
+</ol>
 
-Open brackets must be closed in the correct order.
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
 
-Note that an empty string is also considered valid.
+<pre>
+<strong>Input:</strong> s = &quot;()&quot;
+<strong>Output:</strong> true
+</pre>
 
-Example 1:
+<p><strong class="example">Example 2:</strong></p>
 
-```
-Input: "()"
-Output: true
-```
+<pre>
+<strong>Input:</strong> s = &quot;()[]{}&quot;
+<strong>Output:</strong> true
+</pre>
 
-Example 2:
+<p><strong class="example">Example 3:</strong></p>
 
-```
-Input: "()[]{}"
-Output: true
-```
+<pre>
+<strong>Input:</strong> s = &quot;(]&quot;
+<strong>Output:</strong> false
+</pre>
 
-Example 3:
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
 
-```
-Input: "(]"
-Output: false
-```
+<ul>
+	<li><code>1 &lt;= s.length &lt;= 10<sup>4</sup></code></li>
+	<li><code>s</code> consists of parentheses only <code>&#39;()[]{}&#39;</code>.</li>
+</ul>
 
-Example 4:
-
-```
-Input: "([)]"
-Output: false
-```
-
-Example 5:
-
-```
-Input: "{[]}"
-Output: true
-```
 
 # Solution
 
-## Method-1
+## Method1
 
->[directory](#directory) | [title](#title) | [JavaScript](#code-js-1)
-
-Violence
-
-### Analyze
-
-...
+>[Directory](#Directory) | [Title](#Title) | [JavaScript](#code-js-1)
 
 ### Code
 
 #### code-js-1
 
->[directory](#directory) | [title](#title) | [analyze](#method-1) | [index-1.js](./index-1.js "index-1.js")
+>[Directory](#Directory) | [Title](#Title) | [Method1](#Method1) | [index-1.js](./index-1.js "index-1.js")
 
-```js
+```JavaScript
 /**
  * 指定括号翻转
  * @param {*} s 
@@ -130,4 +120,6 @@ console.log('zain5>>>>>', isValid(sample5));
 console.log('zain6>>>>>', isValid(sample6));
 console.log('zain7>>>>>', isValid(sample7));
 console.log('zain8>>>>>', isValid(sample8));
+
 ```
+

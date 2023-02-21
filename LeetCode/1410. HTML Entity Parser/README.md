@@ -11,56 +11,49 @@
 
 >[Directory](#Directory)
 
-1410.&nbsp;HTML Entity Parser
+1410&nbsp;HTML Entity Parser
 
-HTML entity parser is the parser that takes HTML code as input and replace all the entities of the special characters by the characters itself.
+<p><strong>HTML entity parser</strong> is the parser that takes HTML code as input and replace all the entities of the special characters by the characters itself.</p>
 
-The special characters and their entities for HTML are:
-- Quotation Mark: the entity is &quot; and symbol character is ".
-- Single Quote Mark: the entity is &apos; and symbol character is '.
-- Ampersand: the entity is &amp; and symbol character is &.
-- Greater Than Sign: the entity is &gt; and symbol character is >.
-- Less Than Sign: the entity is &lt; and symbol character is <.
-- Slash: the entity is &frasl; and symbol character is /.
+<p>The special characters and their entities for HTML are:</p>
 
-Given the input text string to the HTML parser, you have to implement the entity parser.
+<ul>
+	<li><strong>Quotation Mark:</strong> the entity is <code>&amp;quot;</code> and symbol character is <code>&quot;</code>.</li>
+	<li><strong>Single Quote Mark:</strong> the entity is <code>&amp;apos;</code> and symbol character is <code>&#39;</code>.</li>
+	<li><strong>Ampersand:</strong> the entity is <code>&amp;amp;</code> and symbol character is <code>&amp;</code>.</li>
+	<li><strong>Greater Than Sign:</strong> the entity is <code>&amp;gt;</code> and symbol character is <code>&gt;</code>.</li>
+	<li><strong>Less Than Sign:</strong> the entity is <code>&amp;lt;</code> and symbol character is <code>&lt;</code>.</li>
+	<li><strong>Slash:</strong> the entity is <code>&amp;frasl;</code> and symbol character is <code>/</code>.</li>
+</ul>
 
-Return the text after replacing the entities by the special characters.
+<p>Given the input <code>text</code> string to the HTML parser, you have to implement the entity parser.</p>
 
-Example 1:
-```
-Input: text = "&amp; is an HTML entity but &ambassador; is not."
-Output: "& is an HTML entity but &ambassador; is not."
-Explanation: The parser will replace the &amp; entity by &
-```
+<p>Return <em>the text after replacing the entities by the special characters</em>.</p>
 
-Example 2:
-```
-Input: text = "and I quote: &quot;...&quot;"
-Output: "and I quote: \"...\""
-```
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
 
-Example 3:
-```
-Input: text = "Stay home! Practice on Leetcode :)"
-Output: "Stay home! Practice on Leetcode :)"
-```
+<pre>
+<strong>Input:</strong> text = &quot;&amp;amp; is an HTML entity but &amp;ambassador; is not.&quot;
+<strong>Output:</strong> &quot;&amp; is an HTML entity but &amp;ambassador; is not.&quot;
+<strong>Explanation:</strong> The parser will replace the &amp;amp; entity by &amp;
+</pre>
 
-Example 4:
-```
-Input: text = "x &gt; y &amp;&amp; x &lt; y is always false"
-Output: "x > y && x < y is always false"
-```
+<p><strong class="example">Example 2:</strong></p>
 
-Example 5:
-```
-Input: text = "leetcode.com&frasl;problemset&frasl;all"
-Output: "leetcode.com/problemset/all"
-```
+<pre>
+<strong>Input:</strong> text = &quot;and I quote: &amp;quot;...&amp;quot;&quot;
+<strong>Output:</strong> &quot;and I quote: \&quot;...\&quot;&quot;
+</pre>
 
-Constraints:
-- 1 <= text.length <= 10^5
-- The string may contain any possible characters out of all the 256 ASCII characters.
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>1 &lt;= text.length &lt;= 10<sup>5</sup></code></li>
+	<li>The string may contain any possible characters out of all the 256 ASCII characters.</li>
+</ul>
+
 
 # Solution
 
@@ -68,17 +61,11 @@ Constraints:
 
 >[Directory](#Directory) | [Title](#Title) | [JavaScript](#code-js-1)
 
-[[[Method Introduction]]]
-
-### Analyze
-
-[[[Method analysis]]]
-
 ### Code
 
 #### code-js-1
 
->[Directory](#Directory) | [Title](#Title) | [Analyze](#Method1) | [index-1.js](./index-1.js "index-1.js")
+>[Directory](#Directory) | [Title](#Title) | [Method1](#Method1) | [index-1.js](./index-1.js "index-1.js")
 
 ```JavaScript
 /**
@@ -136,3 +123,4 @@ console.log('zain4>>>>>', entityParser(sample4));
 console.log('zain5>>>>>', entityParser(sample5));
 console.log('zain5>>>>>', entityParser(sample6));
 ```
+

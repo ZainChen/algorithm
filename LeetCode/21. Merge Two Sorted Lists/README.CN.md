@@ -4,64 +4,66 @@
 
 >- [标题](#标题)
 >- [解](#解)
->    - [方法一](#方法一)
+>    - [方法1](#方法1)
 >        - [code-js-1](#code-js-1)
->    - [方法二](#方法二)
+>    - [方法2](#方法2)
 >        - [code-js-2](#code-js-2)
 
 # 标题
 
 >[目录](#目录)
 
-21.&nbsp;合并两个有序链表
+21&nbsp;合并两个有序链表
 
-将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 
+<p>将两个升序链表合并为一个新的 <strong>升序</strong> 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 </p>
 
-示例 1：
+<p> </p>
 
-![merge-lists.jpeg](./image/merge-lists.jpeg "merge-lists.jpeg")
+<p><strong>示例 1：</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/10/03/merge_ex1.jpg" style="width: 662px; height: 302px;" />
+<pre>
+<strong>输入：</strong>l1 = [1,2,4], l2 = [1,3,4]
+<strong>输出：</strong>[1,1,2,3,4,4]
+</pre>
 
-```
-输入：l1 = [1,2,4], l2 = [1,3,4]
-输出：[1,1,2,3,4,4]
-```
+<p><strong>示例 2：</strong></p>
 
-示例 2：
-```
-输入：l1 = [], l2 = []
-输出：[]
-```
+<pre>
+<strong>输入：</strong>l1 = [], l2 = []
+<strong>输出：</strong>[]
+</pre>
 
-示例 3：
-```
-输入：l1 = [], l2 = [0]
-输出：[0]
-```
+<p><strong>示例 3：</strong></p>
 
-提示：
-- 两个链表的节点数目范围是 [0, 50]
-- -100 <= Node.val <= 100
-- l1 和 l2 均按 非递减顺序 排列
+<pre>
+<strong>输入：</strong>l1 = [], l2 = [0]
+<strong>输出：</strong>[0]
+</pre>
+
+<p> </p>
+
+<p><strong>提示：</strong></p>
+
+<ul>
+	<li>两个链表的节点数目范围是 <code>[0, 50]</code></li>
+	<li><code>-100 <= Node.val <= 100</code></li>
+	<li><code>l1</code> 和 <code>l2</code> 均按 <strong>非递减顺序</strong> 排列</li>
+</ul>
+
 
 # 解
 
-## 方法一
+## 方法1
 
 >[目录](#目录) | [标题](#标题) | [JavaScript](#code-js-1)
-
-...
-
-### 分析
-
-...
 
 ### 代码
 
 #### code-js-1
 
->[目录](#目录) | [标题](#标题) | [分析](#方法一) | [index-1.js](./index-1.js "index-1.js")
+>[目录](#目录) | [标题](#标题) | [方法1](#方法1) | [index-1.js](./index-1.js "index-1.js")
 
-```js
+```JavaScript
 /**
  * Definition for singly-linked list.
  * function ListNode(val, next) {
@@ -152,25 +154,20 @@ let linkTwo = generateLink([1,3,4])
 printLinkNode(linkTwo)
 const mergeLink = mergeTwoLists(linkOne, linkTwo)
 printLinkNode(mergeLink)
+
 ```
 
-## 方法二
+## 方法2
 
 >[目录](#目录) | [标题](#标题) | [JavaScript](#code-js-2)
-
-...
-
-### 分析
-
-...
 
 ### 代码
 
 #### code-js-2
 
->[目录](#目录) | [标题](#标题) | [分析](#方法二) | [index-2.js](./index-2.js "index-2.js")
+>[目录](#目录) | [标题](#标题) | [方法2](#方法2) | [index-2.js](./index-2.js "index-2.js")
 
-```js
+```JavaScript
 /**
  * Definition for singly-linked list.
  * function ListNode(val, next) {
@@ -250,4 +247,6 @@ let linkTwo = generateLink([1,3,4])
 printLinkNode(linkTwo)
 const mergeLink = mergeTwoLists(linkOne, linkTwo)
 printLinkNode(mergeLink)
+
 ```
+

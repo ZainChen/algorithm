@@ -11,38 +11,41 @@
 
 >[目录](#目录)
 
-108.&nbsp;将有序数组转换为二叉搜索树
+108&nbsp;将有序数组转换为二叉搜索树
 
-给你一个整数数组 nums ，其中元素已经按 升序 排列，请你将其转换为一棵 高度平衡 二叉搜索树。
+<p>给你一个整数数组 <code>nums</code> ，其中元素已经按 <strong>升序</strong> 排列，请你将其转换为一棵 <strong>高度平衡</strong> 二叉搜索树。</p>
 
-高度平衡 二叉树是一棵满足「每个节点的左右两个子树的高度差的绝对值不超过 1 」的二叉树。
+<p><strong>高度平衡 </strong>二叉树是一棵满足「每个节点的左右两个子树的高度差的绝对值不超过 1 」的二叉树。</p>
 
-示例 1：
+<p>&nbsp;</p>
 
-![tree](./image/btree1.jpeg "tree")
+<p><strong>示例 1：</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/02/18/btree1.jpg" style="width: 302px; height: 222px;" />
+<pre>
+<strong>输入：</strong>nums = [-10,-3,0,5,9]
+<strong>输出：</strong>[0,-3,9,-10,null,5]
+<strong>解释：</strong>[0,-10,5,null,-3,null,9] 也将被视为正确答案：
+<img alt="" src="https://assets.leetcode.com/uploads/2021/02/18/btree2.jpg" style="width: 302px; height: 222px;" />
+</pre>
 
-```
-输入：nums = [-10,-3,0,5,9]
-输出：[0,-3,9,-10,null,5]
-解释：[0,-10,5,null,-3,null,9] 也将被视为正确答案：
-```
+<p><strong>示例 2：</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/02/18/btree.jpg" style="width: 342px; height: 142px;" />
+<pre>
+<strong>输入：</strong>nums = [1,3]
+<strong>输出：</strong>[3,1]
+<strong>解释：</strong>[1,null,3] 和 [3,1] 都是高度平衡二叉搜索树。
+</pre>
 
-![tree](./image/btree2.jpeg "tree")
+<p>&nbsp;</p>
 
-示例 2：
+<p><strong>提示：</strong></p>
 
-![tree](./image/btree3.jpeg "tree")
+<ul>
+	<li><code>1 &lt;= nums.length &lt;= 10<sup>4</sup></code></li>
+	<li><code>-10<sup>4</sup> &lt;= nums[i] &lt;= 10<sup>4</sup></code></li>
+	<li><code>nums</code> 按 <strong>严格递增</strong> 顺序排列</li>
+</ul>
 
-```
-输入：nums = [1,3]
-输出：[3,1]
-解释：[1,null,3] 和 [3,1] 都是高度平衡二叉搜索树。
-```
-
-提示：
-- 1 <= nums.length <= 104
-- -104 <= nums[i] <= 104
-- nums 按 严格递增 顺序排列
 
 # 解
 
@@ -50,17 +53,11 @@
 
 >[目录](#目录) | [标题](#标题) | [JavaScript](#code-js-1)
 
-[[[方法简介]]]
-
-### 分析
-
-[[[方法分析]]]
-
 ### 代码
 
 #### code-js-1
 
->[目录](#目录) | [标题](#标题) | [分析](#方法1) | [index-1.js](./index-1.js "index-1.js")
+>[目录](#目录) | [标题](#标题) | [方法1](#方法1) | [index-1.js](./index-1.js "index-1.js")
 
 ```JavaScript
 /**
@@ -133,4 +130,6 @@ console.log('sortedArrayToBST2222', tree2, printTreeLevel(tree2))
 
 const tree3 = sortedArrayToBST([-10,-3,0,5,7,9])
 console.log('sortedArrayToBST333', tree3, printTreeLevel(tree3))
+
 ```
+

@@ -1,60 +1,33 @@
-[LeetCode](../README.CN.md) | [English](./README.md) | 简体中文
+[LeetCode](../README.md) | English | [简体中文](./README.CN.md)
 
-# 目录
+# Directory
 
->- [标题](#标题)
->- [解](#解)
->    - [方法1](#方法1)
+>- [Title](#Title)
+>- [Solution](#Solution)
+>    - [Method1](#Method1)
 >        - [code-js-1](#code-js-1)
->    - [方法2](#方法2)
+>    - [Method2](#Method2)
 >        - [code-js-2](#code-js-2)
 
-# 标题
+# Title
 
->[目录](#目录)
+>[Directory](#Directory)
 
-剑指 Offer 30&nbsp;包含min函数的栈
+剑指 Offer 30&nbsp;包含min函数的栈 LCOF
 
-<p>定义栈的数据结构，请在该类型中实现一个能够得到栈的最小元素的 min 函数在该栈中，调用 min、push 及 pop 的时间复杂度都是 O(1)。</p>
+English description is not available for the problem. Please switch to Chinese.
 
-<p>&nbsp;</p>
+# Solution
 
-<p><strong>示例:</strong></p>
+## Method1
 
-<pre>MinStack minStack = new MinStack();
-minStack.push(-2);
-minStack.push(0);
-minStack.push(-3);
-minStack.min();   --&gt; 返回 -3.
-minStack.pop();
-minStack.top();      --&gt; 返回 0.
-minStack.min();   --&gt; 返回 -2.
-</pre>
+>[Directory](#Directory) | [Title](#Title) | [JavaScript](#code-js-1)
 
-<p>&nbsp;</p>
-
-<p><strong>提示：</strong></p>
-
-<ol>
-	<li>各函数的调用总次数不超过 20000 次</li>
-</ol>
-
-<p>&nbsp;</p>
-
-<p>注意：本题与主站 155 题相同：<a href="https://leetcode-cn.com/problems/min-stack/">https://leetcode-cn.com/problems/min-stack/</a></p>
-
-
-# 解
-
-## 方法1
-
->[目录](#目录) | [标题](#标题) | [JavaScript](#code-js-1)
-
-### 代码
+### Code
 
 #### code-js-1
 
->[目录](#目录) | [标题](#标题) | [方法1](#方法1) | [index-1.js](./index-1.js "index-1.js")
+>[Directory](#Directory) | [Title](#Title) | [Method1](#Method1) | [index-1.js](./index-1.js "index-1.js")
 
 ```JavaScript
 /**
@@ -135,15 +108,15 @@ console.log(minStack2.min())
 
 ```
 
-## 方法2
+## Method2
 
->[目录](#目录) | [标题](#标题) | [JavaScript](#code-js-2)
+>[Directory](#Directory) | [Title](#Title) | [JavaScript](#code-js-2)
 
-### 代码
+### Code
 
 #### code-js-2
 
->[目录](#目录) | [标题](#标题) | [方法2](#方法2) | [index-2.js](./index-2.js "index-2.js")
+>[Directory](#Directory) | [Title](#Title) | [Method2](#Method2) | [index-2.js](./index-2.js "index-2.js")
 
 ```JavaScript
 /**

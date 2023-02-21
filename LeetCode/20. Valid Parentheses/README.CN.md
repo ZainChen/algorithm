@@ -4,79 +4,71 @@
 
 >- [标题](#标题)
 >- [解](#解)
->    - [方法一：暴力](#方法一)
+>    - [方法1](#方法1)
 >        - [code-js-1](#code-js-1)
 
 # 标题
 
 >[目录](#目录)
 
-20.&nbsp;有效的括号
+20&nbsp;有效的括号
 
-给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串，判断字符串是否有效。
+<p>给定一个只包括 <code>'('</code>，<code>')'</code>，<code>'{'</code>，<code>'}'</code>，<code>'['</code>，<code>']'</code>&nbsp;的字符串 <code>s</code> ，判断字符串是否有效。</p>
 
-有效字符串需满足：
+<p>有效字符串需满足：</p>
 
-左括号必须用相同类型的右括号闭合。
+<ol>
+	<li>左括号必须用相同类型的右括号闭合。</li>
+	<li>左括号必须以正确的顺序闭合。</li>
+	<li>每个右括号都有一个对应的相同类型的左括号。</li>
+</ol>
 
-左括号必须以正确的顺序闭合。
+<p>&nbsp;</p>
 
-注意空字符串可被认为是有效字符串。
+<p><strong>示例 1：</strong></p>
 
-示例 1:
+<pre>
+<strong>输入：</strong>s = "()"
+<strong>输出：</strong>true
+</pre>
 
-```
-输入: "()"
-输出: true
-```
+<p><strong>示例&nbsp;2：</strong></p>
 
-示例 2:
+<pre>
+<strong>输入：</strong>s = "()[]{}"
+<strong>输出：</strong>true
+</pre>
 
-```
-输入: "()[]{}"
-输出: true
-```
+<p><strong>示例&nbsp;3：</strong></p>
 
-示例 3:
+<pre>
+<strong>输入：</strong>s = "(]"
+<strong>输出：</strong>false
+</pre>
 
-```
-输入: "(]"
-输出: false
-```
+<p>&nbsp;</p>
 
-示例 4:
+<p><strong>提示：</strong></p>
 
-```
-输入: "([)]"
-输出: false
-```
+<ul>
+	<li><code>1 &lt;= s.length &lt;= 10<sup>4</sup></code></li>
+	<li><code>s</code> 仅由括号 <code>'()[]{}'</code> 组成</li>
+</ul>
 
-示例 5:
-
-```
-输入: "{[]}"
-输出: true
-```
 
 # 解
 
-## 方法一
+## 方法1
 
 >[目录](#目录) | [标题](#标题) | [JavaScript](#code-js-1)
-
-暴力
-
-### 分析
-
-...
 
 ### 代码
 
 #### code-js-1
 
->[目录](#目录) | [标题](#标题) | [分析](#方法一) | [index-1.js](./index-1.js "index-1.js")
+>[目录](#目录) | [标题](#标题) | [方法1](#方法1) | [index-1.js](./index-1.js "index-1.js")
 
-```js
+```JavaScript
 /**
  * 指定括号翻转
  * @param {*} s 
@@ -130,4 +122,6 @@ console.log('zain5>>>>>', isValid(sample5));
 console.log('zain6>>>>>', isValid(sample6));
 console.log('zain7>>>>>', isValid(sample7));
 console.log('zain8>>>>>', isValid(sample8));
+
 ```
+

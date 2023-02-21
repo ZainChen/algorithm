@@ -4,14 +4,14 @@
 
 >- [Title](#Title)
 >- [Solution](#Solution)
->    - [Method1: Violence](#Method1)
+>    - [Method1](#Method1)
 >        - [code-js-1](#code-js-1)
 >        - [code-cpp-1](#code-cpp-1)
 >        - [code-python-1](#code-python-1)
->    - [Method2: Two-pass hash table](#Method2)
+>    - [Method2](#Method2)
 >        - [code-js-2](#code-js-2)
 >        - [code-cpp-2](#code-cpp-2)
->    - [Method3: Once hash table](#Method3)
+>    - [Method3](#Method3)
 >        - [code-js-3](#code-js-3)
 >        - [code-cpp-3](#code-cpp-3)
 
@@ -19,38 +19,63 @@
 
 >[Directory](#Directory)
 
-1.&nbsp;Two Sum
+1&nbsp;Two Sum
 
-Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+<p>Given an array of integers <code>nums</code>&nbsp;and an integer <code>target</code>, return <em>indices of the two numbers such that they add up to <code>target</code></em>.</p>
 
-You may assume that each input would have exactly one solution, and you may not use the same element twice.
+<p>You may assume that each input would have <strong><em>exactly</em> one solution</strong>, and you may not use the <em>same</em> element twice.</p>
 
-Example:
-```
-Given nums = [2, 7, 11, 15], target = 9,
-Because nums[0] + nums[1] = 2 + 7 = 9,
-return [0, 1].
-```
+<p>You can return the answer in any order.</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+
+<pre>
+<strong>Input:</strong> nums = [2,7,11,15], target = 9
+<strong>Output:</strong> [0,1]
+<strong>Explanation:</strong> Because nums[0] + nums[1] == 9, we return [0, 1].
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+
+<pre>
+<strong>Input:</strong> nums = [3,2,4], target = 6
+<strong>Output:</strong> [1,2]
+</pre>
+
+<p><strong class="example">Example 3:</strong></p>
+
+<pre>
+<strong>Input:</strong> nums = [3,3], target = 6
+<strong>Output:</strong> [0,1]
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>2 &lt;= nums.length &lt;= 10<sup>4</sup></code></li>
+	<li><code>-10<sup>9</sup> &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>
+	<li><code>-10<sup>9</sup> &lt;= target &lt;= 10<sup>9</sup></code></li>
+	<li><strong>Only one valid answer exists.</strong></li>
+</ul>
+
+<p>&nbsp;</p>
+<strong>Follow-up:&nbsp;</strong>Can you come up with an algorithm that is less than&nbsp;<code>O(n<sup>2</sup>)&nbsp;</code>time complexity?
 
 # Solution
 
 ## Method1
 
->[Directory](#Directory) | [Title](#Title) | [Javascript](#code-js-1), [C++](#code-cpp-1), [Python](#code-python-1)
-
-Violence
-
-### Analyze
-
-...
+>[Directory](#Directory) | [Title](#Title) | [JavaScript](#code-js-1), [C++](#code-cpp-1), [Python](#code-python-1)
 
 ### Code
 
 #### code-js-1
 
->[Directory](#Directory) | [Title](#Title) | [Analyze](#Method1) | [index-1.js](./index-1.js "index-1.js")
+>[Directory](#Directory) | [Title](#Title) | [Method1](#Method1) | [index-1.js](./index-1.js "index-1.js")
 
-```Javascript
+```JavaScript
 /**
  * @param {number[]} nums
  * @param {number} target
@@ -74,9 +99,10 @@ let target = 9;
 
 console.log(twoSum(nums, target));
 ```
+
 #### code-cpp-1
 
->[Directory](#Directory) | [Title](#Title) | [Analyze](#Method1) | [main-1.cpp](./main-1.cpp "main-1.cpp")
+>[Directory](#Directory) | [Title](#Title) | [Method1](#Method1) | [main-1.cpp](./main-1.cpp "main-1.cpp")
 
 ```C++
 #include<iostream>
@@ -121,9 +147,10 @@ int main() {
     system("pause");
 }
 ```
+
 #### code-python-1
 
->[Directory](#Directory) | [Title](#Title) | [Analyze](#Method1) | [python2-1.py](./python2-1.py "python2-1.py")
+>[Directory](#Directory) | [Title](#Title) | [Method1](#Method1) | [python2-1.py](./python2-1.py "python2-1.py")
 
 ```Python
 class Solution(object):
@@ -147,23 +174,18 @@ if __name__ == '__main__':
     print(result)
 
 ```
+
 ## Method2
 
->[Directory](#Directory) | [Title](#Title) | [Javascript](#code-js-2), [C++](#code-cpp-2)
-
-Two-pass hash table
-
-### Analyze
-
-Use the map subscript
+>[Directory](#Directory) | [Title](#Title) | [JavaScript](#code-js-2), [C++](#code-cpp-2)
 
 ### Code
 
 #### code-js-2
 
->[Directory](#Directory) | [Title](#Title) | [Analyze](#Method2) | [index-2.js](./index-2.js "index-2.js")
+>[Directory](#Directory) | [Title](#Title) | [Method2](#Method2) | [index-2.js](./index-2.js "index-2.js")
 
-```Javascript
+```JavaScript
 /**
  * @param {number[]} nums
  * @param {number} target
@@ -189,9 +211,10 @@ let target = 9;
 
 console.log(twoSum(nums, target));
 ```
+
 #### code-cpp-2
 
->[Directory](#Directory) | [Title](#Title) | [Analyze](#Method2) | [main-2.cpp](./main-2.cpp "main-2.cpp")
+>[Directory](#Directory) | [Title](#Title) | [Method2](#Method2) | [main-2.cpp](./main-2.cpp "main-2.cpp")
 
 ```C++
 #include<iostream>
@@ -239,23 +262,18 @@ int main() {
     system("pause");
 }
 ```
+
 ## Method3
 
->[Directory](#Directory) | [Title](#Title) | [Javascript](#code-js-3), [C++](#code-cpp-3)
-
-Once hash table
-
-### Analyze
-
-Use the map subscript.
+>[Directory](#Directory) | [Title](#Title) | [JavaScript](#code-js-3), [C++](#code-cpp-3)
 
 ### Code
 
 #### code-js-3
 
->[Directory](#Directory) | [Title](#Title) | [Analyze](#Method3) | [index-3.js](./index-3.js "index-3.js")
+>[Directory](#Directory) | [Title](#Title) | [Method3](#Method3) | [index-3.js](./index-3.js "index-3.js")
 
-```Javascript
+```JavaScript
 /**
  * @param {number[]} nums
  * @param {number} target
@@ -280,9 +298,10 @@ let target = 9;
 
 console.log(twoSum(nums, target));
 ```
+
 #### code-cpp-3
 
->[Directory](#Directory) | [Title](#Title) | [Analyze](#Method3) | [main-3.cpp](./main-3.cpp "main-3.cpp")
+>[Directory](#Directory) | [Title](#Title) | [Method3](#Method3) | [main-3.cpp](./main-3.cpp "main-3.cpp")
 
 ```C++
 #include<iostream>
@@ -327,3 +346,4 @@ int main() {
     system("pause");
 }
 ```
+

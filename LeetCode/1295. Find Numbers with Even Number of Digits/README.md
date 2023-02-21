@@ -2,67 +2,93 @@
 
 # Directory
 
->- [Title](#title)
->- [Solution](#solution)
->    - [Method-1: Violence](#method-1)
->        - [code-cpp-1](#code-cpp-1)
+>- [Title](#Title)
+>- [Solution](#Solution)
+>    - [Method1](#Method1)
 >        - [code-js-1](#code-js-1)
+>        - [code-cpp-1](#code-cpp-1)
 
 # Title
 
->[directory](#directory)
+>[Directory](#Directory)
 
-1295.&nbsp;Find Numbers with Even Number of Digits
+1295&nbsp;Find Numbers with Even Number of Digits
 
-Given an array nums of integers, return how many of them contain an even number of digits.
+<p>Given an array <code>nums</code> of integers, return how many of them contain an <strong>even number</strong> of digits.</p>
 
-Example 1:
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
 
-```
-Input: nums = [12,345,2,6,7896]
-Output: 2
-Explanation: 
-12 contains 2 digits (even number of digits). 
-345 contains 3 digits (odd number of digits). 
-2 contains 1 digit (odd number of digits). 
-6 contains 1 digit (odd number of digits). 
-7896 contains 4 digits (even number of digits). 
+<pre>
+<strong>Input:</strong> nums = [12,345,2,6,7896]
+<strong>Output:</strong> 2
+<strong>Explanation: 
+</strong>12 contains 2 digits (even number of digits).&nbsp;
+345 contains 3 digits (odd number of digits).&nbsp;
+2 contains 1 digit (odd number of digits).&nbsp;
+6 contains 1 digit (odd number of digits).&nbsp;
+7896 contains 4 digits (even number of digits).&nbsp;
 Therefore only 12 and 7896 contain an even number of digits.
-```
+</pre>
 
-Example 2:
+<p><strong class="example">Example 2:</strong></p>
 
-```
-Input: nums = [555,901,482,1771]
-Output: 1
-Explanation: 
+<pre>
+<strong>Input:</strong> nums = [555,901,482,1771]
+<strong>Output:</strong> 1 
+<strong>Explanation: </strong>
 Only 1771 contains an even number of digits.
- 
-```
+</pre>
 
-Constraints:
-- 1 <= nums.length <= 500
-- 1 <= nums[i] <= 10^5
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>1 &lt;= nums.length &lt;= 500</code></li>
+	<li><code>1 &lt;= nums[i] &lt;= 10<sup>5</sup></code></li>
+</ul>
+
 
 # Solution
 
-## Method-1
+## Method1
 
->[directory](#directory) | [title](#title) | [C++](#code-cpp-1), [JavaScript](#code-js-1), [Python](#code-python2-1)
-
-Violence
-
-### Analyze
-
-...
+>[Directory](#Directory) | [Title](#Title) | [JavaScript](#code-js-1), [C++](#code-cpp-1)
 
 ### Code
 
+#### code-js-1
+
+>[Directory](#Directory) | [Title](#Title) | [Method1](#Method1) | [index-1.js](./index-1.js "index-1.js")
+
+```JavaScript
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var findNumbers = function(nums) {
+    let a = 0;
+    for(let i = 0; i < nums.length; i++) {
+        if((nums[i]).toString().length % 2 === 0) {
+            a += 1;
+        }
+    }
+    return a;
+};
+
+let sample1 = [12, 345, 2, 6, 7896];
+let sample2 = [555,901,482,1771];
+
+console.log('zain1>>>>>', findNumbers(sample1));
+console.log('zain2>>>>>', findNumbers(sample2));
+
+```
+
 #### code-cpp-1
 
->[directory](#directory) | [title](#title) | [analyze](#method-1) | [main-1.cpp](./main-1.cpp "main-1.cpp")
+>[Directory](#Directory) | [Title](#Title) | [Method1](#Method1) | [main-1.cpp](./main-1.cpp "main-1.cpp")
 
-```cpp
+```C++
 #include<iostream>
 #include<vector>
 using namespace std;
@@ -99,28 +125,3 @@ int main() {
 }
 ```
 
-#### code-js-1
-
->[directory](#directory) | [title](#title) | [analyze](#method-1) | [index-1.js](./index-1.js "index-1.js")
-
-```js
-/**
- * @param {number[]} nums
- * @return {number}
- */
-var findNumbers = function(nums) {
-    let a = 0;
-    for(let i = 0; i < nums.length; i++) {
-        if((nums[i]).toString().length % 2 === 0) {
-            a += 1;
-        }
-    }
-    return a;
-};
-
-let sample1 = [12, 345, 2, 6, 7896];
-let sample2 = [555,901,482,1771];
-
-console.log('zain1>>>>>', findNumbers(sample1));
-console.log('zain2>>>>>', findNumbers(sample2));
-```

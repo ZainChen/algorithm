@@ -2,71 +2,69 @@
 
 # Directory
 
->- [Title](#title)
->- [Solution](#solution)
->    - [Method-1: String flipping method](#method-1)
+>- [Title](#Title)
+>- [Solution](#Solution)
+>    - [Method1](#Method1)
 >        - [code-js-1](#code-js-1)
->    - [Method-2: Integer remainder](#method-2)
+>    - [Method2](#Method2)
 >        - [code-js-2](#code-js-2)
 
 # Title
 
->[directory](#directory)
+>[Directory](#Directory)
 
-9.&nbsp;Palindrome Number
+9&nbsp;Palindrome Number
 
-Given an integer x, return true if x is palindrome integer.
+<p>Given an integer <code>x</code>, return <code>true</code><em> if </em><code>x</code><em> is a </em><span data-keyword="palindrome-integer"><em><strong>palindrome</strong></em></span><em>, and </em><code>false</code><em> otherwise</em>.</p>
 
-An integer is a palindrome when it reads the same backward as forward.
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
 
-- For example, 121 is a palindrome while 123 is not.
- 
-Example 1:
-```
-Input: x = 121
-Output: true
-Explanation: 121 reads as 121 from left to right and from right to left.
-```
+<pre>
+<strong>Input:</strong> x = 121
+<strong>Output:</strong> true
+<strong>Explanation:</strong> 121 reads as 121 from left to right and from right to left.
+</pre>
 
-Example 2:
-```
-Input: x = -121
-Output: false
-Explanation: From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.
-```
+<p><strong class="example">Example 2:</strong></p>
 
-Example 3:
-```
-Input: x = 10
-Output: false
-Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
-```
+<pre>
+<strong>Input:</strong> x = -121
+<strong>Output:</strong> false
+<strong>Explanation:</strong> From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.
+</pre>
 
-Constraints:
-- -231 <= x <= 231 - 1
- 
+<p><strong class="example">Example 3:</strong></p>
 
-Follow up: Could you solve it without converting the integer to a string?
+<pre>
+<strong>Input:</strong> x = 10
+<strong>Output:</strong> false
+<strong>Explanation:</strong> Reads 01 from right to left. Therefore it is not a palindrome.
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>-2<sup>31</sup>&nbsp;&lt;= x &lt;= 2<sup>31</sup>&nbsp;- 1</code></li>
+</ul>
+
+<p>&nbsp;</p>
+<strong>Follow up:</strong> Could you solve it without converting the integer to a string?
 
 # Solution
 
-## Method-1
+## Method1
 
->[directory](#directory) | [title](#title) | [JavaScript](#code-js-1)
-
-String flipping method
-
-### Analyze
-
-...
+>[Directory](#Directory) | [Title](#Title) | [JavaScript](#code-js-1)
 
 ### Code
 
 #### code-js-1
 
->[directory](#directory) | [title](#title) | [analyze](#method-1) | [index-1.js](./index-1.js "index-1.js")
+>[Directory](#Directory) | [Title](#Title) | [Method1](#Method1) | [index-1.js](./index-1.js "index-1.js")
 
-```js
+```JavaScript
 /**
  * @param {number} x
  * @return {boolean}
@@ -79,25 +77,20 @@ var isPalindrome = function(x) {
 console.log(isPalindrome(121))
 console.log(isPalindrome(-121))
 console.log(isPalindrome(0))
+
 ```
 
-## Method-2
+## Method2
 
->[directory](#directory) | [title](#title) | [JavaScript](#code-js-2)
-
-Integer remainder
-
-### Analyze
-
-...
+>[Directory](#Directory) | [Title](#Title) | [JavaScript](#code-js-2)
 
 ### Code
 
 #### code-js-2
 
->[directory](#directory) | [title](#title) | [analyze](#method-2) | [index-2.js](./index-2.js "index-2.js")
+>[Directory](#Directory) | [Title](#Title) | [Method2](#Method2) | [index-2.js](./index-2.js "index-2.js")
 
-```js
+```JavaScript
 /**
  * @param {number} x
  * @return {boolean}
@@ -120,4 +113,6 @@ console.log(isPalindrome(121))
 console.log(isPalindrome(3728900))
 console.log(isPalindrome(-121))
 console.log(isPalindrome(0))
+
 ```
+

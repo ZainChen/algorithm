@@ -2,63 +2,85 @@
 
 # Directory
 
->- [Title](#title)
->- [Solution](#solution)
->    - [Method-1: Partition recursion](#method-1)
+>- [Title](#Title)
+>- [Solution](#Solution)
+>    - [Method1](#Method1)
+>        - [code-js-1](#code-js-1)
+>        - [code-cpp-1](#code-cpp-1)
 
 # Title
 
->[directory](#directory)
+>[Directory](#Directory)
 
-654.&nbsp;Maximum Binary Tree
+654&nbsp;Maximum Binary Tree
 
-Given an integer array with no duplicates. A maximum tree building on this array is defined as follow:
+<p>You are given an integer array <code>nums</code> with no duplicates. A <strong>maximum binary tree</strong> can be built recursively from <code>nums</code> using the following algorithm:</p>
 
-The root is the maximum number in the array.
+<ol>
+	<li>Create a root node whose value is the maximum value in <code>nums</code>.</li>
+	<li>Recursively build the left subtree on the <strong>subarray prefix</strong> to the <strong>left</strong> of the maximum value.</li>
+	<li>Recursively build the right subtree on the <strong>subarray suffix</strong> to the <strong>right</strong> of the maximum value.</li>
+</ol>
 
-    1.The left subtree is the maximum tree constructed from left part subarray divided by the maximum number.
-    2.The right subtree is the maximum tree constructed from right part subarray divided by the maximum number.
-    3.Construct the maximum tree by the given array and output the root node of this tree.
+<p>Return <em>the <strong>maximum binary tree</strong> built from </em><code>nums</code>.</p>
 
-#### Example 1:
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/12/24/tree1.jpg" style="width: 302px; height: 421px;" />
+<pre>
+<strong>Input:</strong> nums = [3,2,1,6,0,5]
+<strong>Output:</strong> [6,3,5,null,2,0,null,null,1]
+<strong>Explanation:</strong> The recursive calls are as follow:
+- The largest value in [3,2,1,6,0,5] is 6. Left prefix is [3,2,1] and right suffix is [0,5].
+    - The largest value in [3,2,1] is 3. Left prefix is [] and right suffix is [2,1].
+        - Empty array, so no child.
+        - The largest value in [2,1] is 2. Left prefix is [] and right suffix is [1].
+            - Empty array, so no child.
+            - Only one element, so child is a node with value 1.
+    - The largest value in [0,5] is 5. Left prefix is [0] and right suffix is [].
+        - Only one element, so child is a node with value 0.
+        - Empty array, so no child.
+</pre>
 
-```c++
-Input: [3,2,1,6,0,5]
-Output: return the tree root node representing the following tree:
+<p><strong class="example">Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/12/24/tree2.jpg" style="width: 182px; height: 301px;" />
+<pre>
+<strong>Input:</strong> nums = [3,2,1]
+<strong>Output:</strong> [3,null,2,null,1]
+</pre>
 
-      6
-    /   \
-   3     5
-    \    / 
-     2  0   
-       \
-        1
-```
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
 
-Note:
-
-The size of the given array will be in the range [1,1000].
+<ul>
+	<li><code>1 &lt;= nums.length &lt;= 1000</code></li>
+	<li><code>0 &lt;= nums[i] &lt;= 1000</code></li>
+	<li>All integers in <code>nums</code> are <strong>unique</strong>.</li>
+</ul>
 
 
 # Solution
 
-## Method-1
+## Method1
 
->[directory](#directory) | [title](#title) | [C++](#code-cpp-1), [JavaScript](#code-js-1)
-
-Partition recursion
-
-### Analyze
-
-Confirm the maximum subscript, partition, recursion.
+>[Directory](#Directory) | [Title](#Title) | [JavaScript](#code-js-1), [C++](#code-cpp-1)
 
 ### Code
 
+#### code-js-1
+
+>[Directory](#Directory) | [Title](#Title) | [Method1](#Method1) | [index-1.js](./index-1.js "index-1.js")
+
+```JavaScript
+
+console.log("zain");
+```
+
 #### code-cpp-1
 
->[directory](#directory) | [title](#title) | [analyze](#method-1) | [main-1.cpp](./main-1.cpp "main-1.cpp")
+>[Directory](#Directory) | [Title](#Title) | [Method1](#Method1) | [main-1.cpp](./main-1.cpp "main-1.cpp")
 
-```cpp
+```C++
 #include<iostream>
 #include<vector>
 #include<queue>
@@ -104,9 +126,9 @@ public:
     }
 };
 
-// Queue implementation binary tree level output
+// 队列实现二叉树层次输出
 void levelOrder(TreeNode *t) {
-    queue<TreeNode*> qt;  //Create a queue q, each element is a node pointer
+    queue<TreeNode*> qt;  //创建队列 q,每个元素都是结点指针
     TreeNode* p = t;
     if(p != NULL) {
         qt.push(p);
@@ -157,10 +179,3 @@ int main() {
 }
 ```
 
-#### code-js-1
-
->[directory](#directory) | [title](#title) | [analyze](#method-1) | [index-1.js](./index-1.js "index-1.js")
-
-```js
-
-```

@@ -11,53 +11,70 @@
 
 >[目录](#目录)
 
-1410.&nbsp;HTML 实体解析器
+1410&nbsp;HTML 实体解析器
 
-「HTML 实体解析器」 是一种特殊的解析器，它将 HTML 代码作为输入，并用字符本身替换掉所有这些特殊的字符实体。
+<p>「HTML&nbsp;实体解析器」 是一种特殊的解析器，它将 HTML 代码作为输入，并用字符本身替换掉所有这些特殊的字符实体。</p>
 
-HTML 里这些特殊字符和它们对应的字符实体包括：
-- 双引号：字符实体为 &quot; ，对应的字符是 " 。
-- 单引号：字符实体为 &apos; ，对应的字符是 ' 。
-- 与符号：字符实体为 &amp; ，对应对的字符是 & 。
-- 大于号：字符实体为 &gt; ，对应的字符是 > 。
-- 小于号：字符实体为 &lt; ，对应的字符是 < 。
-- 斜线号：字符实体为 &frasl; ，对应的字符是 / 。
-- 给你输入字符串 text ，请你实现一个 HTML 实体解析器，返回解析器解析后的结果。
+<p>HTML 里这些特殊字符和它们对应的字符实体包括：</p>
 
-示例 1：
-```
-输入：text = "&amp; is an HTML entity but &ambassador; is not."
-输出："& is an HTML entity but &ambassador; is not."
-解释：解析器把字符实体 &amp; 用 & 替换
-```
+<ul>
+	<li><strong>双引号：</strong>字符实体为&nbsp;<code>&amp;quot;</code>&nbsp;，对应的字符是&nbsp;<code>&quot;</code>&nbsp;。</li>
+	<li><strong>单引号：</strong>字符实体为&nbsp;<code>&amp;apos;</code>&nbsp;，对应的字符是&nbsp;<code>&#39;</code>&nbsp;。</li>
+	<li><strong>与符号：</strong>字符实体为&nbsp;<code>&amp;amp;</code>&nbsp;，对应对的字符是&nbsp;<code>&amp;</code>&nbsp;。</li>
+	<li><strong>大于号：</strong>字符实体为&nbsp;<code>&amp;gt;</code>&nbsp;，对应的字符是&nbsp;<code>&gt;</code>&nbsp;。</li>
+	<li><strong>小于号：</strong>字符实体为&nbsp;<code>&amp;lt;</code>&nbsp;，对应的字符是&nbsp;<code>&lt;</code>&nbsp;。</li>
+	<li><strong>斜线号：</strong>字符实体为&nbsp;<code>&amp;frasl;</code>&nbsp;，对应的字符是&nbsp;<code>/</code>&nbsp;。</li>
+</ul>
 
-示例 2：
-```
-输入：text = "and I quote: &quot;...&quot;"
-输出："and I quote: \"...\""
-```
+<p>给你输入字符串&nbsp;<code>text</code>&nbsp;，请你实现一个 HTML&nbsp;实体解析器，返回解析器解析后的结果。</p>
 
-示例 3：
-```
-输入：text = "Stay home! Practice on Leetcode :)"
-输出："Stay home! Practice on Leetcode :)"
-```
+<p>&nbsp;</p>
 
-示例 4：
-```
-输入：text = "x &gt; y &amp;&amp; x &lt; y is always false"
-输出："x > y && x < y is always false"
-```
+<p><strong>示例 1：</strong></p>
 
-示例 5：
-```
-输入：text = "leetcode.com&frasl;problemset&frasl;all"
-输出："leetcode.com/problemset/all"
-```
+<pre>
+<strong>输入：</strong>text = &quot;&amp;amp; is an HTML entity but &amp;ambassador; is not.&quot;
+<strong>输出：</strong>&quot;&amp; is an HTML entity but &amp;ambassador; is not.&quot;
+<strong>解释：</strong>解析器把字符实体 &amp;amp; 用 &amp; 替换
+</pre>
 
-提示：
-- 1 <= text.length <= 10^5
-- 字符串可能包含 256 个ASCII 字符中的任意字符。
+<p><strong>示例&nbsp;2：</strong></p>
+
+<pre>
+<strong>输入：</strong>text = &quot;and I quote: &amp;quot;...&amp;quot;&quot;
+<strong>输出：</strong>&quot;and I quote: \&quot;...\&quot;&quot;
+</pre>
+
+<p><strong>示例 3：</strong></p>
+
+<pre>
+<strong>输入：</strong>text = &quot;Stay home! Practice on Leetcode :)&quot;
+<strong>输出：</strong>&quot;Stay home! Practice on Leetcode :)&quot;
+</pre>
+
+<p><strong>示例 4：</strong></p>
+
+<pre>
+<strong>输入：</strong>text = &quot;x &amp;gt; y &amp;amp;&amp;amp; x &amp;lt; y is always false&quot;
+<strong>输出：</strong>&quot;x &gt; y &amp;&amp; x &lt; y is always false&quot;
+</pre>
+
+<p><strong>示例 5：</strong></p>
+
+<pre>
+<strong>输入：</strong>text = &quot;leetcode.com&amp;frasl;problemset&amp;frasl;all&quot;
+<strong>输出：</strong>&quot;leetcode.com/problemset/all&quot;
+</pre>
+
+<p>&nbsp;</p>
+
+<p><strong>提示：</strong></p>
+
+<ul>
+	<li><code>1 &lt;= text.length &lt;= 10^5</code></li>
+	<li>字符串可能包含 256 个ASCII 字符中的任意字符。</li>
+</ul>
+
 
 # 解
 
@@ -65,17 +82,11 @@ HTML 里这些特殊字符和它们对应的字符实体包括：
 
 >[目录](#目录) | [标题](#标题) | [JavaScript](#code-js-1)
 
-[[[方法简介]]]
-
-### 分析
-
-[[[方法分析]]]
-
 ### 代码
 
 #### code-js-1
 
->[目录](#目录) | [标题](#标题) | [分析](#方法1) | [index-1.js](./index-1.js "index-1.js")
+>[目录](#目录) | [标题](#标题) | [方法1](#方法1) | [index-1.js](./index-1.js "index-1.js")
 
 ```JavaScript
 /**
@@ -133,3 +144,4 @@ console.log('zain4>>>>>', entityParser(sample4));
 console.log('zain5>>>>>', entityParser(sample5));
 console.log('zain5>>>>>', entityParser(sample6));
 ```
+

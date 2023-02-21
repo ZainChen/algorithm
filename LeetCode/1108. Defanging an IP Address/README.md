@@ -2,59 +2,75 @@
 
 # Directory
 
->- [Title](#title)
->- [Solution](#solution)
->    - [Method-1: Violence](#method-1)
->        - [code-cpp-1](#code-cpp-1)
+>- [Title](#Title)
+>- [Solution](#Solution)
+>    - [Method1](#Method1)
 >        - [code-js-1](#code-js-1)
+>        - [code-cpp-1](#code-cpp-1)
 
 # Title
 
->[directory](#directory)
+>[Directory](#Directory)
 
-1108.&nbsp;Defanging an IP Address
+1108&nbsp;Defanging an IP Address
 
-Given a valid (IPv4) IP address, return a defanged version of that IP address.
+<p>Given a valid (IPv4) IP <code>address</code>, return a defanged version of that IP address.</p>
 
-A defanged IP address replaces every period "." with "[.]".
+<p>A <em>defanged&nbsp;IP address</em>&nbsp;replaces every period <code>&quot;.&quot;</code> with <code>&quot;[.]&quot;</code>.</p>
 
-Example 1:
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+<pre><strong>Input:</strong> address = "1.1.1.1"
+<strong>Output:</strong> "1[.]1[.]1[.]1"
+</pre><p><strong class="example">Example 2:</strong></p>
+<pre><strong>Input:</strong> address = "255.100.50.0"
+<strong>Output:</strong> "255[.]100[.]50[.]0"
+</pre>
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
 
-```
-Input: address = "1.1.1.1"
-Output: "1[.]1[.]1[.]1"
-```
-
-Example 2:
-
-```
-Input: address = "255.100.50.0"
-Output: "255[.]100[.]50[.]0"
-```
- 
-Constraints:
-
-The given address is a valid IPv4 address.
+<ul>
+	<li>The given <code>address</code> is a valid IPv4 address.</li>
+</ul>
 
 # Solution
 
-## Method-1
+## Method1
 
->[directory](#directory) | [title](#title) | [C++](#code-cpp-1), [JavaScript](#code-js-1), [Python](#code-python2-1)
-
-Violence
-
-### Analyze
-
-...
+>[Directory](#Directory) | [Title](#Title) | [JavaScript](#code-js-1), [C++](#code-cpp-1)
 
 ### Code
 
+#### code-js-1
+
+>[Directory](#Directory) | [Title](#Title) | [Method1](#Method1) | [index-1.js](./index-1.js "index-1.js")
+
+```JavaScript
+/**
+ * @param {string} address
+ * @return {string}
+ */
+var defangIPaddr = function (address) {
+    let s = '';
+    for (let i = 0; i < address.length; i++) {
+        s += address[i] === '.' ? '[.]' : address[i];
+    }
+    return s;
+};
+
+let sample1 = "1.1.1.1";
+let sample2 = "255.100.50.0";
+
+console.log('zain1>>>>>', defangIPaddr(sample1));
+console.log('zain2>>>>>', defangIPaddr(sample2));
+
+```
+
 #### code-cpp-1
 
->[directory](#directory) | [title](#title) | [analyze](#method-1) | [main-1.cpp](./main-1.cpp "main-1.cpp")
+>[Directory](#Directory) | [Title](#Title) | [Method1](#Method1) | [main-1.cpp](./main-1.cpp "main-1.cpp")
 
-```cpp
+```C++
 #include<iostream>
 using namespace std;
 
@@ -85,26 +101,3 @@ int main() {
 }
 ```
 
-#### code-js-1
-
->[directory](#directory) | [title](#title) | [analyze](#method-1) | [index-1.js](./index-1.js "index-1.js")
-
-```js
-/**
- * @param {string} address
- * @return {string}
- */
-var defangIPaddr = function (address) {
-    let s = '';
-    for (let i = 0; i < address.length; i++) {
-        s += address[i] === '.' ? '[.]' : address[i];
-    }
-    return s;
-};
-
-let sample1 = "1.1.1.1";
-let sample2 = "255.100.50.0";
-
-console.log('zain1>>>>>', defangIPaddr(sample1));
-console.log('zain2>>>>>', defangIPaddr(sample2));
-```
