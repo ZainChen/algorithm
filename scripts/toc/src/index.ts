@@ -25,8 +25,18 @@ class Toc {
     await this.initData()
     this.generateLeetCodeReadmeDirectory('cn')
     this.generateLeetCodeReadmeDirectory('en')
-    await this.generateLeetCodeProblemDetails('cn')
-    await this.generateLeetCodeProblemDetails('en')
+    const folderNames = process.argv.slice(2)
+    if (folderNames.length > 0) {
+      // 过滤只处理指定文件夹
+      const folderInfos = this.leetCodeFolderInfos.filter((folder) => {
+        return folderNames.includes(folder.folderName)
+      })
+      await this.generateLeetCodeProblemDetails('cn', folderInfos)
+      await this.generateLeetCodeProblemDetails('en', folderInfos)
+    } else {
+      await this.generateLeetCodeProblemDetails('cn')
+      await this.generateLeetCodeProblemDetails('en')
+    }
   }
 
   async initData() {
@@ -122,10 +132,14 @@ class Toc {
     console.log('zain>>>>>🚀 | 完成：生成 LeetCode 题目列表，', language)
   }
 
-  async generateLeetCodeProblemDetails(language: LanguageType) {
+  async generateLeetCodeProblemDetails(
+    language: LanguageType,
+    folderInfos?: LeetCodeFolderInfo[]
+  ) {
     console.log('zain>>>>>🚀 | 开始：生成 LeetCode 题目详情，', language)
-    for (let i = 0; i < this.leetCodeFolderInfos.length; i += 1) {
-      const folder = this.leetCodeFolderInfos[i]
+    const folders = folderInfos || this.leetCodeFolderInfos
+    for (let i = 0; i < folders.length; i += 1) {
+      const folder = folders[i]
       console.log(
         `zain>>>>>🚀 | 进行中：正在生成题目详情【${folder.folderName}】`
       )
