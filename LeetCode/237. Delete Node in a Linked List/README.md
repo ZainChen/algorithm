@@ -12,7 +12,7 @@
 
 >[Directory](#Directory)
 
-237&nbsp;Delete Node in a Linked List
+237.&nbsp;Delete Node in a Linked List
 
 <p>There is a singly-linked list <code>head</code> and we want to delete a node <code>node</code> in it.</p>
 

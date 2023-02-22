@@ -12,7 +12,7 @@
 
 >[Directory](#Directory)
 
-剑指 Offer 09&nbsp;用两个栈实现队列 LCOF
+剑指 Offer 09.&nbsp;用两个栈实现队列 LCOF
 
 English description is not available for the problem. Please switch to Chinese.
 

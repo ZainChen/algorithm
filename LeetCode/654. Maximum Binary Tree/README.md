@@ -12,7 +12,7 @@
 
 >[Directory](#Directory)
 
-654&nbsp;Maximum Binary Tree
+654.&nbsp;Maximum Binary Tree
 
 <p>You are given an integer array <code>nums</code> with no duplicates. A <strong>maximum binary tree</strong> can be built recursively from <code>nums</code> using the following algorithm:</p>
 

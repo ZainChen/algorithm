@@ -12,7 +12,7 @@
 
 >[目录](#目录)
 
-237&nbsp;删除链表中的节点
+237.&nbsp;删除链表中的节点
 
 <p>有一个单链表的&nbsp;<code>head</code>，我们想删除它其中的一个节点&nbsp;<code>node</code>。</p>
 

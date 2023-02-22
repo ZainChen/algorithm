@@ -11,7 +11,7 @@
 
 >[Directory](#Directory)
 
-912&nbsp;Sort an Array
+912.&nbsp;Sort an Array
 
 <p>Given an array of integers <code>nums</code>, sort the array in ascending order and return it.</p>
 

@@ -13,7 +13,7 @@
 
 >[目录](#目录)
 
-160&nbsp;相交链表
+160.&nbsp;相交链表
 
 <p>给你两个单链表的头节点&nbsp;<code>headA</code> 和 <code>headB</code> ，请你找出并返回两个单链表相交的起始节点。如果两个链表不存在相交节点，返回 <code>null</code> 。</p>
 

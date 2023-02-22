@@ -155,7 +155,7 @@ class Toc {
         )
         writeContent += `# ${localLang.title[language]}\n\n`
         writeContent += `>[${localLang.directory[language]}](#${localLang.directory[language]})\n\n`
-        writeContent += `${problemInfo.id}&nbsp;${
+        writeContent += `${problemInfo.id}.&nbsp;${
           language === 'cn' ? problemInfo.titleCn : problemInfo.title
         }\n\n`
         // eslint-disable-next-line no-await-in-loop

@@ -11,7 +11,7 @@
 
 >[目录](#目录)
 
-20&nbsp;有效的括号
+20.&nbsp;有效的括号
 
 <p>给定一个只包括 <code>'('</code>，<code>')'</code>，<code>'{'</code>，<code>'}'</code>，<code>'['</code>，<code>']'</code>&nbsp;的字符串 <code>s</code> ，判断字符串是否有效。</p>
 

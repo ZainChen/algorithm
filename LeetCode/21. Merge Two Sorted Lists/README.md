@@ -13,7 +13,7 @@
 
 >[Directory](#Directory)
 
-21&nbsp;Merge Two Sorted Lists
+21.&nbsp;Merge Two Sorted Lists
 
 <p>You are given the heads of two sorted linked lists <code>list1</code> and <code>list2</code>.</p>
 

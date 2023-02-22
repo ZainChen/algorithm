@@ -13,7 +13,7 @@
 
 >[目录](#目录)
 
-9&nbsp;回文数
+9.&nbsp;回文数
 
 <p>给你一个整数 <code>x</code> ，如果 <code>x</code> 是一个回文整数，返回 <code>true</code> ；否则，返回 <code>false</code> 。</p>
 

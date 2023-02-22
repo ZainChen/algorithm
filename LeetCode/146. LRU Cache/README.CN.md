@@ -12,7 +12,7 @@
 
 >[目录](#目录)
 
-146&nbsp;LRU 缓存
+146.&nbsp;LRU 缓存
 
 <div class="title__3Vvk">请你设计并实现一个满足&nbsp; <a href="https://baike.baidu.com/item/LRU" target="_blank">LRU (最近最少使用) 缓存</a> 约束的数据结构。</div>
 

@@ -11,7 +11,7 @@
 
 >[Directory](#Directory)
 
-20&nbsp;Valid Parentheses
+20.&nbsp;Valid Parentheses
 
 <p>Given a string <code>s</code> containing just the characters <code>&#39;(&#39;</code>, <code>&#39;)&#39;</code>, <code>&#39;{&#39;</code>, <code>&#39;}&#39;</code>, <code>&#39;[&#39;</code> and <code>&#39;]&#39;</code>, determine if the input string is valid.</p>
 

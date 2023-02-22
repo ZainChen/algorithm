@@ -13,7 +13,7 @@
 
 >[Directory](#Directory)
 
-1480&nbsp;Running Sum of 1d Array
+1480.&nbsp;Running Sum of 1d Array
 
 <p>Given an array <code>nums</code>. We define a running sum of an array as&nbsp;<code>runningSum[i] = sum(nums[0]&hellip;nums[i])</code>.</p>
 

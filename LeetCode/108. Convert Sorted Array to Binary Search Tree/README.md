@@ -11,7 +11,7 @@
 
 >[Directory](#Directory)
 
-108&nbsp;Convert Sorted Array to Binary Search Tree
+108.&nbsp;Convert Sorted Array to Binary Search Tree
 
 <p>Given an integer array <code>nums</code> where the elements are sorted in <strong>ascending order</strong>, convert <em>it to a </em><span data-keyword="height-balanced"><strong><em>height-balanced</em></strong></span> <em>binary search tree</em>.</p>
 

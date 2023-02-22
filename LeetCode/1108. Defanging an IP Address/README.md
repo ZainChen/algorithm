@@ -12,7 +12,7 @@
 
 >[Directory](#Directory)
 
-1108&nbsp;Defanging an IP Address
+1108.&nbsp;Defanging an IP Address
 
 <p>Given a valid (IPv4) IP <code>address</code>, return a defanged version of that IP address.</p>
 

@@ -12,7 +12,7 @@
 
 >[Directory](#Directory)
 
-14&nbsp;Longest Common Prefix
+14.&nbsp;Longest Common Prefix
 
 <p>Write a function to find the longest common prefix string amongst an array of strings.</p>
 

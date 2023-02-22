@@ -11,6 +11,7 @@
 20 | [有效的括号](./20.%20Valid%20Parentheses/README.CN.md) | JavaScript
 21 | [合并两个有序链表](./21.%20Merge%20Two%20Sorted%20Lists/README.CN.md) | JavaScript
 25 | [K 个一组翻转链表](./25.%20Reverse%20Nodes%20in%20k-Group/README.CN.md) | JavaScript
+53 | [最大子数组和](./53.%20Maximum%20Subarray/README.CN.md) | JavaScript
 88 | [合并两个有序数组](./88.%20Merge%20Sorted%20Array/README.CN.md) | JavaScript
 102 | [二叉树的层序遍历](./102.%20Binary%20Tree%20Level%20Order%20Traversal/README.CN.md) | JavaScript
 103 | [二叉树的锯齿形层序遍历](./103.%20Binary%20Tree%20Zigzag%20Level%20Order%20Traversal/README.CN.md) | JavaScript

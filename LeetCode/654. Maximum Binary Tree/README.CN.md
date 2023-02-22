@@ -12,7 +12,7 @@
 
 >[目录](#目录)
 
-654&nbsp;最大二叉树
+654.&nbsp;最大二叉树
 
 <p>给定一个不重复的整数数组&nbsp;<code>nums</code> 。&nbsp;<strong>最大二叉树</strong>&nbsp;可以用下面的算法从&nbsp;<code>nums</code> 递归地构建:</p>
 

@@ -12,7 +12,7 @@
 
 >[目录](#目录)
 
-1108&nbsp;IP 地址无效化
+1108.&nbsp;IP 地址无效化
 
 <p>给你一个有效的 <a href="https://baike.baidu.com/item/IPv4" target="_blank">IPv4</a> 地址&nbsp;<code>address</code>，返回这个 IP 地址的无效化版本。</p>
 

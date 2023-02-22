@@ -13,7 +13,7 @@
 
 >[Directory](#Directory)
 
-剑指 Offer 30&nbsp;包含min函数的栈 LCOF
+剑指 Offer 30.&nbsp;包含min函数的栈 LCOF
 
 English description is not available for the problem. Please switch to Chinese.
 

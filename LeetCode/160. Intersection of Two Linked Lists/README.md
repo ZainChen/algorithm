@@ -13,7 +13,7 @@
 
 >[Directory](#Directory)
 
-160&nbsp;Intersection of Two Linked Lists
+160.&nbsp;Intersection of Two Linked Lists
 
 <p>Given the heads of two singly linked-lists <code>headA</code> and <code>headB</code>, return <em>the node at which the two lists intersect</em>. If the two linked lists have no intersection at all, return <code>null</code>.</p>
 

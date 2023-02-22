@@ -11,7 +11,7 @@
 
 >[目录](#目录)
 
-1431&nbsp;拥有最多糖果的孩子
+1431.&nbsp;拥有最多糖果的孩子
 
 <p>给你一个数组&nbsp;<code>candies</code>&nbsp;和一个整数&nbsp;<code>extraCandies</code>&nbsp;，其中&nbsp;<code>candies[i]</code>&nbsp;代表第 <code>i</code> 个孩子拥有的糖果数目。</p>
 

@@ -11,7 +11,7 @@
 
 >[Directory](#Directory)
 
-543&nbsp;Diameter of Binary Tree
+543.&nbsp;Diameter of Binary Tree
 
 <p>Given the <code>root</code> of a binary tree, return <em>the length of the <strong>diameter</strong> of the tree</em>.</p>
 

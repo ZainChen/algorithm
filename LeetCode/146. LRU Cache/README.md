@@ -12,7 +12,7 @@
 
 >[Directory](#Directory)
 
-146&nbsp;LRU Cache
+146.&nbsp;LRU Cache
 
 <p>Design a data structure that follows the constraints of a <strong><a href="https://en.wikipedia.org/wiki/Cache_replacement_policies#LRU" target="_blank">Least Recently Used (LRU) cache</a></strong>.</p>
 

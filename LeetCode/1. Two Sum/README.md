@@ -19,7 +19,7 @@
 
 >[Directory](#Directory)
 
-1&nbsp;Two Sum
+1.&nbsp;Two Sum
 
 <p>Given an array of integers <code>nums</code>&nbsp;and an integer <code>target</code>, return <em>indices of the two numbers such that they add up to <code>target</code></em>.</p>
 
